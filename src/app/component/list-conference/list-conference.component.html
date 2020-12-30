@@ -1,0 +1,31 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">sponsor</th>
+        <th scope="col">Prix Ticket</th>
+        <th scope="col">Date</th>
+        <th scope="col">Dernier delais de soumission</th>
+        <th scope="col">Site Web</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let conf of conferences">
+        <td>{{ conf.id }}</td>
+        <td>{{ conf.nom }}</td>
+        <td>{{ conf.categorie }}</td>
+        <td>{{ conf.sponsor }}</td>
+        <td>{{ conf.prixticket }}</td>
+        <td>{{ conf.date | date:'shortDate'}}</td>
+        <td>{{ conf.delaisoumission | date:'shortDate' }}</td>
+        <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
