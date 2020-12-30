@@ -6,6 +6,7 @@ export class Conference {
   nom:string;
   date:string;
   hotel:string;
+  idsalle:string;
   sessions:string;
   categorie:string;
   sponsor:string;
