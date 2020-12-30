@@ -16,4 +16,5 @@ export class Conference {
   prixticket:string;
   nticket:string;
   terminer:boolean;
+  deleted:boolean;
 }

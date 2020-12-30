@@ -9,4 +9,5 @@ export class Utilisateur {
   reservations:string;
   invitationsenv:string;
   invitationsrecu:string;
+  deleted:boolean;
 }
