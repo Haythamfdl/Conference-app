@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+      <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input type="text" [(ngModel)]="conference.nom"
+               class="form-control"
+               id="Nom"
+               name="Nom"
+               placeholder="Entrer le nom de la Conference"
+               required #nom="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Hotel">Hotel</label>
+        <select  class="form-control" ngModel="hotels" id="Hotel" name="Hotel" (change)="select($event)" >
+          <option *ngFor="let hotel of hotels" value="{{hotel.id}}">{{hotel.nom}}</option>
+        </select>
+      </div>
+
+      <button type="submit" [disabled]="!userForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

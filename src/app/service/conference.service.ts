@@ -7,16 +7,16 @@ import {Conference} from "../class/conference";
   providedIn: 'root'
 })
 export class ConferenceService {
-  private conferenceUrl: string;
+  private Url: string;
   constructor(private http: HttpClient) {
-    this.conferenceUrl = 'http://localhost:8080/conferences';
+    this.Url = 'http://localhost:8080/conferences';
   }
 
   public findAll(): Observable<Conference[]> {
-    return this.http.get<Conference[]>(this.conferenceUrl);
+    return this.http.get<Conference[]>(this.Url);
   }
 
   public save(conference: Conference) {
-    return this.http.post<Conference>(this.conferenceUrl, conference);
+    return this.http.post<Conference>(this.Url, conference);
   }
 }

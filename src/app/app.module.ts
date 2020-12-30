@@ -5,11 +5,13 @@ import { ListConferenceComponent } from './component/list-conference/list-confer
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
+import { FormConferenceComponent } from './component/form-conference/form-conference.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListConferenceComponent
+    ListConferenceComponent,
+    FormConferenceComponent
   ],
   imports: [
     BrowserModule,

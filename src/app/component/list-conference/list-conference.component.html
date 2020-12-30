@@ -1,5 +1,6 @@
 <div class="card my-5">
   <div class="card-body">
+    <h3>Liste des Conferrences</h3>
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
@@ -11,6 +12,7 @@
         <th scope="col">Date</th>
         <th scope="col">Dernier delais de soumission</th>
         <th scope="col">Site Web</th>
+        <th scope="col">Hotel</th>
 
       </tr>
       </thead>
@@ -24,6 +26,7 @@
         <td>{{ conf.date | date:'shortDate'}}</td>
         <td>{{ conf.delaisoumission | date:'shortDate' }}</td>
         <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
+        <td>{{ conf.hotel.nom }}</td>
       </tr>
       </tbody>
     </table>

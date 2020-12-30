@@ -1,11 +1,12 @@
 import {Utilisateur} from "./utilisateur";
+import {Hotel} from "./hotel";
 
 export class Conference {
   id:string;
   organisateur:Utilisateur;
   nom:string;
   date:string;
-  hotel:string;
+  hotel:Hotel;
   idsalle:string;
   sessions:string;
   categorie:string;

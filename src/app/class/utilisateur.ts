@@ -1,3 +1,5 @@
+import {Reservation} from "./reservation";
+
 export class Utilisateur {
   id:string;
   nom:string;
@@ -6,7 +8,7 @@ export class Utilisateur {
   affiliaton:string;
   fonction:string;
   pays:string;
-  reservations:string;
+  reservations:Reservation[];
   invitationsenv:string;
   invitationsrecu:string;
   deleted:boolean;
