@@ -6,12 +6,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import { FormConferenceComponent } from './component/form-conference/form-conference.component';
+import { ModifConferenceComponent } from './component/modif-conference/modif-conference.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListConferenceComponent,
-    FormConferenceComponent
+    FormConferenceComponent,
+    ModifConferenceComponent
   ],
   imports: [
     BrowserModule,

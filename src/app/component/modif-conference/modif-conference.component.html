@@ -1,6 +1,6 @@
 <div class="card my-5">
   <div class="card-body">
-    <h3>Créer une Conferrence</h3>
+    <h3>Modifier des Conferrences</h3>
     <form (ngSubmit)="onSubmit()"  #form="ngForm">
 
       <div class="form-group">
@@ -110,7 +110,7 @@
       </div>
 
       <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-info float-lg-right">Sauvegarder</button>
+              class="btn btn-info float-lg-right">Modifier</button>
 
       <button type="reset"
               class="btn btn-danger float-lg-left">Réinitialiser</button>
