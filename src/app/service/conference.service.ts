@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaderResponse, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Conference} from "../class/conference";
 
@@ -8,6 +8,10 @@ import {Conference} from "../class/conference";
 })
 export class ConferenceService {
   private Url: string;
+  private headers : {'Content-Type':'application/json'};
+  httpOptions={
+    headers : new HttpHeaders({'Content-Type':'application/json'})
+  }
   constructor(private http: HttpClient) {
     this.Url = 'http://localhost:8080/conferences';
   }
@@ -16,7 +20,7 @@ export class ConferenceService {
     return this.http.get<Conference[]>(this.Url);
   }
 
-  public save(conference: Conference) {
-    return this.http.post<Conference>(this.Url, conference);
+  public save(conference : Object):Observable<Object> {
+    return this.http.post(this.Url, conference, this.httpOptions)
   }
 }

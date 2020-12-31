@@ -4,6 +4,7 @@ import {ConferenceService} from "../../service/conference.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Hotel} from "../../class/hotel";
 import {HotelService} from "../../service/hotel.service";
+import {Session} from "../../class/session";
 
 @Component({
   selector: 'app-form-conference',
@@ -14,7 +15,8 @@ export class FormConferenceComponent implements OnInit {
 
   conference: Conference;
   hotels:Hotel[];
-  hotel:Hotel;
+  hotel:Hotel=new Hotel();
+  session:Session[];
   idhotel:string;
 
   constructor(
@@ -22,14 +24,19 @@ export class FormConferenceComponent implements OnInit {
     private router: Router,
     private conferenceService: ConferenceService,
     private hotelService:HotelService) {
-    this.hotel=new Hotel();
     this.conference = new Conference();
   }
 
   onSubmit() {
     this.hotel =this.hotels.find(x => x.id === this.idhotel);
-    this.conference.hotel=this.hotel;
-    this.conferenceService.save(this.conference).subscribe(result => this.Alert());
+    this.conference.nom="aaaaaaaaaaaa";
+    this.conference.hotel=this.idhotel;
+    this.conference.sessions=this.session;
+    this.conference.terminer=false;
+    this.conference.deleted=false;
+    this.conferenceService.save(this.conference).subscribe(data => {
+      this.Alert();
+    });
   }
 
   Alert() {
