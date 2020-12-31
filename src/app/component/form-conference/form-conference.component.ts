@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {ConferenceService} from "../../service/conference.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Hotel} from "../../class/hotel";
 import {HotelService} from "../../service/hotel.service";
 import {Session} from "../../class/session";
+import {FormControl, FormGroup} from "@angular/forms";
+import {SalleConference} from "../../class/salle-conference";
+import {SalleConfService} from "../../service/salle-conf.service";
 
 @Component({
   selector: 'app-form-conference',
@@ -15,9 +18,7 @@ export class FormConferenceComponent implements OnInit {
 
   conference: Conference;
   hotels:Hotel[];
-  hotel:Hotel=new Hotel();
-  session:Session[];
-  idhotel:string;
+  form:FormGroup;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,10 +29,6 @@ export class FormConferenceComponent implements OnInit {
   }
 
   onSubmit() {
-    this.hotel =this.hotels.find(x => x.id === this.idhotel);
-    this.conference.nom="aaaaaaaaaaaa";
-    this.conference.hotel=this.idhotel;
-    this.conference.sessions=this.session;
     this.conference.terminer=false;
     this.conference.deleted=false;
     this.conferenceService.save(this.conference).subscribe(data => {
@@ -40,12 +37,12 @@ export class FormConferenceComponent implements OnInit {
   }
 
   Alert() {
-    alert("La Conference a été Créer !")
+    alert("La Conference a été Créer !");
   }
 
   select(event : any){
-    this.idhotel=event.target.value;
-    console.log(this.idhotel);
+    this.conference.hotel =event;
+    console.log("hotel is" , this.conference.hotel);
 
   }
   ngOnInit(): void {

@@ -8,7 +8,6 @@ export class Conference {
   nom:string;
   date:string;
   hotel:Hotel;
-  idsalle:string;
   sessions:Session[];
   categorie:string;
   sponsor:string;
