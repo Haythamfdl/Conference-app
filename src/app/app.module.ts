@@ -7,13 +7,15 @@ import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import { FormConferenceComponent } from './component/form-conference/form-conference.component';
 import { ModifConferenceComponent } from './component/modif-conference/modif-conference.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListConferenceComponent,
     FormConferenceComponent,
-    ModifConferenceComponent
+    ModifConferenceComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

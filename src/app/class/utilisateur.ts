@@ -5,6 +5,7 @@ export class Utilisateur {
   nom:string;
   prenom:string;
   email:string;
+  pass:string;
   affiliaton:string;
   fonction:string;
   pays:string;

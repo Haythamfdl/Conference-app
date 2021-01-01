@@ -1,0 +1,29 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h3>Login</h3>
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <input type="text" [(ngModel)]="utilisateur.email"
+               class="form-control"
+               id="email"
+               name="email"
+               placeholder="Entrer votre email"
+               required #email="ngModel">
+      </div>
+
+      <div class="form-group">
+        <input type="password" [(ngModel)]="utilisateur.pass"
+               class="form-control"
+               id="pass"
+               name="pass"
+               placeholder="Entrer votre mots de passe"
+               required #pass="ngModel">
+      </div>
+
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-info float-lg-right">Login</button>
+    </form>
+  </div>
+</div>

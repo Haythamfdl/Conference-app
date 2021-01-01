@@ -4,10 +4,8 @@ import {ConferenceService} from "../../service/conference.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Hotel} from "../../class/hotel";
 import {HotelService} from "../../service/hotel.service";
-import {Session} from "../../class/session";
 import {FormControl, FormGroup} from "@angular/forms";
-import {SalleConference} from "../../class/salle-conference";
-import {SalleConfService} from "../../service/salle-conf.service";
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-form-conference',
@@ -18,6 +16,7 @@ export class FormConferenceComponent implements OnInit {
 
   conference: Conference;
   hotels:Hotel[];
+  utilisateur:Utilisateur;
   form:FormGroup;
 
   constructor(
@@ -29,6 +28,8 @@ export class FormConferenceComponent implements OnInit {
   }
 
   onSubmit() {
+    this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
+    this.conference.organisateur=this.utilisateur;
     this.conference.terminer=false;
     this.conference.deleted=false;
     this.conferenceService.save(this.conference).subscribe(data => {
