@@ -1,4 +1,5 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,8 @@ export class NavbarComponent implements OnInit,OnChanges {
   show: boolean =false;
   title = 'Gestion Conference';
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,
+              private router: Router,) { }
 
   ngOnInit(): void {
     this.isLoggedIn();
@@ -24,6 +26,11 @@ export class NavbarComponent implements OnInit,OnChanges {
     }
 
 
+  }
+
+  loggOut(){
+    localStorage.removeItem('Utilisateur');
+    this.router.navigate(['/']).then(() => {window.location.reload()});
   }
 
   isLoggedIn(){

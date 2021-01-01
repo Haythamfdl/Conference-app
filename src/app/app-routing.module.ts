@@ -5,6 +5,7 @@ import {FormConferenceComponent} from "./component/form-conference/form-conferen
 import {ModifConferenceComponent} from "./component/modif-conference/modif-conference.component";
 import {LoginComponent} from "./component/login/login.component";
 import {ListMesconfComponent} from "./component/list-mesconf/list-mesconf.component";
+import {HomeComponent} from "./component/home/home.component";
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Mconferences', component: ModifConferenceComponent },
   { path: 'Myconferences', component: ListMesconfComponent },
   { path: 'Login', component: LoginComponent },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
