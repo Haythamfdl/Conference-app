@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit,OnChanges {
   show: boolean =false;
-  title = 'Gestion Conference';
+  title = 'Gestion Conférence';
 
   constructor(private route: ActivatedRoute,
               private router: Router,) { }
