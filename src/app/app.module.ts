@@ -9,6 +9,7 @@ import { FormConferenceComponent } from './component/form-conference/form-confer
 import { ModifConferenceComponent } from './component/modif-conference/modif-conference.component';
 import { LoginComponent } from './component/login/login.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { ListMesconfComponent } from './component/list-mesconf/list-mesconf.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     FormConferenceComponent,
     ModifConferenceComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListMesconfComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,12 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Gestion Conference
+          Conferences
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a routerLink="/Lconferences" class="dropdown-item">Lister les Conferences</a>
-          <a routerLink="/Aconferences" class="dropdown-item">Chairing</a>
-          <a routerLink="/Mconferences" class="dropdown-item">Modifier Conference</a>
-          <a routerLink="/Lconferences" class="dropdown-item">Annuler Conference</a>
+          <a *ngIf="!show" routerLink="/Aconferences" class="dropdown-item">Chairing</a>
+          <a *ngIf="!show" routerLink="/Myconferences" class="dropdown-item">Afficher Mes Conference</a>
         </div>
       </li>
       <li class="nav-item">

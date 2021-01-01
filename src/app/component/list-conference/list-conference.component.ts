@@ -17,4 +17,7 @@ export class ListConferenceComponent implements OnInit {
     });
   }
 
+  test(value : any){
+    console.log(JSON.stringify(value));
+  }
 }

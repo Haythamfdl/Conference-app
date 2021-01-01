@@ -25,15 +25,14 @@ export class ModifConferenceComponent implements OnInit {
   }
 
   onSubmit() {
-    this.conference.terminer=false;
-    this.conference.deleted=false;
-    this.conferenceService.save(this.conference).subscribe(data => {
+    this.conferenceService.update(this.conference).subscribe(data => {
       this.Alert();
     });
   }
 
   Alert() {
-    alert("La Conference a été Créer !");
+    alert("La Conference a été Modifier !");
+    this.router.navigate(['/Myconferences']).then(() => {window.location.reload()});
   }
 
   select(event : any){
@@ -42,9 +41,12 @@ export class ModifConferenceComponent implements OnInit {
 
   }
   ngOnInit(): void {
+
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });
+    this.conference=JSON.parse(localStorage.getItem("Conference"));
+
   }
 
 }

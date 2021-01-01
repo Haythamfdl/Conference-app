@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaderResponse, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Conference} from "../class/conference";
+import {Utilisateur} from "../class/utilisateur";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,15 @@ export class ConferenceService {
     return this.http.get<Conference[]>(this.Url);
   }
 
-  public save(conference : Object):Observable<Object> {
-    return this.http.post(this.Url, conference, this.httpOptions)
+  public findMine(utilisateur): Observable<Conference[]> {
+    return this.http.get<Conference[]>(this.Url+"/myconf/"+utilisateur);
+  }
+
+  public update(conference : Conference): Observable<Object> {
+    return this.http.put(this.Url, conference, this.httpOptions);
+  }
+
+  public save(conference : Conference):Observable<Object> {
+    return this.http.post(this.Url, conference, this.httpOptions);
   }
 }
