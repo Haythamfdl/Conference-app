@@ -28,24 +28,20 @@ export class LoginComponent implements OnInit {
 
   Alert() {
     if(this.utilisateur == null){
+      this.utilisateur =new Utilisateur();
       alert("Email ou mots de passe incorrecte");
       localStorage.removeItem('Utilisateur');
     }
     else {
       localStorage.setItem('Utilisateur',JSON.stringify(this.utilisateur));
       console.log(localStorage.getItem("Utilisateur"));
-      this.router.navigate(['/']);
+      this.router.navigate(['/']).then(() => {window.location.reload()});
       alert("Vous êtes connecter");
     }
 
   }
   ngOnInit(): void {
-    if(localStorage.getItem("Utilisateur") === null){
-      console.log("local doesnt exist");
-    }
-    else{
-      console.log(localStorage.getItem("Utilisateur"));
-    }
+
   }
 
 }

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">{{ title }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gestion Conference
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a routerLink="/Lconferences" class="dropdown-item">Lister les Conferences</a>
+          <a routerLink="/Aconferences" class="dropdown-item">Chairing</a>
+          <a routerLink="/Mconferences" class="dropdown-item">Modifier Conference</a>
+          <a routerLink="/Lconferences" class="dropdown-item">Annuler Conference</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Gestion Papier</a>
+      </li>
+      <li *ngIf="!show" class="nav-item">
+        <a class="nav-link" href="#">Mon Profile</a>
+      </li>
+      <li *ngIf="show" class="nav-item">
+        <a class="nav-link" href="#">Inscription</a>
+      </li>
+      <li *ngIf="show" class="nav-item" >
+        <a class="nav-link" href="/Login">Login</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { FormConferenceComponent } from './component/form-conference/form-conference.component';
 import { ModifConferenceComponent } from './component/modif-conference/modif-conference.component';
 import { LoginComponent } from './component/login/login.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LoginComponent } from './component/login/login.component';
     ListConferenceComponent,
     FormConferenceComponent,
     ModifConferenceComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
