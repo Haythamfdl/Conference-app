@@ -15,9 +15,7 @@
         <th scope="col">Hotel</th>
         <th scope="col">Ville</th>
         <th scope="col">Terminer</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th colspan="4"></th>
       </tr>
       </thead>
       <tbody>
@@ -33,7 +31,8 @@
         <td>{{ conf.hotel.nom }}</td>
         <td>{{ conf.hotel.ville }}</td>
         <td>{{ conf.terminer }}</td>
-        <td><button class="btn btn-info" (click)="Modifier(conf)">Modifier</button></td>
+        <td><button class="btn btn-primary" (click)="Modifier(conf)">Modifier</button></td>
+        <td><button class="btn btn-success" (click)="Modifier(conf)">Ajouter Session</button></td>
         <td><button class="btn btn-secondary" (click)="Terminer(conf)">Terminer</button></td>
         <td><button class="btn btn-danger" (click)="Supprimer(conf)">Supprimer</button></td>
       </tr>
