@@ -13,6 +13,7 @@ import { ListMesconfComponent } from './component/list-mesconf/list-mesconf.comp
 import { HomeComponent } from './component/home/home.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ModifUserComponent } from './component/modif-user/modif-user.component';
+import { InvitationComponent } from './component/invitation/invitation.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ModifUserComponent } from './component/modif-user/modif-user.component'
     ListMesconfComponent,
     HomeComponent,
     RegisterComponent,
-    ModifUserComponent
+    ModifUserComponent,
+    InvitationComponent
   ],
   imports: [
     BrowserModule,

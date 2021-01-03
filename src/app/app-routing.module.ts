@@ -8,6 +8,7 @@ import {ListMesconfComponent} from "./component/list-mesconf/list-mesconf.compon
 import {HomeComponent} from "./component/home/home.component";
 import {RegisterComponent} from "./component/register/register.component";
 import {ModifUserComponent} from "./component/modif-user/modif-user.component";
+import {InvitationComponent} from "./component/invitation/invitation.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'mutilisateur', component: ModifUserComponent },
+  { path: 'invitation', component: InvitationComponent },
 ];
 
 @NgModule({
