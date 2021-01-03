@@ -6,15 +6,17 @@ import {ModifConferenceComponent} from "./component/modif-conference/modif-confe
 import {LoginComponent} from "./component/login/login.component";
 import {ListMesconfComponent} from "./component/list-mesconf/list-mesconf.component";
 import {HomeComponent} from "./component/home/home.component";
+import {RegisterComponent} from "./component/register/register.component";
 
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'Lconferences', component: ListConferenceComponent },
   { path: 'Aconferences', component: FormConferenceComponent },
   { path: 'Mconferences', component: ModifConferenceComponent },
   { path: 'Myconferences', component: ListMesconfComponent },
   { path: 'Login', component: LoginComponent },
-  { path: '', component: HomeComponent },
+  { path: 'Register', component: RegisterComponent },
 ];
 
 @NgModule({

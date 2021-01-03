@@ -9,7 +9,6 @@ import {Utilisateur} from "../class/utilisateur";
 })
 export class ConferenceService {
   private Url: string;
-  private headers : {'Content-Type':'application/json'};
   httpOptions={
     headers : new HttpHeaders({'Content-Type':'application/json'})
   }

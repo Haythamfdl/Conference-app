@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Conference} from "../class/conference";
 import {Utilisateur} from "../class/utilisateur";
@@ -9,7 +9,9 @@ import {Utilisateur} from "../class/utilisateur";
 })
 export class UtilisateurService {
   private Url: string;
-  private headers : {'Content-Type':'application/json'};
+  httpOptions={
+    headers : new HttpHeaders({'Content-Type':'application/json'})
+  }
   constructor(private http: HttpClient) {
     this.Url = 'http://localhost:8080/utilisateurs';
   }
@@ -19,6 +21,10 @@ export class UtilisateurService {
 
   public login(email:string,pass:string): Observable<Utilisateur> {
     return this.http.get<Utilisateur>(this.Url+"/"+email+"/"+pass);
+  }
+
+  public save(utilisateur : Utilisateur):Observable<Object> {
+    return this.http.post(this.Url, utilisateur, this.httpOptions);
   }
 
 }
