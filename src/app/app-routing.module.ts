@@ -7,16 +7,18 @@ import {LoginComponent} from "./component/login/login.component";
 import {ListMesconfComponent} from "./component/list-mesconf/list-mesconf.component";
 import {HomeComponent} from "./component/home/home.component";
 import {RegisterComponent} from "./component/register/register.component";
+import {ModifUserComponent} from "./component/modif-user/modif-user.component";
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'Lconferences', component: ListConferenceComponent },
-  { path: 'Aconferences', component: FormConferenceComponent },
-  { path: 'Mconferences', component: ModifConferenceComponent },
-  { path: 'Myconferences', component: ListMesconfComponent },
-  { path: 'Login', component: LoginComponent },
-  { path: 'Register', component: RegisterComponent },
+  { path: 'lconferences', component: ListConferenceComponent },
+  { path: 'aconferences', component: FormConferenceComponent },
+  { path: 'mconferences', component: ModifConferenceComponent },
+  { path: 'myconferences', component: ListMesconfComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'mutilisateur', component: ModifUserComponent },
 ];
 
 @NgModule({

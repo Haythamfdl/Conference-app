@@ -1,5 +1,5 @@
 <div class="card my-5 w-75 mx-auto">
-  <div class="card-header"><h3>Créer votre Compte</h3></div>
+  <div class="card-header"><h3>Modifier votre Compte</h3></div>
   <div class="card-body">
     <form (ngSubmit)="onSubmit()"  #form="ngForm">
 
@@ -74,11 +74,22 @@
                required #fonc="ngModel">
       </div>
 
-      <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-primary float-lg-right">Créer</button>
-
-      <button type="reset"
-              class="btn btn-danger float-lg-left">Réinitialiser</button>
+      <table align="center">
+        <tbody>
+          <td style="padding-right: 350px">
+            <button type="reset"
+                class="btn btn-danger">Réinitialiser</button>
+          </td>
+          <td>
+            <button type="button" (click)="Delete()"
+                class="btn btn-success">Supprimer votre Compte</button>
+          </td>
+          <td style="padding-left: 350px">
+            <button type="submit" [disabled]="!form.form.valid"
+                class="btn btn-primary">Modifier</button>
+          </td>
+        </tbody>
+      </table>
     </form>
   </div>
 </div>

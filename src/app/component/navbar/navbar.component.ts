@@ -1,5 +1,6 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit,OnChanges {
   show: boolean =false;
+  utilisateur:Utilisateur;
   title = 'Gestion Conférence';
 
   constructor(private route: ActivatedRoute,
@@ -39,6 +41,7 @@ export class NavbarComponent implements OnInit,OnChanges {
     }
     else{
       this.show=false;
+      this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
     }
   }
 }

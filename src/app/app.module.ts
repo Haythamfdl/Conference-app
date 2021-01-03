@@ -12,6 +12,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { ListMesconfComponent } from './component/list-mesconf/list-mesconf.component';
 import { HomeComponent } from './component/home/home.component';
 import { RegisterComponent } from './component/register/register.component';
+import { ModifUserComponent } from './component/modif-user/modif-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterComponent } from './component/register/register.component';
     NavbarComponent,
     ListMesconfComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModifUserComponent
   ],
   imports: [
     BrowserModule,

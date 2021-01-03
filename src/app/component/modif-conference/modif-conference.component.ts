@@ -15,6 +15,7 @@ export class ModifConferenceComponent implements OnInit {
   conference: Conference;
   hotels:Hotel[];
   form:FormGroup;
+  id:string;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class ModifConferenceComponent implements OnInit {
   }
 
   onSubmit() {
+    this.conference.id=this.id;
     this.conferenceService.update(this.conference).subscribe(data => {
       this.Alert();
     });
@@ -38,15 +40,13 @@ export class ModifConferenceComponent implements OnInit {
   select(event : any){
     this.conference.hotel =event;
     console.log("hotel is" , this.conference.hotel);
-
   }
   ngOnInit(): void {
-
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });
     this.conference=JSON.parse(localStorage.getItem("Conference"));
-
+    this.id=this.conference.id;
   }
 
 }

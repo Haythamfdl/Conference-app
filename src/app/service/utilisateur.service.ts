@@ -27,4 +27,8 @@ export class UtilisateurService {
     return this.http.post(this.Url, utilisateur, this.httpOptions);
   }
 
+  public update(utilisateur : Utilisateur):Observable<Object> {
+    return this.http.put(this.Url, utilisateur, this.httpOptions);
+  }
+
 }

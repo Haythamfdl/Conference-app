@@ -10,25 +10,30 @@
           Conferences
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a routerLink="/Lconferences" class="dropdown-item">Lister les Conferences</a>
-          <a *ngIf="!show" routerLink="/Aconferences" class="dropdown-item">Chairing</a>
-          <a *ngIf="!show" routerLink="/Myconferences" class="dropdown-item">Afficher Mes Conference</a>
+          <a routerLink="/lconferences" class="dropdown-item">Lister les Conferences</a>
+          <a *ngIf="!show" routerLink="/aconferences" class="dropdown-item">Chairing</a>
+          <a *ngIf="!show" routerLink="/myconferences" class="dropdown-item">Afficher Mes Conference</a>
         </div>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">Gestion Papier</a>
       </li>
-      <li *ngIf="!show" class="nav-item">
-        <a class="nav-link" href="#">Mon Profile</a>
-      </li>
-      <li *ngIf="!show" class="nav-item" >
-        <a class="nav-link" href="/Login" (click)="loggOut()">Déconnexion</a>
+
+      <li *ngIf="!show" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mon Profile ({{utilisateur.nom}} {{utilisateur.prenom}})
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a routerLink="/mutilisateur" class="dropdown-item">Modifier mes Information</a>
+          <a href="/login" class="dropdown-item" (click)="loggOut()">Déconnexion</a>
+        </div>
       </li>
       <li *ngIf="show" class="nav-item">
-        <a class="nav-link" href="/Register">Inscription</a>
+        <a class="nav-link" href="/tegister">Inscription</a>
       </li>
       <li *ngIf="show" class="nav-item" >
-        <a class="nav-link" href="/Login">Login</a>
+        <a class="nav-link" href="/login">Login</a>
       </li>
     </ul>
   </div>
