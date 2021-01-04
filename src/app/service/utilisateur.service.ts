@@ -23,6 +23,10 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(this.Url+"/"+email+"/"+pass);
   }
 
+  public getByEmail(email:string): Observable<Utilisateur> {
+    return this.http.get<Utilisateur>(this.Url+"/"+email);
+  }
+
   public save(utilisateur : Utilisateur):Observable<Object> {
     return this.http.post(this.Url, utilisateur, this.httpOptions);
   }

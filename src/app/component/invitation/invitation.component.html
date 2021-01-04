@@ -1,1 +1,34 @@
-<p>invitation works!</p>
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Envoyer une Invitation</h3></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" [(ngModel)]="invitee.email"
+               class="form-control"
+               id="email"
+               name="email"
+               placeholder="Entrer l'email de l'utilisateur a inviter"
+               required #email="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Message">Message</label>
+        <input type="text" [(ngModel)]="invitation.message"
+               class="form-control"
+               id="message"
+               name="message"
+               placeholder="Entrer un message"
+               required #mess="ngModel">
+      </div>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Envoyer</button>
+
+    </form>
+  </div>
+</div>

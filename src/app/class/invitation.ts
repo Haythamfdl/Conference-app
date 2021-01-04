@@ -4,9 +4,9 @@ import {Conference} from "./conference";
 export class Invitation {
   id:string;
   inviteur:Utilisateur;
-  inviter:Utilisateur;
+  invitee:Utilisateur;
   conference:Conference;
   accepter:boolean;
-  Message:string;
+  message:string;
   date:string;
 }
