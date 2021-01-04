@@ -28,12 +28,20 @@
 
       <li *ngIf="!show" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Invitation
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a routerLink="/einvitation" class="dropdown-item">Invitation Envoyer</a>
+          <a routerLink="/rinvitation" class="dropdown-item">Invitation Recue</a>
+        </div>
+      </li>
+
+      <li *ngIf="!show" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Mon Profile ({{utilisateur.nom}} {{utilisateur.prenom}})
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a routerLink="/mutilisateur" class="dropdown-item">Modifier mes Information</a>
-          <a routerLink="/einvitation" class="dropdown-item">Invitation Envoyer</a>
-          <a routerLink="/rinvitation" class="dropdown-item">Invitation Recue</a>
           <a href="/login" class="dropdown-item" (click)="loggOut()">Déconnexion</a>
         </div>
       </li>
