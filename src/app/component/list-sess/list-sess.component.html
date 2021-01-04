@@ -8,7 +8,7 @@
         <th scope="col">Date de Debut</th>
         <th scope="col">Date de Fin</th>
         <th scope="col">Terminer</th>
-        <th colspan="4"></th>
+        <th scope="col"></th>
       </tr>
       </thead>
       <tbody>
@@ -17,10 +17,12 @@
         <td>{{ session.datedeb | date:'dd/MMM/y h:mm a' }}</td>
         <td>{{ session.datefin | date:'dd/MMM/y h:mm a'}}</td>
         <td>{{ session.termine?'Oui':'Non'}}</td>
-        <td><button class="btn btn-info" (click)="Modifier(session)">Modifier</button></td>
-        <td><button class="btn btn-secondary">Afficher Track</button></td>
-        <td><button class="btn btn-success" (click)="Terminer(session)">Terminer</button></td>
-        <td><button class="btn btn-danger" (click)="Supprimer(session)">Supprimer</button></td>
+        <td>
+          <button style="margin-right: 10px" class="btn btn-info" (click)="Modifier(session)">Modifier</button>
+          <button style="margin-right: 10px"  class="btn btn-secondary">Afficher Track</button>
+          <button style="margin-right: 10px" class="btn btn-success" (click)="Terminer(session)">Terminer</button>
+          <button style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(session)">Supprimer</button>
+        </td>
       </tr>
       </tbody>
     </table>
