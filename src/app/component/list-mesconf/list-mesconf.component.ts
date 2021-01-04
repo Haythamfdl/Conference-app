@@ -62,4 +62,9 @@ export class ListMesconfComponent implements OnInit {
     localStorage.setItem('Conference',JSON.stringify(value));
     this.router.navigate(['/invitation']).then(() => {window.location.reload()});
   }
+
+  Session(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+  }
 }

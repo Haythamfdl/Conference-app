@@ -12,6 +12,8 @@ import {InvitationComponent} from "./component/invitation/invitation.component";
 import {InvitRecuComponent} from "./component/invit-recu/invit-recu.component";
 import {InvitEnvComponent} from "./component/invit-env/invit-env.component";
 import {InfoConfComponent} from "./component/info-conf/info-conf.component";
+import {ListSessComponent} from "./component/list-sess/list-sess.component";
+import {FormSessComponent} from "./component/form-sess/form-sess.component";
 
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'invitation', component: InvitationComponent },
   { path: 'rinvitation', component: InvitRecuComponent },
   { path: 'einvitation', component: InvitEnvComponent },
+  { path: 'sessions', component: ListSessComponent },
+  { path: 'asession', component: FormSessComponent },
 ];
 
 @NgModule({
