@@ -35,7 +35,7 @@ export class ListSessComponent implements OnInit {
   Modifier(value : any){
     localStorage.setItem('Session',JSON.stringify(value));
     console.log(JSON.stringify(localStorage.getItem("Session")));
-    this.router.navigate(['/mconferences']).then(() => {window.location.reload()});
+    this.router.navigate(['/msession']).then(() => {window.location.reload()});
   }
 
   Ajouter(){

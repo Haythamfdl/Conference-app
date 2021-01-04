@@ -19,6 +19,7 @@ import { InvitEnvComponent } from './component/invit-env/invit-env.component';
 import { InfoConfComponent } from './component/info-conf/info-conf.component';
 import { ListSessComponent } from './component/list-sess/list-sess.component';
 import { FormSessComponent } from './component/form-sess/form-sess.component';
+import { ModifSessComponent } from './component/modif-sess/modif-sess.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormSessComponent } from './component/form-sess/form-sess.component';
     InvitEnvComponent,
     InfoConfComponent,
     ListSessComponent,
-    FormSessComponent
+    FormSessComponent,
+    ModifSessComponent
   ],
   imports: [
     BrowserModule,
