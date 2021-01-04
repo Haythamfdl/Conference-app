@@ -6,33 +6,28 @@
       <tr>
         <th scope="col">Nom</th>
         <th scope="col">Categorie</th>
-        <th scope="col">sponsor</th>
-        <th scope="col">Prix Ticket</th>
         <th scope="col">Date</th>
-        <th scope="col">Dernier delais de Soumission</th>
         <th scope="col">Site Web</th>
         <th scope="col">Hotel</th>
         <th scope="col">Ville</th>
         <th scope="col">Terminer</th>
-        <th colspan="4"></th>
+        <th colspan="5"></th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let conf of conferences">
         <td>{{ conf.nom }}</td>
         <td>{{ conf.categorie }}</td>
-        <td>{{ conf.sponsor }}</td>
-        <td>{{ conf.prixticket }}</td>
         <td>{{ conf.date | date:'shortDate'}}</td>
-        <td>{{ conf.delaisoumission | date:'shortDate' }}</td>
         <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
         <td>{{ conf.hotel.nom }}</td>
         <td>{{ conf.hotel.ville }}</td>
         <td>{{ conf.terminer?'Oui':'Non' }}</td>
+        <td><button class="btn btn-info" (click)="Info(conf)">Plus d'Info</button></td>
         <td><button class="btn btn-primary" (click)="Modifier(conf)">Modifier</button></td>
         <td><button class="btn btn-success" (click)="Inviter(conf)">Inviter Utilisateur</button></td>
         <td><button class="btn btn-secondary" (click)="Terminer(conf)">Terminer</button></td>
-        <td><button class="btn btn-danger" (click)="Supprimer(conf)">Supprimer</button></td>
+        <td><button class="btn btn-danger" (click)="Supprimer(conf)">Annuler</button></td>
       </tr>
       </tbody>
     </table>

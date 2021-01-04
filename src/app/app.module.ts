@@ -16,6 +16,7 @@ import { ModifUserComponent } from './component/modif-user/modif-user.component'
 import { InvitationComponent } from './component/invitation/invitation.component';
 import { InvitRecuComponent } from './component/invit-recu/invit-recu.component';
 import { InvitEnvComponent } from './component/invit-env/invit-env.component';
+import { InfoConfComponent } from './component/info-conf/info-conf.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InvitEnvComponent } from './component/invit-env/invit-env.component';
     ModifUserComponent,
     InvitationComponent,
     InvitRecuComponent,
-    InvitEnvComponent
+    InvitEnvComponent,
+    InfoConfComponent
   ],
   imports: [
     BrowserModule,

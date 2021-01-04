@@ -7,11 +7,11 @@ import {ConferenceService} from "../../service/conference.service";
 import {HotelService} from "../../service/hotel.service";
 
 @Component({
-  selector: 'app-modif-conference',
-  templateUrl: './modif-conference.component.html',
-  styleUrls: ['./modif-conference.component.css']
+  selector: 'app-info-conf',
+  templateUrl: './info-conf.component.html',
+  styleUrls: ['./info-conf.component.css']
 })
-export class ModifConferenceComponent implements OnInit {
+export class InfoConfComponent implements OnInit {
   conference: Conference;
   hotels:Hotel[];
   form:FormGroup;
@@ -42,6 +42,7 @@ export class ModifConferenceComponent implements OnInit {
     console.log("hotel is" , this.conference.hotel);
   }
 
+
   ngOnInit(): void {
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
@@ -49,5 +50,6 @@ export class ModifConferenceComponent implements OnInit {
     this.conference=JSON.parse(localStorage.getItem("Conference"));
     this.id=this.conference.id;
   }
+
 
 }

@@ -11,6 +11,7 @@ import {ModifUserComponent} from "./component/modif-user/modif-user.component";
 import {InvitationComponent} from "./component/invitation/invitation.component";
 import {InvitRecuComponent} from "./component/invit-recu/invit-recu.component";
 import {InvitEnvComponent} from "./component/invit-env/invit-env.component";
+import {InfoConfComponent} from "./component/info-conf/info-conf.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'aconferences', component: FormConferenceComponent },
   { path: 'mconferences', component: ModifConferenceComponent },
   { path: 'myconferences', component: ListMesconfComponent },
+  { path: 'conference', component: InfoConfComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'mutilisateur', component: ModifUserComponent },

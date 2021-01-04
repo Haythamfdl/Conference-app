@@ -53,6 +53,11 @@ export class ListMesconfComponent implements OnInit {
     alert("La Conferrence a été Terminer");
   }
 
+  Info(value :any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/conference']);
+  }
+
   Inviter(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
     this.router.navigate(['/invitation']).then(() => {window.location.reload()});

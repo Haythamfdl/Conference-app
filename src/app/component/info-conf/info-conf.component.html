@@ -1,0 +1,109 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Informations de la Conférence <b>{{conference.nom}}</b></h3></div>
+  <div class="card-body">
+
+      <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input type="text" value="{{conference.nom}}"
+               class="form-control"
+               id="Nom"
+               name="Nom"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Catégorie">Catégorie</label>
+        <input type="text" value="{{conference.categorie}}"
+               class="form-control"
+               id="Catégorie"
+               name="Catégorie"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Date">Date de la Conférence</label>
+        <input type="text" value="{{conference.date | date:'longDate' }}"
+               class="form-control"
+               id="Date"
+               name="Date"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Sponsors">Sponsor</label>
+        <input type="text" value="{{conference.sponsor}}"
+               class="form-control"
+               id="Sponsors"
+               name="Sponsors"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Hotel">Hotel</label>
+        <input type="text" value="{{conference.hotel.nom}}"
+               class="form-control"
+               id="Hotel"
+               name="Hotel"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Page-Web">Page Web</label>
+        <input type="text" value="{{conference.pageweb}}"
+               class="form-control"
+               id="Page-Web"
+               name="Page-Web"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Max-papier">Nombre Maximum de Papiers</label>
+        <input type="number" value="{{conference.maxpapier}}"
+               class="form-control"
+               id="Max-papier"
+               name="Max-papier"
+               min="1"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Delai">Delai de Soumission des Papiers</label>
+        <input type="text" value="{{conference.delaisoumission | date:'longDate' }}"
+               class="form-control"
+               id="Delai"
+               name="Delai"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Prix-Ticket">Prix de Ticket</label>
+        <input type="number" value="{{conference.prixticket}}"
+               class="form-control"
+               id="Prix-Ticket"
+               name="Prix-Ticket"
+               min="1"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Nombre-Ticket">Nombre de Ticket</label>
+        <input type="number" value="{{conference.nticket}}"
+               class="form-control"
+               id="Nombre-Ticket"
+               name="Nombre-Ticket"
+               min="1"
+               disabled>
+      </div>
+
+    <div class="form-group">
+      <label for="Terminer">Conférence Terminer</label>
+      <input type="text" value="{{conference.terminer?'Oui':'Non'}}"
+             class="form-control"
+             id="Terminer"
+             name="Terminer"
+             disabled>
+    </div>
+
+  </div>
+</div>
+
