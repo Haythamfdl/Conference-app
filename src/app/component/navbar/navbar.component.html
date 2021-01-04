@@ -32,12 +32,13 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a routerLink="/mutilisateur" class="dropdown-item">Modifier mes Information</a>
-          <a routerLink="/invitation" class="dropdown-item">Invitation</a>
+          <a routerLink="/einvitation" class="dropdown-item">Invitation Envoyer</a>
+          <a routerLink="/rinvitation" class="dropdown-item">Invitation Recue</a>
           <a href="/login" class="dropdown-item" (click)="loggOut()">Déconnexion</a>
         </div>
       </li>
       <li *ngIf="show" class="nav-item">
-        <a class="nav-link" href="/tegister">Inscription</a>
+        <a class="nav-link" href="/register">Inscription</a>
       </li>
       <li *ngIf="show" class="nav-item" >
         <a class="nav-link" href="/login">Login</a>

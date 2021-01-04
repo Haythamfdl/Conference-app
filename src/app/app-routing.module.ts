@@ -9,6 +9,8 @@ import {HomeComponent} from "./component/home/home.component";
 import {RegisterComponent} from "./component/register/register.component";
 import {ModifUserComponent} from "./component/modif-user/modif-user.component";
 import {InvitationComponent} from "./component/invitation/invitation.component";
+import {InvitRecuComponent} from "./component/invit-recu/invit-recu.component";
+import {InvitEnvComponent} from "./component/invit-env/invit-env.component";
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'mutilisateur', component: ModifUserComponent },
   { path: 'invitation', component: InvitationComponent },
+  { path: 'rinvitation', component: InvitRecuComponent },
+  { path: 'einvitation', component: InvitEnvComponent },
 ];
 
 @NgModule({

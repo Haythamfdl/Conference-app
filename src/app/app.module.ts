@@ -15,6 +15,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { ModifUserComponent } from './component/modif-user/modif-user.component';
 import { InvitationComponent } from './component/invitation/invitation.component';
 import { InvitRecuComponent } from './component/invit-recu/invit-recu.component';
+import { InvitEnvComponent } from './component/invit-env/invit-env.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InvitRecuComponent } from './component/invit-recu/invit-recu.component'
     RegisterComponent,
     ModifUserComponent,
     InvitationComponent,
-    InvitRecuComponent
+    InvitRecuComponent,
+    InvitEnvComponent
   ],
   imports: [
     BrowserModule,

@@ -22,12 +22,12 @@ export class InvitationService {
     return this.http.get<Invitation[]>(this.Url);
   }
 
-  public invRec(): Observable<Invitation[]> {
-    return this.http.get<Invitation[]>(this.Url);
+  public invRec(id :string): Observable<Invitation[]> {
+    return this.http.get<Invitation[]>(this.Url+"/recu/"+id);
   }
 
-  public invEnv(): Observable<Invitation[]> {
-    return this.http.get<Invitation[]>(this.Url);
+  public invEnv(id:string): Observable<Invitation[]> {
+    return this.http.get<Invitation[]>(this.Url+"/env/"+id);
   }
 
   public save(invitation : Invitation):Observable<Object> {

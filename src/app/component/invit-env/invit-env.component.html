@@ -1,26 +1,24 @@
 <div class="card my-5">
-  <div class="card-header"><h3>Mes Invitations Recue</h3></div>
+  <div class="card-header"><h3>Mes Invitations Envoyée</h3></div>
   <div class="card-body table-responsive">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">L'Expediteur</th>
+        <th scope="col">Accusé de réception</th>
         <th scope="col">La Conférence</th>
         <th scope="col">Message</th>
-        <th scope="col">Date de Récéption</th>
+        <th scope="col">Date d'Envoie</th>
         <th scope="col">Invitation Acceptée</th>
-        <th scope="col"></th>
 
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let inv of invitations">
-        <td>{{inv.inviteur.email}} </td>
+        <td>{{inv.invitee.email}} </td>
         <td>{{inv.conference.nom}}</td>
         <td>{{inv.message}}</td>
         <td>{{inv.date | date:'shortDate'}}</td>
         <td>{{inv.accepter}}</td>
-        <td><button class="btn btn-primary" (click)="Accepter(inv)">Accepter l'Invitation</button></td>
       </tr>
       </tbody>
     </table>
