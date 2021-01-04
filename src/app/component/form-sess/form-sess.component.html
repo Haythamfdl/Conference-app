@@ -1,1 +1,48 @@
-<p>form-sess works!</p>
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Créer une Session pour la Conférence <b>{{conference.nom}}</b></h3></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Hotel">Selectioner le numéro de la Salle des Conférence de l'Hotel <b>{{conference.hotel.nom}}</b></label>
+        <select required
+                class="form-control"
+                id="Hotel"
+                name="Hotel"
+                (ngModelChange)="select($event)"
+                [(ngModel)]="session.salle"
+                #hotel="ngModel">
+          <option *ngFor="let salleConference of salleConferences" [ngValue]="salleConference.numero">{{salleConference.numero}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="DateD">Date de Debut de la Session</label>
+        <input type="datetime-local" [(ngModel)]="session.datedeb"
+               class="form-control"
+               id="DateD"
+               name="DateD"
+               placeholder="Entrer la date de début de la session"
+               required #dated="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="DateF">Date de Fin de la Session</label>
+        <input type="datetime-local" [(ngModel)]="session.datefin"
+               class="form-control"
+               id="DateF"
+               name="DateF"
+               placeholder="Entrer la date de fin de la session"
+               required #datef="ngModel">
+      </div>
+
+
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Ajouter</button>
+    </form>
+  </div>
+</div>

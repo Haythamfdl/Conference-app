@@ -2,7 +2,7 @@ import {Hotel} from "./hotel";
 
 export class SalleConference{
   id:string;
-  etage:string;
+  numero:string;
   nbpersonne:number;
   prix:number;
   type:string;

@@ -14,16 +14,16 @@
       <tbody>
       <tr *ngFor="let session of sessions">
         <td>{{ session.salle }}</td>
-        <td>{{ session.datedeb | date:'shortDate' }}</td>
-        <td>{{ session.datefin | date:'shortDate'}}</td>
+        <td>{{ session.datedeb | date:'dd/MMM/y h:mm a' }}</td>
+        <td>{{ session.datefin | date:'dd/MMM/y h:mm a'}}</td>
         <td>{{ session.termine?'Oui':'Non'}}</td>
         <td><button class="btn btn-info" (click)="Modifier(session)">Modifier</button></td>
         <td><button class="btn btn-secondary">Afficher Track</button></td>
         <td><button class="btn btn-success" (click)="Terminer(session)">Terminer</button></td>
-        <td><button class="btn btn-warning" (click)="Supprimer(session)">Supprimer</button></td>
+        <td><button class="btn btn-danger" (click)="Supprimer(session)">Supprimer</button></td>
       </tr>
       </tbody>
     </table>
-    <td><button class="btn btn-primary">Ajouter une Session</button></td>
+    <td><button class="btn btn-primary" (click)="Ajouter()">Ajouter une Session</button></td>
   </div>
 </div>

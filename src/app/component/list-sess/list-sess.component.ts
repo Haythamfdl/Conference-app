@@ -38,6 +38,10 @@ export class ListSessComponent implements OnInit {
     this.router.navigate(['/mconferences']).then(() => {window.location.reload()});
   }
 
+  Ajouter(){
+    this.router.navigate(['/asession']);
+  }
+
   Supprimer(value : any){
     this.s = value;
     this.s.deleted = true;

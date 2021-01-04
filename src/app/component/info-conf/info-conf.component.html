@@ -22,7 +22,7 @@
 
       <div class="form-group">
         <label for="Date">Date de la Conférence</label>
-        <input type="text" value="{{conference.date | date:'longDate' }}"
+        <input type="text" value="{{conference.date | date:'dd/MMM/y h:mm a' }}"
                class="form-control"
                id="Date"
                name="Date"
@@ -68,7 +68,7 @@
 
       <div class="form-group">
         <label for="Delai">Delai de Soumission des Papiers</label>
-        <input type="text" value="{{conference.delaisoumission | date:'longDate' }}"
+        <input type="text" value="{{conference.delaisoumission | date:'dd/MMM/y h:mm a' }}"
                class="form-control"
                id="Delai"
                name="Delai"

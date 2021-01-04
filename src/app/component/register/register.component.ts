@@ -10,11 +10,13 @@ import {UtilisateurService} from "../../service/utilisateur.service";
 })
 export class RegisterComponent implements OnInit {
   utilisateur:Utilisateur;
+  u:Utilisateur;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private utilisateurService: UtilisateurService) {
     this.utilisateur=new Utilisateur();
+    this.u=new Utilisateur();
   }
 
   ngOnInit(): void {
@@ -28,9 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   Alert(){
-    localStorage.setItem('Utilisateur',JSON.stringify(this.utilisateur));
-    console.log(localStorage.getItem("Utilisateur"));
-    this.router.navigate(['/']).then(() => {window.location.reload()});
+    this.router.navigate(['/login']).then(() => {window.location.reload()});
     alert("Compte créer avec success!!!");
   }
 }
