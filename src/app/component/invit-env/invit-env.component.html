@@ -18,7 +18,7 @@
         <td>{{inv.conference.nom}}</td>
         <td>{{inv.message}}</td>
         <td>{{inv.date | date:'shortDate'}}</td>
-        <td>{{inv.accepter}}</td>
+        <td>{{inv.accepter?'Oui':'Non' }}</td>
       </tr>
       </tbody>
     </table>
