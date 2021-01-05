@@ -4,6 +4,7 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
+        <th scope="col">Nom Session</th>
         <th scope="col">Salle</th>
         <th scope="col">Date de Debut</th>
         <th scope="col">Date de Fin</th>
@@ -13,6 +14,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let session of sessions">
+        <td>{{ session.nom }}</td>
         <td>{{ session.salle }}</td>
         <td>{{ session.datedeb | date:'dd/MMM/y h:mm a' }}</td>
         <td>{{ session.datefin | date:'dd/MMM/y h:mm a'}}</td>
@@ -26,6 +28,6 @@
       </tr>
       </tbody>
     </table>
-    <td><button class="btn btn-primary" (click)="Ajouter()">Ajouter une Session</button></td>
+    <td><button *ngIf="!show" class="btn btn-primary" (click)="Ajouter()">Ajouter une Session</button></td>
   </div>
 </div>

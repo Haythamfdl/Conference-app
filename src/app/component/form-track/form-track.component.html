@@ -1,0 +1,41 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Créer Track pour la Session <b>{{session.nom}} </b></h3></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input type="text" [(ngModel)]="track.nom"
+               class="form-control"
+               id="Nom"
+               name="Nom"
+               placeholder="Entrer le Nom de la Track"
+               #nom="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="HeureD">Heure de Debut</label>
+        <input type="datetime-local" [(ngModel)]="track.datedeb"
+               class="form-control"
+               id="HeureD"
+               name="HeureFD"
+               required #heured="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="HeureF">Heure de Fin</label>
+        <input type="datetime-local" [(ngModel)]="track.datefin"
+               class="form-control"
+               id="HeureF"
+               name="HeureF"
+               required #heured="ngModel">
+      </div>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Ajouter</button>
+    </form>
+  </div>
+</div>

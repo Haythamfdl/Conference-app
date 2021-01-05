@@ -3,6 +3,7 @@ import {Papier} from "./papier";
 
 export class Track {
   id:string;
+  nom:string;
   datedeb:string;
   datefin:string;
   papier:Papier;
