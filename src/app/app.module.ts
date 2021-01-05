@@ -20,6 +20,7 @@ import { InfoConfComponent } from './component/info-conf/info-conf.component';
 import { ListSessComponent } from './component/list-sess/list-sess.component';
 import { FormSessComponent } from './component/form-sess/form-sess.component';
 import { ModifSessComponent } from './component/modif-sess/modif-sess.component';
+import { ListTrackComponent } from './component/list-track/list-track.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ModifSessComponent } from './component/modif-sess/modif-sess.component'
     InfoConfComponent,
     ListSessComponent,
     FormSessComponent,
-    ModifSessComponent
+    ModifSessComponent,
+    ListTrackComponent
   ],
   imports: [
     BrowserModule,

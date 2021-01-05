@@ -19,7 +19,7 @@
         <td>{{ session.termine?'Oui':'Non'}}</td>
         <td>
           <button *ngIf="!show" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(session)">Modifier</button>
-          <button style="margin-right: 10px"  class="btn btn-secondary">Afficher Track</button>
+          <button style="margin-right: 10px"  class="btn btn-secondary" (click)="Tracks(session)">Afficher Track</button>
           <button *ngIf="!show" style="margin-right: 10px" class="btn btn-success" (click)="Terminer(session)">Terminer</button>
           <button *ngIf="!show" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(session)">Supprimer</button>
         </td>

@@ -68,4 +68,10 @@ export class ListSessComponent implements OnInit {
       this.show=false;
     }
   }
+
+  Tracks(value: any){
+    localStorage.setItem('Session',JSON.stringify(value));
+    console.log(value);
+    this.router.navigate(['/tracks']);
+  }
 }
