@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarConference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Conferences
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -17,7 +17,7 @@
       </li>
 
       <li *ngIf="!show" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarInvitation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Invitation
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -28,7 +28,7 @@
       </li>
 
       <li *ngIf="!show" class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Mon Profile ({{utilisateur.nom}} {{utilisateur.prenom}})
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
