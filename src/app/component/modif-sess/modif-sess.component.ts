@@ -6,6 +6,7 @@ import {SalleConference} from "../../class/salle-conference";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SessionService} from "../../service/session.service";
 import {SalleConfService} from "../../service/salle-conf.service";
+import {UtilisateurService} from "../../service/utilisateur.service";
 
 @Component({
   selector: 'app-modif-sess',
@@ -21,7 +22,8 @@ export class ModifSessComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private sessionService:SessionService,
-              private salleConfService:SalleConfService) {
+              private salleConfService:SalleConfService,
+              private  utilisateurService:UtilisateurService) {
     this.session=new Session();
   }
 
@@ -37,8 +39,17 @@ export class ModifSessComponent implements OnInit {
     });
   }
   onSubmit(){
-    this.sessionService.update(this.session).subscribe(date =>{
-      this.router.navigate(['/sessions']);
+    this.utilisateurService.getByEmail(this.session.chair.email).subscribe(data => {
+      if(data == null){
+        console.log(data);
+        alert("cet email est invalable");
+      }
+      else {
+        this.session.chair=data;
+        this.sessionService.update(this.session).subscribe(date =>{
+          this.router.navigate(['/sessions']);
+        });
+      }
     });
   }
 

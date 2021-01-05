@@ -5,6 +5,7 @@
       <thead class="thead-dark">
       <tr>
         <th scope="col">Nom Session</th>
+        <th scope="col">Chair</th>
         <th scope="col">Salle</th>
         <th scope="col">Date de Debut</th>
         <th scope="col">Date de Fin</th>
@@ -15,6 +16,7 @@
       <tbody>
       <tr *ngFor="let session of sessions">
         <td>{{ session.nom }}</td>
+        <td>{{ session.chair.nom }} {{session.chair.prenom}}</td>
         <td>{{ session.salle }}</td>
         <td>{{ session.datedeb | date:'dd/MMM/y h:mm a' }}</td>
         <td>{{ session.datefin | date:'dd/MMM/y h:mm a'}}</td>

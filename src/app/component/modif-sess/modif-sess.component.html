@@ -27,6 +27,16 @@
       </div>
 
       <div class="form-group">
+        <label for="Chair">Chair</label>
+        <input type="text" [(ngModel)]="session.chair.email"
+               class="form-control"
+               id="Chair"
+               name="Chair"
+               placeholder="Entrer l'email du Chair"
+               #chair="ngModel">
+      </div>
+
+      <div class="form-group">
         <label for="DateD">Date de Debut de la Session</label>
         <input type="datetime-local" [(ngModel)]="session.datedeb"
                class="form-control"

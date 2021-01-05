@@ -17,6 +17,17 @@
       </li>
 
       <li *ngIf="!show" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarPapier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Papier
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a routerLink="/einvitation" class="dropdown-item">Mes Papiers</a>
+          <a routerLink="/myconferences" class="dropdown-item">Soumettre un Papier</a>
+          <a routerLink="/rinvitation" class="dropdown-item">Papiers Recue</a>
+        </div>
+      </li>
+
+      <li *ngIf="!show" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarInvitation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Invitation
         </a>

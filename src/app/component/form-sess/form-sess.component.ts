@@ -8,6 +8,7 @@ import {SalleConference} from "../../class/salle-conference";
 import {Hotel} from "../../class/hotel";
 import {SalleConfService} from "../../service/salle-conf.service";
 import {SessionService} from "../../service/session.service";
+import {UtilisateurService} from "../../service/utilisateur.service";
 
 @Component({
   selector: 'app-form-sess',
@@ -19,11 +20,13 @@ export class FormSessComponent implements OnInit {
   conference : Conference
   session:Session;
   salleConferences:SalleConference[];
+  email:string
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private sessionService:SessionService,
-              private salleConfService:SalleConfService) {
+              private salleConfService:SalleConfService,
+              private utilisateurService: UtilisateurService,) {
     this.session=new Session();
   }
 
@@ -38,11 +41,20 @@ export class FormSessComponent implements OnInit {
     });
   }
   onSubmit(){
-    this.session.termine=false;
-    this.session.deleted=false;
-    this.session.conference=this.conference;
-    this.sessionService.save(this.session).subscribe(date =>{
-      this.router.navigate(['/sessions']);
+    this.utilisateurService.getByEmail(this.email).subscribe(data => {
+      if(data == null){
+        console.log(data);
+        alert("cet email est invalable");
+      }
+      else {
+        this.session.chair=data;
+        this.session.termine=false;
+        this.session.deleted=false;
+        this.session.conference=this.conference;
+        this.sessionService.save(this.session).subscribe(date =>{
+          this.router.navigate(['/sessions']);
+        });
+      }
     });
   }
 }
