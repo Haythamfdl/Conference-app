@@ -28,4 +28,9 @@ export class ListConferenceComponent implements OnInit {
   test(value : any){
     console.log(JSON.stringify(value));
   }
+
+  Session(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+  }
 }

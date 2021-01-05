@@ -19,7 +19,9 @@
         <td>{{ conf.date | date:'dd/MMM/y h:mm a'}}</td>
         <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
         <td>{{ conf.hotel.ville }}</td>
-        <td><button class="btn btn-info" (click)="Info(conf)">Plus d'Info</button></td>
+        <td>
+          <button style="margin-right: 10px" class="btn btn-info" (click)="Info(conf)">Plus d'Info</button>
+          <button class="btn btn-warning" (click)="Session(conf)">Afficher les Sessions</button></td>
       </tr>
       </tbody>
     </table>

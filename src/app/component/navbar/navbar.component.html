@@ -16,16 +16,6 @@
         </div>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Papiers
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a routerLink="/lconferences" class="dropdown-item">Lister les Papier</a>
-          <a *ngIf="!show" routerLink="/aconferences" class="dropdown-item">Ajouter Papier</a>
-        </div>
-      </li>
-
       <li *ngIf="!show" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Invitation
