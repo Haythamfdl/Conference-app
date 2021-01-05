@@ -23,6 +23,10 @@ import { ModifSessComponent } from './component/modif-sess/modif-sess.component'
 import { ListTrackComponent } from './component/list-track/list-track.component';
 import { FormTrackComponent } from './component/form-track/form-track.component';
 import { ModifTrackComponent } from './component/modif-track/modif-track.component';
+import { FormPapierComponent } from './component/form-papier/form-papier.component';
+import { ListTopicComponent } from './component/list-topic/list-topic.component';
+import { FormTopicComponent } from './component/form-topic/form-topic.component';
+import { ModifTopicComponent } from './component/modif-topic/modif-topic.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,11 @@ import { ModifTrackComponent } from './component/modif-track/modif-track.compone
     ModifSessComponent,
     ListTrackComponent,
     FormTrackComponent,
-    ModifTrackComponent
+    ModifTrackComponent,
+    FormPapierComponent,
+    ListTopicComponent,
+    FormTopicComponent,
+    ModifTopicComponent
   ],
   imports: [
     BrowserModule,

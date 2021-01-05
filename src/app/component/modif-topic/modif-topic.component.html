@@ -1,0 +1,33 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Modifier le Topic <b>{{topic.nom}}</b></h3></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input type="text" [(ngModel)]="topic.nom"
+               class="form-control"
+               id="Nom"
+               name="Nom"
+               placeholder="Entrer le Nom du Topic"
+               #nom="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Desc">Description</label>
+        <input type="text" [(ngModel)]="topic.description"
+               class="form-control"
+               id="Desc"
+               name="Desc"
+               placeholder="Entrer la Description du Topic"
+               #desc="ngModel">
+      </div>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Modifier</button>
+    </form>
+  </div>
+</div>

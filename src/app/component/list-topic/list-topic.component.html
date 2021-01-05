@@ -1,0 +1,25 @@
+<div class="card my-5">
+  <div class="card-header"><h3>Liste des Topics de la Conférence <b>{{conference.nom}}</b></h3></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let topic of topics">
+        <td>{{ topic.nom }}</td>
+        <td>{{ topic.description }}</td>
+        <td>
+          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(topic)">Modifier</button>
+          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(topic)">Supprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <td><button *ngIf="!show" class="btn btn-primary" (click)="Ajouter()">Ajouter un Topic</button></td>
+  </div>
+</div>

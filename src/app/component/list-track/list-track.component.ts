@@ -40,7 +40,7 @@ export class ListTrackComponent implements OnInit {
   Modifier(value : any){
     localStorage.setItem('Track',JSON.stringify(value));
     console.log(JSON.stringify(localStorage.getItem("Track")));
-    this.router.navigate(['/mtrack']).then(() => {window.location.reload()});
+    this.router.navigate(['/mtrack']);
   }
 
   Ajouter(){
@@ -59,7 +59,7 @@ export class ListTrackComponent implements OnInit {
     this.t = value;
     this.t.terminer = true;
     this.trackService.update(this.t).subscribe();
-    this.router.navigate(['/tracks']).then(() => {window.location.reload()});
+    this.router.navigate(['/tracks']);
     alert("Track a été Terminer");
   }
 
@@ -76,5 +76,12 @@ export class ListTrackComponent implements OnInit {
       return false;
     else
       return true;
+  }
+  Enlever(value:Track){
+    this.t = value;
+    this.t.papier = null;
+    this.trackService.update(this.t).subscribe();
+    this.router.navigate(['/tracks']).then(() => {window.location.reload()});
+    alert("Papier a été Enlever");
   }
 }

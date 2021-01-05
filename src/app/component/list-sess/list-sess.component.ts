@@ -37,7 +37,7 @@ export class ListSessComponent implements OnInit {
   Modifier(value : any){
     localStorage.setItem('Session',JSON.stringify(value));
     console.log(JSON.stringify(localStorage.getItem("Session")));
-    this.router.navigate(['/msession']).then(() => {window.location.reload()});
+    this.router.navigate(['/msession']);
   }
 
   Ajouter(){
@@ -56,7 +56,7 @@ export class ListSessComponent implements OnInit {
     this.s = value;
     this.s.termine = true;
     this.sessionService.update(this.s).subscribe();
-    this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+    this.router.navigate(['/sessions']);
     alert("La Session a été Terminer");
   }
 

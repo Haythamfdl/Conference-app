@@ -34,7 +34,7 @@ export class ListMesconfComponent implements OnInit {
   Modifier(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
     console.log(JSON.stringify(localStorage.getItem("Conference")));
-    this.router.navigate(['/mconferences']).then(() => {window.location.reload()});
+    this.router.navigate(['/mconferences']);
   }
 
   Supprimer(value : any){
@@ -49,7 +49,7 @@ export class ListMesconfComponent implements OnInit {
     this.c = value;
     this.c.terminer = true;
     this.confserv.update(this.c).subscribe();
-    this.router.navigate(['/myconferences']).then(() => {window.location.reload()});
+    this.router.navigate(['/myconferences']);
     alert("La Conferrence a été Terminer");
   }
 
@@ -60,11 +60,17 @@ export class ListMesconfComponent implements OnInit {
 
   Inviter(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/invitation']).then(() => {window.location.reload()});
+    this.router.navigate(['/invitation']);
   }
 
   Session(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+    this.router.navigate(['/sessions']);
   }
+
+  Topic(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/topics']);
+  }
+
 }

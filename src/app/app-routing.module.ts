@@ -18,6 +18,10 @@ import {ModifSessComponent} from "./component/modif-sess/modif-sess.component";
 import {ListTrackComponent} from "./component/list-track/list-track.component";
 import {FormTrackComponent} from "./component/form-track/form-track.component";
 import {ModifTrackComponent} from "./component/modif-track/modif-track.component";
+import {FormPapierComponent} from "./component/form-papier/form-papier.component";
+import {ListTopicComponent} from "./component/list-topic/list-topic.component";
+import {FormTopicComponent} from "./component/form-topic/form-topic.component";
+import {ModifTopicComponent} from "./component/modif-topic/modif-topic.component";
 
 
 const routes: Routes = [
@@ -39,6 +43,10 @@ const routes: Routes = [
   { path: 'tracks', component: ListTrackComponent },
   { path: 'atrack', component: FormTrackComponent },
   { path: 'mtrack', component: ModifTrackComponent },
+  { path: 'topics', component: ListTopicComponent },
+  { path: 'atopic', component: FormTopicComponent },
+  { path: 'mtopic', component: ModifTopicComponent },
+  { path: 'apapier', component: FormPapierComponent },
 ];
 
 @NgModule({
