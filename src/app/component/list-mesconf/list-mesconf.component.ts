@@ -73,4 +73,10 @@ export class ListMesconfComponent implements OnInit {
     this.router.navigate(['/topics']);
   }
 
+  Papier(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/recpapier']);
+  }
+
+
 }

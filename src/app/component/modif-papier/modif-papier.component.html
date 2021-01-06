@@ -1,5 +1,5 @@
 <div class="card my-5 w-75 mx-auto">
-  <div class="card-header"><h3>Ajouter Votre Papier a la Conférence <b>{{conference.nom}}</b></h3></div>
+  <div class="card-header"><h3>Modifier le Papier <b>{{papier.nom}}</b></h3></div>
   <div class="card-body">
     <form (ngSubmit)="onSubmit()"  #form="ngForm">
 
@@ -42,7 +42,7 @@
                 name="Topic"
                 (ngModelChange)="select($event)"
                 [(ngModel)]="papier.topic"
-                #hotel="ngModel">
+                #top="ngModel">
           <option *ngFor="let t of topics" [ngValue]="t">{{t.nom}}</option>
         </select>
       </div>
@@ -71,7 +71,7 @@
               class="btn btn-danger float-lg-left">Réinitialiser</button>
 
       <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-primary float-lg-right">Ajouter</button>
+              class="btn btn-primary float-lg-right">Modifier</button>
     </form>
   </div>
 </div>

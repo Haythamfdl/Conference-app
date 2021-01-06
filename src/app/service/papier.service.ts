@@ -16,15 +16,15 @@ export class PapierService {
     this.Url = 'http://localhost:8080/papiers';
   }
 
-  public findbyConf(conference): Observable<Topic[]> {
-    return this.http.get<Topic[]>(this.Url+"/"+conference);
+  public findbyConf(conference): Observable<Papier[]> {
+    return this.http.get<Papier[]>(this.Url+"/"+conference);
   }
 
-  public findbyConfC(conference): Observable<Topic[]> {
-    return this.http.get<Topic[]>(this.Url+"/confirmer/"+conference);
+  public findbyConfC(conference): Observable<Papier[]> {
+    return this.http.get<Papier[]>(this.Url+"/confirmer/"+conference);
   }
-  public findMine(conference): Observable<Topic[]> {
-    return this.http.get<Topic[]>(this.Url+"/my/"+conference);
+  public findMine(utilisateur): Observable<Papier[]> {
+    return this.http.get<Papier[]>(this.Url+"/my/"+utilisateur);
   }
 
   public save(papier : Papier): Observable<Object> {

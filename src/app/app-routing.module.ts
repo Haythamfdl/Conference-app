@@ -23,6 +23,9 @@ import {ListTopicComponent} from "./component/list-topic/list-topic.component";
 import {FormTopicComponent} from "./component/form-topic/form-topic.component";
 import {ModifTopicComponent} from "./component/modif-topic/modif-topic.component";
 import {ChoixConfComponent} from "./component/choix-conf/choix-conf.component";
+import {ListMespapierComponent} from "./component/list-mespapier/list-mespapier.component";
+import {ListRecpapierComponent} from "./component/list-recpapier/list-recpapier.component";
+import {ModifPapierComponent} from "./component/modif-papier/modif-papier.component";
 
 
 const routes: Routes = [
@@ -48,7 +51,10 @@ const routes: Routes = [
   { path: 'atopic', component: FormTopicComponent },
   { path: 'mtopic', component: ModifTopicComponent },
   { path: 'cconference', component: ChoixConfComponent },
+  { path: 'mypapier', component: ListMespapierComponent },
+  { path: 'recpapier', component: ListRecpapierComponent },
   { path: 'apapier', component: FormPapierComponent },
+  { path: 'mpapier', component: ModifPapierComponent },
 ];
 
 @NgModule({

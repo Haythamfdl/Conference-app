@@ -1,0 +1,29 @@
+<div class="card my-5">
+  <div class="card-header"><h3>Papiers Reçu pour la Conférence <b>{{conferences.nom}}</b></h3></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Premier Auteur</th>
+        <th scope="col">Topic</th>
+        <th scope="col">Conference</th>
+        <th scope="col">Confirmer</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of papiers">
+        <td>{{ p.nom }}</td>
+        <td>{{ p.premierauteur.nom }} {{ p.premierauteur.prenom }}</td>
+        <td>{{ p.topic.nom }}</td>
+        <td>{{ p.conference.nom }}</td>
+        <td>{{ p.confirmer }}</td>
+        <td>
+          <button style="margin-right: 10px" class="btn btn-info" (click)="Info(p)">Plus d'Info</button>
+          <button style="margin-right: 10px" class="btn btn-primary" (click)="Confirmer(p)">Confirmer</button>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import {Utilisateur} from "./utilisateur";
 import {Track} from "./track";
 import {Conference} from "./conference";
+import {Topic} from "./topic";
 
 export class Papier {
   id:string;
@@ -13,7 +14,7 @@ export class Papier {
   nom:string;
   description:string;
   confirmer:boolean;
-  topic:string;
+  topic:Topic;
   data:any;
   deleted:boolean;
 }

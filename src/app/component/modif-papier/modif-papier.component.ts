@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {Conference} from "../../class/conference";
 import {Topic} from "../../class/topic";
+import {Papier} from "../../class/papier";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TopicService} from "../../service/topic.service";
-import {Papier} from "../../class/papier";
 import {PapierService} from "../../service/papier.service";
 import {UtilisateurService} from "../../service/utilisateur.service";
-import {Byte} from "@angular/compiler/src/util";
 
 @Component({
-  selector: 'app-form-papier',
-  templateUrl: './form-papier.component.html',
-  styleUrls: ['./form-papier.component.css']
+  selector: 'app-modif-papier',
+  templateUrl: './modif-papier.component.html',
+  styleUrls: ['./modif-papier.component.css']
 })
-export class FormPapierComponent implements OnInit {
+export class ModifPapierComponent implements OnInit {
   conference : Conference
   topics:Topic[];
   papier:Papier;
@@ -30,8 +29,14 @@ export class FormPapierComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.conference=JSON.parse(localStorage.getItem("Conference"));
-    this.topicService.findMine(this.conference.id).subscribe(data => {
+    this.papier=JSON.parse(localStorage.getItem("Papier"));
+    if(this.papier.auteur !== null){
+      this.email1=this.papier.auteur.email;
+    }
+    if(this.papier.presentateur !== null){
+      this.email2=this.papier.presentateur.email;
+    }
+    this.topicService.findMine(this.papier.conference.id).subscribe(data => {
       this.topics = data;
     });
   }
@@ -48,11 +53,6 @@ export class FormPapierComponent implements OnInit {
   }
 
   onSubmit() {
-    this.papier.premierauteur = JSON.parse(localStorage.getItem("Utilisateur"));
-    this.papier.conference = JSON.parse(localStorage.getItem("Conference"));
-    this.papier.confirmer = false;
-    this.papier.deleted = false;
-
     if (this.email1 !== "") {
       this.utilisateurService.getByEmail(this.email1).subscribe(data => {
         if (data == null) {
@@ -60,21 +60,22 @@ export class FormPapierComponent implements OnInit {
           alert("L'email du co-auteur est invalable");
         } else {
           this.papier.auteur = data;
+          if (this.email2 !== "") {
+            this.utilisateurService.getByEmail(this.email2).subscribe(data => {
+              if (data == null) {
+                console.log(data);
+                alert("L'email du présentateur est invalable");
+              } else {
+                this.papier.presentateur = data;
+                this.papierService.update(this.papier).subscribe();
+                this.router.navigate(['/mypapier']);
+              }
+            });
+          }
         }
       });
     }
 
-    if (this.email2 !== "") {
-      this.utilisateurService.getByEmail(this.email2).subscribe(data => {
-        if (data == null) {
-          console.log(data);
-          alert("L'email du présentateur est invalable");
-        } else {
-          this.papier.presentateur = data;
-        }
-      });
-    }
-    this.papierService.save(this.papier).subscribe();
-    this.router.navigate(['/mypapier']);
+
   }
 }
