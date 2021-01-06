@@ -1,1 +1,78 @@
-<p>form-papier works!</p>
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Ajouter Votre Papier a la Conférence <b>{{conference.nom}}</b></h3></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input type="text" [(ngModel)]="papier.nom"
+               class="form-control"
+               id="Nom"
+               name="Nom"
+               placeholder="Entrer le Nom du Papier"
+               required
+               #nom="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Auth">Co-auteur</label>
+        <input type="text" [(ngModel)]="email1"
+               class="form-control"
+               id="Auth"
+               name="Auth"
+               placeholder="Entrer l'Email du Co-Auteur du Papier"
+               #cauteur="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Pres">Présentareur</label>
+        <input type="text" [(ngModel)]="email2"
+               class="form-control"
+               id="Pres"
+               name="Pres"
+               placeholder="Entrer l'Email du Présentareur du Papier"
+               required
+               #pres="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Topic">Topic</label>
+        <select required
+                class="form-control"
+                id="Topic"
+                name="Topic"
+                (ngModelChange)="select($event)"
+                [(ngModel)]="papier.topic"
+                #hotel="ngModel">
+          <option *ngFor="let t of topics" [ngValue]="t">{{t.nom}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="Desc">Description</label>
+        <input type="text" [(ngModel)]="papier.description"
+               class="form-control"
+               id="Desc"
+               name="Desc"
+               placeholder="Entrer la Description du Papier"
+               required
+               #desc="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Papier">Le Papier</label>
+        <input type="file"
+               class="form-control-file"
+               id="Papier"
+               name="Papier"
+               (change)="change($event)">
+      </div>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Ajouter</button>
+    </form>
+  </div>
+</div>

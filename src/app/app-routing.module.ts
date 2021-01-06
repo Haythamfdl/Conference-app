@@ -22,6 +22,7 @@ import {FormPapierComponent} from "./component/form-papier/form-papier.component
 import {ListTopicComponent} from "./component/list-topic/list-topic.component";
 import {FormTopicComponent} from "./component/form-topic/form-topic.component";
 import {ModifTopicComponent} from "./component/modif-topic/modif-topic.component";
+import {ChoixConfComponent} from "./component/choix-conf/choix-conf.component";
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'topics', component: ListTopicComponent },
   { path: 'atopic', component: FormTopicComponent },
   { path: 'mtopic', component: ModifTopicComponent },
+  { path: 'cconference', component: ChoixConfComponent },
   { path: 'apapier', component: FormPapierComponent },
 ];
 

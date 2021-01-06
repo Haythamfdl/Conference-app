@@ -1,5 +1,5 @@
 <div class="card my-5">
-  <div class="card-header"><h3>Liste des Conférences</h3></div>
+  <div class="card-header"><h3>Veuiller choisir une Conférences</h3></div>
   <div class="card-body table-responsive">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -19,7 +19,7 @@
         <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(conf)">Plus d'Info</button>
-          <button class="btn btn-warning" (click)="Session(conf)">Afficher les Sessions</button></td>
+          <button class="btn btn-primary" (click)="Papier(conf)">Soumettre Papier</button></td>
       </tr>
       </tbody>
     </table>

@@ -27,6 +27,7 @@ import { FormPapierComponent } from './component/form-papier/form-papier.compone
 import { ListTopicComponent } from './component/list-topic/list-topic.component';
 import { FormTopicComponent } from './component/form-topic/form-topic.component';
 import { ModifTopicComponent } from './component/modif-topic/modif-topic.component';
+import { ChoixConfComponent } from './component/choix-conf/choix-conf.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ModifTopicComponent } from './component/modif-topic/modif-topic.compone
     FormPapierComponent,
     ListTopicComponent,
     FormTopicComponent,
-    ModifTopicComponent
+    ModifTopicComponent,
+    ChoixConfComponent
   ],
   imports: [
     BrowserModule,
