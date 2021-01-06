@@ -32,6 +32,7 @@ import { ListMespapierComponent } from './component/list-mespapier/list-mespapie
 import { ListRecpapierComponent } from './component/list-recpapier/list-recpapier.component';
 import { ModifPapierComponent } from './component/modif-papier/modif-papier.component';
 import { AjoutPaptrackComponent } from './component/ajout-paptrack/ajout-paptrack.component';
+import { InfoPapierComponent } from './component/info-papier/info-papier.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AjoutPaptrackComponent } from './component/ajout-paptrack/ajout-paptrac
     ListMespapierComponent,
     ListRecpapierComponent,
     ModifPapierComponent,
-    AjoutPaptrackComponent
+    AjoutPaptrackComponent,
+    InfoPapierComponent
   ],
   imports: [
     BrowserModule,

@@ -26,9 +26,9 @@ export class ListMespapierComponent implements OnInit {
     });
   }
 
-  Info(value :any){
+  Papier(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/']);
+    this.router.navigate(['/papier']);
   }
 
   Modifier(value :any){

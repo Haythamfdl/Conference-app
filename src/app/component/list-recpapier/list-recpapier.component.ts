@@ -27,7 +27,7 @@ export class ListRecpapierComponent implements OnInit {
 
   Info(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/']);
+    this.router.navigate(['/papier']);
   }
 
   Confirmer(value : any){

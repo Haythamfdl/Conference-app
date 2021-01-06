@@ -19,7 +19,7 @@
         <td>{{ track.terminer?'Oui':'Non'}}</td>
         <td>
           <button *ngIf="!show" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(track)">Modifier</button>
-          <button *ngIf="!aPapier(track) " style="margin-right: 10px"  class="btn btn-secondary">Info Papier</button>
+          <button *ngIf="!aPapier(track) " style="margin-right: 10px"  class="btn btn-secondary" (click)="Info(track.papier)">Info Papier</button>
           <button *ngIf="!show && aPapier(track) " style="margin-right: 10px"  class="btn btn-warning" (click)="AjouterP(track)">Ajouter Papier</button>
           <button *ngIf="!show && !aPapier(track) " style="margin-right: 10px"  class="btn btn-warning" (click)="Enlever(track)">Enlever Papier</button>
           <button *ngIf="!show" style="margin-right: 10px" class="btn btn-success" (click)="Terminer(track)">Terminer</button>

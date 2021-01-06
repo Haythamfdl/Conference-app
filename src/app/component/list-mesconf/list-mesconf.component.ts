@@ -78,5 +78,6 @@ export class ListMesconfComponent implements OnInit {
     this.router.navigate(['/recpapier']);
   }
 
-
 }
+
+

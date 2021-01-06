@@ -88,4 +88,9 @@ export class ListTrackComponent implements OnInit {
     localStorage.setItem('Track',JSON.stringify(value));
     this.router.navigate(['/apaptrack']);
   }
+
+  Info(value :any){
+    localStorage.setItem('Papier',JSON.stringify(value));
+    this.router.navigate(['/papier']);
+  }
 }

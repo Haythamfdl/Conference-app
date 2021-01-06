@@ -1,0 +1,60 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Information du Papier <b>{{papier.nom}} </b></h3></div>
+  <div class="card-body">
+
+      <div class="form-group">
+        <label for="Desc">Description</label>
+        <input type="text" value="{{papier.description}}"
+               class="form-control"
+               id="Desc"
+               name="Desc"
+               disabled>
+      </div>
+
+    <div class="form-group">
+      <label for="Conf">Conférence</label>
+      <input type="text" value="{{papier.conference.nom}}"
+             class="form-control"
+             id="Conf"
+             name="Conf"
+             disabled>
+    </div>
+
+      <div class="form-group">
+        <label for="Topic">Topic</label>
+        <input type="text" value="{{papier.topic.nom}}"
+               class="form-control"
+               id="Topic"
+               name="Topic"
+               disabled>
+      </div>
+
+      <div class="form-group">
+        <label for="Pauteur">Premier Auteur</label>
+        <input type="text" value="{{papier.premierauteur.nom}} {{papier.premierauteur.prenom}}"
+               class="form-control"
+               id="Pauteur"
+               name="Pauteur"
+               disabled>
+      </div>
+
+    <div class="form-group" *ngIf="papier.auteur !== null">
+      <label for="auteur">Co-Auteur</label>
+      <input type="text" value="{{papier.auteur.nom}} {{papier.auteur.prenom}}"
+             class="form-control"
+             id="auteur"
+             name="auteur"
+             disabled>
+    </div>
+
+    <div class="form-group" *ngIf="papier.presentateur !== null">
+      <label for="pres">Présentateur</label>
+      <input type="text" value="{{papier.presentateur.nom}} {{papier.presentateur.prenom}}"
+             class="form-control"
+             id="pres"
+             name="pres"
+             disabled>
+    </div>
+
+  </div>
+</div>

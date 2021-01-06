@@ -18,7 +18,7 @@
         <td>{{ p.premierauteur.nom }} {{ p.premierauteur.prenom }}</td>
         <td>{{ p.topic.nom }}</td>
         <td>{{ p.conference.nom }}</td>
-        <td>{{ p.confirmer }}</td>
+        <td>{{ p.confirmer?'Oui':'Non' }}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(p)">Plus d'Info</button>
           <button style="margin-right: 10px" class="btn btn-primary" (click)="Confirmer(p)">Confirmer</button>
