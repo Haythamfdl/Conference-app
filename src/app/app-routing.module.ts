@@ -26,6 +26,7 @@ import {ChoixConfComponent} from "./component/choix-conf/choix-conf.component";
 import {ListMespapierComponent} from "./component/list-mespapier/list-mespapier.component";
 import {ListRecpapierComponent} from "./component/list-recpapier/list-recpapier.component";
 import {ModifPapierComponent} from "./component/modif-papier/modif-papier.component";
+import {AjoutPaptrackComponent} from "./component/ajout-paptrack/ajout-paptrack.component";
 
 
 const routes: Routes = [
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'recpapier', component: ListRecpapierComponent },
   { path: 'apapier', component: FormPapierComponent },
   { path: 'mpapier', component: ModifPapierComponent },
+  { path: 'apaptrack', component: AjoutPaptrackComponent },
 ];
 
 @NgModule({

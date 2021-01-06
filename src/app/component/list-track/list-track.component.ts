@@ -84,4 +84,8 @@ export class ListTrackComponent implements OnInit {
     this.router.navigate(['/tracks']).then(() => {window.location.reload()});
     alert("Papier a été Enlever");
   }
+  AjouterP(value:any){
+    localStorage.setItem('Track',JSON.stringify(value));
+    this.router.navigate(['/apaptrack']);
+  }
 }
