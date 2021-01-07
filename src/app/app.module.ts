@@ -39,6 +39,7 @@ import { ListReviewComponent } from './component/list-review/list-review.compone
 import { ListMyreviewsComponent } from './component/list-myreviews/list-myreviews.component';
 import { ModifReviewComponent } from './component/modif-review/modif-review.component';
 import { InfoReviewComponent } from './component/info-review/info-review.component';
+import { UploadComponent } from './component/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { InfoReviewComponent } from './component/info-review/info-review.compone
     ListReviewComponent,
     ListMyreviewsComponent,
     ModifReviewComponent,
-    InfoReviewComponent
+    InfoReviewComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

@@ -33,6 +33,7 @@ import {ListMyreviewsComponent} from "./component/list-myreviews/list-myreviews.
 import {ReviewPapierComponent} from "./component/review-papier/review-papier.component";
 import {ModifReviewComponent} from "./component/modif-review/modif-review.component";
 import {InfoReviewComponent} from "./component/info-review/info-review.component";
+import {UploadComponent} from "./component/upload/upload.component";
 
 
 const routes: Routes = [

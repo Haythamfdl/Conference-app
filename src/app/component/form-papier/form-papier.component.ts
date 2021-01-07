@@ -17,6 +17,8 @@ export class FormPapierComponent implements OnInit {
   conference : Conference
   topics:Topic[];
   papier:Papier;
+  p:Papier;
+  selectedfile:File;
   email1:string="";
   email2:string="";
 
@@ -27,6 +29,7 @@ export class FormPapierComponent implements OnInit {
               private papierService:PapierService,
               private utilisateurService:UtilisateurService) {
     this.papier=new Papier();
+    this.p=new Papier();
   }
 
   ngOnInit(): void {
@@ -41,9 +44,13 @@ export class FormPapierComponent implements OnInit {
   }
 
   change(file:any){
-    const data =new FormData();
-    data.append('file',file.target.files[0],file.target.files[0].name);
-    this.papier.data=data;
+    this.selectedfile=file.target.files[0];
+  }
+  onUpload(id:any){
+    const uploadFile =new FormData();
+    uploadFile.append('Papier',this.selectedfile[0]);
+    console.log(uploadFile);
+    this.papierService.upload(id,uploadFile).subscribe();
   }
 
   onSubmit() {
@@ -71,7 +78,11 @@ export class FormPapierComponent implements OnInit {
         }
       });
     }
-    this.papierService.save(this.papier).subscribe();
-    this.router.navigate(['/mypapier']);
+    this.papierService.save(this.papier).subscribe(data =>{
+      this.p = data;
+      //this.onUpload(this.p.id);
+      this.router.navigate(['/mypapier']);
+    });
+
   }
 }

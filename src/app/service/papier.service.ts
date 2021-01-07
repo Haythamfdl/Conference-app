@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Topic} from "../class/topic";
 import {Papier} from "../class/papier";
+import {map} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -27,11 +28,15 @@ export class PapierService {
     return this.http.get<Papier[]>(this.Url+"/my/"+utilisateur);
   }
 
-  public save(papier : Papier): Observable<Object> {
-    return this.http.post(this.Url, papier);
+  public save(papier : Papier): Observable<Papier> {
+    return this.http.post(this.Url, papier).pipe(map(value => Object.assign(new Papier(), value)));
   }
 
   public update(papier : Papier): Observable<Object> {
     return this.http.put(this.Url, papier, this.httpOptions);
+  }
+
+  public upload(papier, file): Observable<Object> {
+    return this.http.post(this.Url+"/upload/"+papier, file);
   }
 }
