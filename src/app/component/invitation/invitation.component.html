@@ -15,12 +15,13 @@
 
       <div class="form-group">
         <label for="Message">Message</label>
-        <input type="text" [(ngModel)]="invitation.message"
+        <textarea type="text" [(ngModel)]="invitation.message"
                class="form-control"
                id="message"
                name="message"
                placeholder="Entrer un message"
-               required #mess="ngModel">
+                  rows="3"
+                  required #mess="ngModel"></textarea>
       </div>
 
       <button type="reset"

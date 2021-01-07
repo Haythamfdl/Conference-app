@@ -26,7 +26,6 @@ export class InvitationComponent implements OnInit {
   onSubmit(){
     this.utilisateurService.getByEmail(this.invitee.email).subscribe(data => {
       if(data == null){
-        console.log(data);
         alert("cet email est invalable");
       }
       else {
@@ -41,8 +40,6 @@ export class InvitationComponent implements OnInit {
   ngOnInit(): void {
     this.invitation.conference=JSON.parse(localStorage.getItem("Conference"));
     this.invitation.inviteur=JSON.parse(localStorage.getItem("Utilisateur"));
-    console.log(JSON.stringify(localStorage.getItem("Utilisateur")));
-    console.log(JSON.stringify(localStorage.getItem("Conference")));
   }
 
 }

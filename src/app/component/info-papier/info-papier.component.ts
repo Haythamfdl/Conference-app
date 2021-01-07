@@ -22,11 +22,6 @@ export class InfoPapierComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private papierService:PapierService){
-    this.papier=new Papier();
-    this.papier.topic=new Topic();
-    this.papier.premierauteur=new Utilisateur();
-    this.papier.auteur=new Utilisateur();
-    this.papier.presentateur=new Utilisateur();
   }
 
   ngOnInit(): void {
@@ -55,15 +50,17 @@ export class InfoPapierComponent implements OnInit {
     {
       this.show=false;
     }
-
-    if(this.u.id == this.papier.auteur.id)
-    {
-      this.show=false;
+    if(this.papier.auteur !== null){
+      if(this.u.id == this.papier.auteur.id)
+      {
+        this.show=false;
+      }
     }
-    if(this.u.id == this.papier.presentateur.id)
-    {
-      this.show=false;
+    if(this.papier.presentateur !== null){
+      if(this.u.id == this.papier.presentateur.id)
+      {
+        this.show=false;
+      }
     }
-
   }
 }
