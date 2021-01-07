@@ -49,21 +49,18 @@ export class ModifPapierComponent implements OnInit {
     const data =new FormData();
     data.append('file',file.target.files[0],file.target.files[0].name);
     this.papier.data=data;
-    console.log(this.papier.data);
   }
 
   onSubmit() {
     if (this.email1 !== "") {
       this.utilisateurService.getByEmail(this.email1).subscribe(data => {
         if (data == null) {
-          console.log(data);
           alert("L'email du co-auteur est invalable");
         } else {
           this.papier.auteur = data;
           if (this.email2 !== "") {
             this.utilisateurService.getByEmail(this.email2).subscribe(data => {
               if (data == null) {
-                console.log(data);
                 alert("L'email du présentateur est invalable");
               } else {
                 this.papier.presentateur = data;

@@ -78,8 +78,6 @@ export class ListTrackComponent implements OnInit {
   canUpdate(){
     if(this.u.id == this.conference.organisateur.id)
     {
-      console.log(this.u.id);
-      console.log(this.conference.organisateur.id);
       this.show=false;
     }
     else{

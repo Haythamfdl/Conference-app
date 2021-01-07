@@ -43,7 +43,6 @@ export class FormSessComponent implements OnInit {
   onSubmit(){
     this.utilisateurService.getByEmail(this.email).subscribe(data => {
       if(data == null){
-        console.log(data);
         alert("cet email est invalable");
       }
       else {

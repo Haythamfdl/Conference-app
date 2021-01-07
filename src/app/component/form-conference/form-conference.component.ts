@@ -43,7 +43,6 @@ export class FormConferenceComponent implements OnInit {
 
   select(event : any){
     this.conference.hotel =event;
-    console.log("hotel is" , this.conference.hotel);
 
   }
   ngOnInit(): void {

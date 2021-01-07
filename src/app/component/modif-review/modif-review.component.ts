@@ -22,7 +22,6 @@ export class ModifReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.evaluation=JSON.parse(localStorage.getItem("Evaluation"));
-    console.log(this.evaluation);
   }
 
   onSubmit(){

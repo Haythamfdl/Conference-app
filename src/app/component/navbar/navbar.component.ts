@@ -26,8 +26,6 @@ export class NavbarComponent implements OnInit,OnChanges {
       if(cc !== pc)
         this.isLoggedIn();
     }
-
-
   }
 
   loggOut(){

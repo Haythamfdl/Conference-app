@@ -43,7 +43,6 @@ export class ModifUserComponent implements OnInit {
 
   Alert(){
     localStorage.setItem('Utilisateur',JSON.stringify(this.utilisateur));
-    console.log(localStorage.getItem("Utilisateur"));
     this.router.navigate(['/']).then(() => {window.location.reload()});
     alert("Votre Compte a été modifier avec success!!!");
   }

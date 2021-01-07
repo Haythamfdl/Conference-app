@@ -39,7 +39,6 @@ export class InfoConfComponent implements OnInit {
 
   select(event : any){
     this.conference.hotel =event;
-    console.log("hotel is" , this.conference.hotel);
   }
 
 

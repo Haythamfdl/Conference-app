@@ -20,7 +20,6 @@ export class InfoReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.evaluation=JSON.parse(localStorage.getItem("Evaluation"));
-    console.log(this.evaluation);
   }
 
 }
