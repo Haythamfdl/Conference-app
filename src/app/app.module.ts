@@ -40,6 +40,9 @@ import { ListMyreviewsComponent } from './component/list-myreviews/list-myreview
 import { ModifReviewComponent } from './component/modif-review/modif-review.component';
 import { InfoReviewComponent } from './component/info-review/info-review.component';
 import { UploadComponent } from './component/upload/upload.component';
+import { ListReservationComponent } from './component/list-reservation/list-reservation.component';
+import { FormReservationComponent } from './component/form-reservation/form-reservation.component';
+import { ModifReservationComponent } from './component/modif-reservation/modif-reservation.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +82,10 @@ import { UploadComponent } from './component/upload/upload.component';
     ListMyreviewsComponent,
     ModifReviewComponent,
     InfoReviewComponent,
-    UploadComponent
+    UploadComponent,
+    ListReservationComponent,
+    FormReservationComponent,
+    ModifReservationComponent
   ],
   imports: [
     BrowserModule,

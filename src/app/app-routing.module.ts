@@ -34,6 +34,9 @@ import {ReviewPapierComponent} from "./component/review-papier/review-papier.com
 import {ModifReviewComponent} from "./component/modif-review/modif-review.component";
 import {InfoReviewComponent} from "./component/info-review/info-review.component";
 import {UploadComponent} from "./component/upload/upload.component";
+import {ListReservationComponent} from "./component/list-reservation/list-reservation.component";
+import {FormReservationComponent} from "./component/form-reservation/form-reservation.component";
+import {ModifReservationComponent} from "./component/modif-reservation/modif-reservation.component";
 
 
 const routes: Routes = [
@@ -70,6 +73,9 @@ const routes: Routes = [
   { path: 'areview', component: ReviewPapierComponent },
   { path: 'mreview', component: ModifReviewComponent },
   { path: 'review', component: InfoReviewComponent },
+  { path: 'reservations', component: ListReservationComponent },
+  { path: 'areservation', component: FormReservationComponent },
+  { path: 'mreservation', component: ModifReservationComponent },
 ];
 
 @NgModule({

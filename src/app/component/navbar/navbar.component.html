@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="/">{{ title }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,10 @@
           <a routerLink="/einvitation" class="dropdown-item">Invitation Envoyer</a>
           <a routerLink="/rinvitation" class="dropdown-item">Invitation Recue</a>
         </div>
+      </li>
+
+      <li *ngIf="!show" class="nav-item">
+        <a class="nav-link" href="/reservations">Réservation</a>
       </li>
 
       <li *ngIf="!show" class="nav-item dropdown">

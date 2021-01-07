@@ -8,7 +8,6 @@ import {Invitation} from "../class/invitation";
   providedIn: 'root'
 })
 export class InvitationService {
-
   private Url: string;
   httpOptions={
     headers : new HttpHeaders({'Content-Type':'application/json'})

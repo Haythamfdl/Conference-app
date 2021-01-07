@@ -1,0 +1,85 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h3>Modifier la Réservation</h3></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Deb">Début de la Réservation</label>
+        <input type="date" [(ngModel)]="reservation.datedeb"
+               class="form-control"
+               id="Deb"
+               name="Deb"
+               required
+               #Deb="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Fin">Fin de la Réservation</label>
+        <input type="date" [(ngModel)]="reservation.datefin"
+               class="form-control"
+               id="Fin"
+               name="Fin"
+               required
+               #fin="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Hotel">Hotel</label>
+        <select required  [(ngModel)]="reservation.hotel"
+                class="form-control"
+                id="Hotel"
+                name="Hotel"
+                (ngModelChange)="selectH($event)">
+          <option *ngFor="let h of hotels" [ngValue]="h">{{h.nom}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="Chambre">Chambre</label>
+        <select required [(ngModel)]="chambre"
+                class="form-control"
+                id="Chambre"
+                name="Chambre"
+                (ngModelChange)="selectC($event)">
+          <option *ngFor="let c of chambres" [ngValue]="c">{{c.numero}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="nbP">Nombre de Personnes</label>
+        <input type="text" [(ngModel)]="chambre.nbpersonne"
+               class="form-control"
+               id="nbP"
+               name="nbP" disabled/>
+      </div>
+
+      <div class="form-group">
+        <label for="type">Nombre de Personnes</label>
+        <input type="text" [(ngModel)]="chambre.type"
+               class="form-control"
+               id="type"
+               name="type" disabled/>
+      </div>
+
+      <div class="form-group">
+        <label for="prix">Prix de la chambre</label>
+        <input type="text" [(ngModel)]="chambre.prix"
+               class="form-control"
+               id="prix"
+               name="prix" disabled/>
+      </div>
+
+      <div class="form-check">
+        <input (ngModelChange)="select($event)" type="checkbox" [(ngModel)]="reservation.repas" class="form-check-input" id="repas" name="repas"/>
+        <label class="form-check-label" for="repas">Avec Repas</label>
+      </div>
+      <br>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Sauvegarder</button>
+    </form>
+  </div>
+</div>

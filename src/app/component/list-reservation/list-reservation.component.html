@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-header"><h3>Mes Réservations</h3></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Hotel</th>
+        <th scope="col">Chambre</th>
+        <th scope="col">Debut de la Réservation</th>
+        <th scope="col">Fin de la Réservation</th>
+        <th scope="col">Avec Repas</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let r of reservations">
+        <td>{{r.hotel.nom}}</td>
+        <td>{{r.chambre}}</td>
+        <td>{{r.datedeb | date:'dd/MMM/y'}}</td>
+        <td>{{r.datefin | date:'dd/MMM/y'}}</td>
+        <td>{{r.repas?'Oui':'Non'}}</td>
+        <td>
+          <button style="margin-right: 10px" class="btn btn-secondary" (click)="Modifier(r)">Modifier</button>
+          <button style="margin-right: 10px" class="btn btn-danger" (click)="Annuler(r)">Annuler</button>
+      </tr>
+      </tbody>
+    </table>
+    <td><button class="btn btn-primary" (click)="Ajouter()">Faire une Réservation</button></td>
+  </div>
+</div>
