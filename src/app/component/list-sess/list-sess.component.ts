@@ -16,14 +16,17 @@ export class ListSessComponent implements OnInit {
   conference : Conference;
   s : Session;
   show:boolean =false;
+  u:Utilisateur;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private sessionService:SessionService) {}
+              private sessionService:SessionService) {
+  }
 
 
   ngOnInit(): void {
-    this.isLoggedIn();
+    this.u =JSON.parse(localStorage.getItem("Utilisateur"));
     this.conference=JSON.parse(localStorage.getItem("Conference"));
+    this.isLoggedIn();
     if(this.conference==null){
       this.router.navigate(['/login']).then(() => {window.location.reload()});
     }
@@ -65,7 +68,19 @@ export class ListSessComponent implements OnInit {
       this.show=true;
     }
     else{
+     this.show=false;
+     this.canUpdate();
+    }
+  }
+  canUpdate(){
+    if(this.u.id == this.conference.organisateur.id)
+    {
+      console.log(this.u.id);
+      console.log(this.conference.organisateur.id);
       this.show=false;
+    }
+    else{
+      this.show=true;
     }
   }
 

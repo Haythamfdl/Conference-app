@@ -43,4 +43,9 @@ export class ListMespapierComponent implements OnInit {
     this.router.navigate(['/mypapier']).then(() => {window.location.reload()});
     alert("La Conferrence a été Supprimer");
   }
+
+  Evaluation(value :any){
+    localStorage.setItem('Papier',JSON.stringify(value));
+    this.router.navigate(['/reviews']);
+  }
 }

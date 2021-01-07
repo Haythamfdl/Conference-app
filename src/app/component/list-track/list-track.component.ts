@@ -5,6 +5,7 @@ import {Track} from "../../class/track";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SessionService} from "../../service/session.service";
 import {TrackService} from "../../service/track.service";
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-list-track',
@@ -16,17 +17,20 @@ export class ListTrackComponent implements OnInit {
   session : Session;
   tracks:Track[];
   t:Track;
+  u:Utilisateur;
   show:boolean =false;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private sessionService:SessionService,
-              private trackService:TrackService) {}
+              private trackService:TrackService) {
+  }
 
 
   ngOnInit(): void {
-    this.isLoggedIn();
     this.conference=JSON.parse(localStorage.getItem("Conference"));
+    this.u=JSON.parse(localStorage.getItem("Utilisateur"));
     this.session=JSON.parse(localStorage.getItem("Session"));
+    this.isLoggedIn();
     if(this.session==null){
       this.router.navigate(['/login']).then(() => {window.location.reload()});
     }
@@ -69,8 +73,22 @@ export class ListTrackComponent implements OnInit {
     }
     else{
       this.show=false;
+      this.canUpdate();
     }
   }
+  canUpdate(){
+    if(this.u.id == this.conference.organisateur.id)
+    {
+      console.log(this.u.id);
+      console.log(this.conference.organisateur.id);
+      this.show=false;
+    }
+    else{
+      this.show=true;
+    }
+  }
+
+
   aPapier(value:Track){
     if(value.papier !== null)
       return false;

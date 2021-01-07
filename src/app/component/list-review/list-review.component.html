@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-header"><h3>Evaluations</h3></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Evaluateur</th>
+        <th scope="col">Date d'Evaluation</th>
+        <th scope="col">Note</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let e of evaluations">
+        <td>{{ e.evaluateur.nom }} {{ e.evaluateur.prenom }}</td>
+        <td>{{e.date | date:'dd/MMM/y h:mm a'}}</td>
+        <td>{{e.note}}</td>
+        <td>
+          <button style="margin-right: 10px" class="btn btn-info" (click)="Info(e)">Plus d'Info</button>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -33,6 +33,10 @@ import { ListRecpapierComponent } from './component/list-recpapier/list-recpapie
 import { ModifPapierComponent } from './component/modif-papier/modif-papier.component';
 import { AjoutPaptrackComponent } from './component/ajout-paptrack/ajout-paptrack.component';
 import { InfoPapierComponent } from './component/info-papier/info-papier.component';
+import { ReviewPapierComponent } from './component/review-papier/review-papier.component';
+import { ListPapierComponent } from './component/list-papier/list-papier.component';
+import { ListReviewComponent } from './component/list-review/list-review.component';
+import { ListMyreviewsComponent } from './component/list-myreviews/list-myreviews.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,11 @@ import { InfoPapierComponent } from './component/info-papier/info-papier.compone
     ListRecpapierComponent,
     ModifPapierComponent,
     AjoutPaptrackComponent,
-    InfoPapierComponent
+    InfoPapierComponent,
+    ReviewPapierComponent,
+    ListPapierComponent,
+    ListReviewComponent,
+    ListMyreviewsComponent
   ],
   imports: [
     BrowserModule,

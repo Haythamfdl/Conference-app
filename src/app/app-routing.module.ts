@@ -28,6 +28,8 @@ import {ListRecpapierComponent} from "./component/list-recpapier/list-recpapier.
 import {ModifPapierComponent} from "./component/modif-papier/modif-papier.component";
 import {AjoutPaptrackComponent} from "./component/ajout-paptrack/ajout-paptrack.component";
 import {InfoPapierComponent} from "./component/info-papier/info-papier.component";
+import {ListReviewComponent} from "./component/list-review/list-review.component";
+import {ListMyreviewsComponent} from "./component/list-myreviews/list-myreviews.component";
 
 
 const routes: Routes = [
@@ -59,6 +61,8 @@ const routes: Routes = [
   { path: 'mpapier', component: ModifPapierComponent },
   { path: 'apaptrack', component: AjoutPaptrackComponent },
   { path: 'papier', component: InfoPapierComponent },
+  { path: 'reviews', component: ListReviewComponent },
+  { path: 'myreviews', component: ListMyreviewsComponent },
 ];
 
 @NgModule({
