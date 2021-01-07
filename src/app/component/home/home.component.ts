@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  show: boolean =true;
+  utilisateur:Utilisateur;
+  constructor() {
+    this.utilisateur=new Utilisateur();
   }
 
+  ngOnInit(): void {
+    this.isLoggedIn();
+  }
+
+  isLoggedIn(){
+    if(localStorage.getItem("Utilisateur") === null){
+      this.show=true;
+    }
+    else{
+      this.show=false;
+      this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
+    }
+  }
 }

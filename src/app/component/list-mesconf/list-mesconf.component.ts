@@ -50,7 +50,6 @@ export class ListMesconfComponent implements OnInit {
     this.c.terminer = true;
     this.confserv.update(this.c).subscribe();
     this.router.navigate(['/myconferences']);
-    alert("La Conferrence a été Terminer");
   }
 
   Info(value :any){

@@ -64,7 +64,6 @@ export class ListTrackComponent implements OnInit {
     this.t.terminer = true;
     this.trackService.update(this.t).subscribe();
     this.router.navigate(['/tracks']);
-    alert("Track a été Terminer");
   }
 
   isLoggedIn(){
