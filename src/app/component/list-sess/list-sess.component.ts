@@ -72,11 +72,10 @@ export class ListSessComponent implements OnInit {
      this.canUpdate();
     }
   }
+
   canUpdate(){
     if(this.u.id == this.conference.organisateur.id)
     {
-      console.log(this.u.id);
-      console.log(this.conference.organisateur.id);
       this.show=false;
     }
     else{

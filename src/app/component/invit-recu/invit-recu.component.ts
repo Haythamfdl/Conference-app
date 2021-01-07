@@ -28,4 +28,14 @@ export class InvitRecuComponent implements OnInit {
     this.invitationService.update(value).subscribe();
   }
 
+  Info(value :any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/conference']);
+  }
+
+  Session(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+  }
+
 }

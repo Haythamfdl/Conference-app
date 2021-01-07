@@ -1,17 +1,18 @@
 <div class="card my-5 w-75 mx-auto">
-  <div class="card-header"><h3>Evaluation du Papier <b>{{papier.nom}}</b></h3></div>
+  <div class="card-header"><h3>Modification de l'Evaluation du Papier <b>{{evaluation.papier.nom}}</b></h3></div>
   <div class="card-body">
     <form (ngSubmit)="onSubmit()"  #form="ngForm">
 
       <div class="form-group">
         <label for="Evalu">Evaluation</label>
-        <input type="text" [(ngModel)]="evaluation.revue"
-               class="form-control"
-               id="Evalu"
-               name="Evalu"
-               placeholder="Entrer l' Evaluation"
-               required
-               #eva="ngModel">
+        <textarea type="text" [(ngModel)]="evaluation.revue"
+                  class="form-control"
+                  id="Evalu"
+                  name="Evalu"
+                  placeholder="Entrer l'Evaluation"
+                  required
+                  rows="3"
+                  #eva="ngModel"></textarea>
       </div>
 
       <div class="form-group">
@@ -26,20 +27,20 @@
       </div>
 
       <div class="form-group">
-        <label for="Note">Commentaire</label>
-        <input type="text" [(ngModel)]="evaluation.commentaire"
+        <label for="Comm">Commentaire</label>
+        <textarea type="text" [(ngModel)]="evaluation.commentaire"
                class="form-control"
-               id="Note"
-               name="Note"
+               id="Comm"
+               name="Comm"
                placeholder="Entrer les Commentaires"
-               #com="ngModel">
+                  #com="ngModel"></textarea>
       </div>
 
       <button type="reset"
               class="btn btn-danger float-lg-left">Réinitialiser</button>
 
       <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-primary float-lg-right">Ajouter</button>
+              class="btn btn-primary float-lg-right">Modifier</button>
     </form>
   </div>
 </div>

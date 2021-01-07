@@ -13,6 +13,7 @@ import {Utilisateur} from "../../class/utilisateur";
 export class ListMyreviewsComponent implements OnInit {
   utilisateur:Utilisateur;
   evaluations:Evaluation[];
+  e:Evaluation;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private evaluationService:EvaluationService) { }
@@ -25,14 +26,22 @@ export class ListMyreviewsComponent implements OnInit {
   }
 
   Modifier(value :any){
-    localStorage.setItem('Evaluation',JSON.stringify(value));
-    this.router.navigate(['/mpapier']);
+    this.e=value;
+    localStorage.setItem('Evaluation',JSON.stringify(this.e));
+    this.router.navigate(['/mreview']);
   }
 
   Info(value :any){
     localStorage.setItem('Evaluation',JSON.stringify(value));
-    this.router.navigate(['/mpapier']);
+    this.router.navigate(['/review']);
   }
 
+  Supprimer(value : any){
+    this.e = value;
+    this.e.deleted = true;
+    this.evaluationService.update(this.e).subscribe();
+    this.router.navigate(['/myreviews']).then(() => {window.location.reload()});
+    alert("La Conferrence a été Supprimer");
+  }
 
 }

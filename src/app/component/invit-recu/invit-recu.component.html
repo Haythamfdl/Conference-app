@@ -19,7 +19,11 @@
         <td>{{inv.message}}</td>
         <td>{{inv.date | date:'shortDate'}}</td>
         <td>{{inv.accepter?'Oui':'Non' }}</td>
-        <td><button (click)="Accepter(inv)" *ngIf="!inv.accepter" class="btn btn-primary">Accepter l'Invitation</button></td>
+        <td>
+          <button (click)="Accepter(inv)" *ngIf="!inv.accepter" class="btn btn-primary">Accepter l'Invitation</button>
+          <button style="margin-right: 10px" class="btn btn-info" (click)="Info(inv.conference)">Plus d'Info</button>
+          <button class="btn btn-warning" (click)="Session(inv.conference)">Afficher les Sessions</button>
+        </td>
       </tr>
       </tbody>
     </table>

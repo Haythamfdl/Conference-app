@@ -28,7 +28,7 @@ export class ListReviewComponent implements OnInit {
 
   Info(value :any){
     localStorage.setItem('Evaluation',JSON.stringify(value));
-    this.router.navigate(['/mpapier']);
+    this.router.navigate(['/review']);
   }
 
 }

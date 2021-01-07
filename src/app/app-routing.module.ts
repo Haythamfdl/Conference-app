@@ -30,6 +30,9 @@ import {AjoutPaptrackComponent} from "./component/ajout-paptrack/ajout-paptrack.
 import {InfoPapierComponent} from "./component/info-papier/info-papier.component";
 import {ListReviewComponent} from "./component/list-review/list-review.component";
 import {ListMyreviewsComponent} from "./component/list-myreviews/list-myreviews.component";
+import {ReviewPapierComponent} from "./component/review-papier/review-papier.component";
+import {ModifReviewComponent} from "./component/modif-review/modif-review.component";
+import {InfoReviewComponent} from "./component/info-review/info-review.component";
 
 
 const routes: Routes = [
@@ -63,6 +66,9 @@ const routes: Routes = [
   { path: 'papier', component: InfoPapierComponent },
   { path: 'reviews', component: ListReviewComponent },
   { path: 'myreviews', component: ListMyreviewsComponent },
+  { path: 'areview', component: ReviewPapierComponent },
+  { path: 'mreview', component: ModifReviewComponent },
+  { path: 'review', component: InfoReviewComponent },
 ];
 
 @NgModule({

@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
     }
     else {
       localStorage.setItem('Utilisateur',JSON.stringify(this.utilisateur));
-      console.log(localStorage.getItem("Utilisateur"));
       this.router.navigate(['/']).then(() => {window.location.reload()});
       alert("Vous êtes connecter");
     }

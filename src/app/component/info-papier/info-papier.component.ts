@@ -16,6 +16,8 @@ import {Utilisateur} from "../../class/utilisateur";
 export class InfoPapierComponent implements OnInit {
   conference : Conference
   papier:Papier;
+  show:boolean=true;
+  u:Utilisateur;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -28,7 +30,40 @@ export class InfoPapierComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.u=JSON.parse(localStorage.getItem("Utilisateur"));
     this.papier=JSON.parse(localStorage.getItem("Papier"));
+    this.isLoggedIn();
   }
 
+  Review(){
+    localStorage.setItem('Papier',JSON.stringify(this.papier));
+    this.router.navigate(['/areview']);
+  }
+
+  isLoggedIn(){
+    if(localStorage.getItem("Utilisateur") === null){
+      this.show=false;
+    }
+    else{
+      this.show=true;
+      this.canUpdate();
+    }
+  }
+
+  canUpdate(){
+    if(this.u.id == this.papier.premierauteur.id)
+    {
+      this.show=false;
+    }
+
+    if(this.u.id == this.papier.auteur.id)
+    {
+      this.show=false;
+    }
+    if(this.u.id == this.papier.presentateur.id)
+    {
+      this.show=false;
+    }
+
+  }
 }

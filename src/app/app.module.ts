@@ -37,6 +37,8 @@ import { ReviewPapierComponent } from './component/review-papier/review-papier.c
 import { ListPapierComponent } from './component/list-papier/list-papier.component';
 import { ListReviewComponent } from './component/list-review/list-review.component';
 import { ListMyreviewsComponent } from './component/list-myreviews/list-myreviews.component';
+import { ModifReviewComponent } from './component/modif-review/modif-review.component';
+import { InfoReviewComponent } from './component/info-review/info-review.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { ListMyreviewsComponent } from './component/list-myreviews/list-myreview
     ReviewPapierComponent,
     ListPapierComponent,
     ListReviewComponent,
-    ListMyreviewsComponent
+    ListMyreviewsComponent,
+    ModifReviewComponent,
+    InfoReviewComponent
   ],
   imports: [
     BrowserModule,
