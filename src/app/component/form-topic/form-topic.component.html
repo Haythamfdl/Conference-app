@@ -15,12 +15,13 @@
 
       <div class="form-group">
         <label for="Desc">Description</label>
-        <input type="text" [(ngModel)]="topic.description"
+        <textarea type="text" [(ngModel)]="topic.description"
                class="form-control"
                id="Desc"
                name="Desc"
                placeholder="Entrer la Description du Topic"
-               #desc="ngModel">
+                  rows="3"
+                  #desc="ngModel"></textarea>
       </div>
 
       <button type="reset"

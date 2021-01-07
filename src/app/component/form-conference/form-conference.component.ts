@@ -39,6 +39,7 @@ export class FormConferenceComponent implements OnInit {
 
   Alert() {
     alert("La Conference a été Créer !");
+    this.router.navigate(['/myconferences']);
   }
 
   select(event : any){

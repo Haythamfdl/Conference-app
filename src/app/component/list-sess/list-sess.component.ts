@@ -60,7 +60,6 @@ export class ListSessComponent implements OnInit {
     this.s.termine = true;
     this.sessionService.update(this.s).subscribe();
     this.router.navigate(['/sessions']);
-    alert("La Session a été Terminer");
   }
 
   isLoggedIn(){
