@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ChambreService} from "../../service/chambre.service";
 import {ReservationService} from "../../service/reservation.service";
 import {HotelService} from "../../service/hotel.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-modif-reservation',
@@ -26,7 +27,8 @@ export class ModifReservationComponent implements OnInit {
     private router: Router,
     private chambreService: ChambreService,
     private reservationService:ReservationService,
-    private hotelService:HotelService) {
+    private hotelService:HotelService,
+    private datePipe:DatePipe) {
     this.reservation=new Reservation();
     this.chambre=new Chambre();
   }
@@ -54,6 +56,8 @@ export class ModifReservationComponent implements OnInit {
 
   ngOnInit(): void {
     this.reservation=JSON.parse(localStorage.getItem("Reservation"));
+    this.reservation.datedeb=this.datePipe.transform(this.reservation.datedeb,'yyyy-MM-dd');
+    this.reservation.datefin=this.datePipe.transform(this.reservation.datefin,'yyyy-MM-dd');
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });

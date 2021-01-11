@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {SessionService} from "../../service/session.service";
 import {SalleConfService} from "../../service/salle-conf.service";
 import {UtilisateurService} from "../../service/utilisateur.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-modif-sess',
@@ -23,7 +24,8 @@ export class ModifSessComponent implements OnInit {
               private router: Router,
               private sessionService:SessionService,
               private salleConfService:SalleConfService,
-              private  utilisateurService:UtilisateurService) {
+              private utilisateurService:UtilisateurService,
+              private datePipe:DatePipe) {
     this.session=new Session();
   }
 
@@ -34,6 +36,8 @@ export class ModifSessComponent implements OnInit {
   ngOnInit(): void {
     this.conference=JSON.parse(localStorage.getItem("Conference"));
     this.session=JSON.parse(localStorage.getItem("Session"));
+    this.session.datedeb=this.datePipe.transform(this.session.datedeb,'yyyy-MM-ddTHH:mm');
+    this.session.datefin=this.datePipe.transform(this.session.datefin,'yyyy-MM-ddTHH:mm');
     this.salleConfService.findAlldispo(this.conference.hotel.id).subscribe(data => {
       this.salleConferences = data;
     });

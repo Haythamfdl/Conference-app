@@ -43,6 +43,7 @@ import { UploadComponent } from './component/upload/upload.component';
 import { ListReservationComponent } from './component/list-reservation/list-reservation.component';
 import { FormReservationComponent } from './component/form-reservation/form-reservation.component';
 import { ModifReservationComponent } from './component/modif-reservation/modif-reservation.component';
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -93,7 +94,7 @@ import { ModifReservationComponent } from './component/modif-reservation/modif-r
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 

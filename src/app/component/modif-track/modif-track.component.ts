@@ -4,6 +4,7 @@ import {Session} from "../../class/session";
 import {Track} from "../../class/track";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TrackService} from "../../service/track.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-modif-track',
@@ -16,13 +17,16 @@ export class ModifTrackComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private trackService:TrackService){
+              private trackService:TrackService,
+              private datePipe:DatePipe){
     this.track=new Track();
   }
 
   ngOnInit(): void {
     this.conference=JSON.parse(localStorage.getItem("Conference"));
     this.track=JSON.parse(localStorage.getItem("Track"));
+    this.track.datedeb=this.datePipe.transform(this.track.datedeb,'yyyy-MM-ddTHH:mm');
+    this.track.datefin=this.datePipe.transform(this.track.datefin,'yyyy-MM-ddTHH:mm');
   }
   onSubmit(){
     this.trackService.update(this.track).subscribe(date =>{
