@@ -5,13 +5,14 @@
 
       <div class="form-group">
         <label for="Evalu">Evaluation</label>
-        <input type="text" [(ngModel)]="evaluation.revue"
+        <textarea type="text" [(ngModel)]="evaluation.revue"
                class="form-control"
                id="Evalu"
                name="Evalu"
                placeholder="Entrer l' Evaluation"
                required
-               #eva="ngModel">
+                  rows="3"
+                  #eva="ngModel"></textarea>
       </div>
 
       <div class="form-group">
@@ -27,12 +28,13 @@
 
       <div class="form-group">
         <label for="Note">Commentaire</label>
-        <input type="text" [(ngModel)]="evaluation.commentaire"
+        <textarea type="text" [(ngModel)]="evaluation.commentaire"
                class="form-control"
                id="Note"
                name="Note"
                placeholder="Entrer les Commentaires"
-               #com="ngModel">
+                  rows="3"
+                  #com="ngModel"></textarea>
       </div>
 
       <button type="reset"
