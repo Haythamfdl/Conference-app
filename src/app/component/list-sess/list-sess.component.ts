@@ -73,7 +73,7 @@ export class ListSessComponent implements OnInit {
   }
 
   canUpdate(){
-    if(this.u.id == this.conference.organisateur.id)
+    if(this.u.id == this.conference.organisateur.id || this.u.isadmin == true)
     {
       this.show=false;
     }

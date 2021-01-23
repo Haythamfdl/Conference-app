@@ -40,7 +40,11 @@
       </li>
 
       <li *ngIf="!show"ng-serve class="nav-item">
-        <a class="nav-link" href="/reservations">Réservation</a>
+        <a class="nav-link" href="/reservations">Réservations</a>
+      </li>
+
+      <li *ngIf="!show && isadmin"ng-serve class="nav-item">
+        <a class="nav-link" href="/reservations">Hotels</a>
       </li>
 
       <li *ngIf="!show" class="nav-item dropdown">

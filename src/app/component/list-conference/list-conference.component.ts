@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {ConferenceService} from "../../service/conference.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-list-conference',
@@ -10,6 +11,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ListConferenceComponent implements OnInit {
   conferences : Conference[];
+  utilisateur:Utilisateur;
+  c:Conference;
+  isadmin:boolean=false;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private confserv:ConferenceService) { }
@@ -18,6 +22,8 @@ export class ListConferenceComponent implements OnInit {
     this.confserv.findAll().subscribe(data => {
       this.conferences = data;
     });
+    this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
+    this.isadmin=this.utilisateur.isadmin;
   }
 
   Info(value :any){
@@ -28,5 +34,19 @@ export class ListConferenceComponent implements OnInit {
   Session(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
     this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+  }
+
+  Modifier(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    console.log(JSON.stringify(localStorage.getItem("Conference")));
+    this.router.navigate(['/mconferences']);
+  }
+
+  Supprimer(value : any){
+    this.c = value;
+    this.c.deleted = true;
+    this.confserv.update(this.c).subscribe();
+    this.router.navigate(['/lconferences']).then(() => {window.location.reload()});
+    alert("La Conferrence a été Supprimer");
   }
 }

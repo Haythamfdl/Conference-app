@@ -14,4 +14,5 @@ export class Utilisateur {
   invitationsenv:Invitation[];
   invitationsrecu:Invitation[];
   deleted:boolean;
+  isadmin:boolean;
 }

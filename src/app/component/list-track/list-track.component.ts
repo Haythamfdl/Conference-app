@@ -76,7 +76,7 @@ export class ListTrackComponent implements OnInit {
     }
   }
   canUpdate(){
-    if(this.u.id == this.conference.organisateur.id)
+    if(this.u.id == this.conference.organisateur.id || this.u.isadmin == true)
     {
       this.show=false;
     }

@@ -9,6 +9,7 @@ import {Utilisateur} from "../../class/utilisateur";
 })
 export class NavbarComponent implements OnInit,OnChanges {
   show: boolean =false;
+  isadmin:boolean =false;
   utilisateur:Utilisateur;
   title = 'Gestion Conférence';
 
@@ -40,6 +41,7 @@ export class NavbarComponent implements OnInit,OnChanges {
     else{
       this.show=false;
       this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
+      this.isadmin = this.utilisateur.isadmin;
     }
   }
 }

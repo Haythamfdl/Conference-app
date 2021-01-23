@@ -44,6 +44,7 @@ import { ListReservationComponent } from './component/list-reservation/list-rese
 import { FormReservationComponent } from './component/form-reservation/form-reservation.component';
 import { ModifReservationComponent } from './component/modif-reservation/modif-reservation.component';
 import {DatePipe} from "@angular/common";
+import { ListHotelsComponent } from './component/list-hotels/list-hotels.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import {DatePipe} from "@angular/common";
     UploadComponent,
     ListReservationComponent,
     FormReservationComponent,
-    ModifReservationComponent
+    ModifReservationComponent,
+    ListHotelsComponent
   ],
   imports: [
     BrowserModule,
