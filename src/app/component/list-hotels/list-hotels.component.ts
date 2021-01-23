@@ -35,7 +35,7 @@ export class ListHotelsComponent implements OnInit {
     alert("L'Hotel a été Supprimer");
   }
 
-  Ajouter(value : any){
+  Ajouter(){
     this.router.navigate(['/ahotel']);
   }
 }
