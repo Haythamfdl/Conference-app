@@ -23,9 +23,16 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(){
-    this.utilisateur.deleted=false;
-    this.utilisateurService.save(this.utilisateur).subscribe(data => {
-      this.Alert();
+    this.utilisateurService.getByEmail(this.utilisateur.email).subscribe(data => {
+      if(data != null){
+        alert("L'email est déja utiliser !!!");
+      }
+      else {
+        this.utilisateur.deleted=false;
+        this.utilisateurService.save(this.utilisateur).subscribe(data => {
+          this.Alert();
+        });
+      }
     });
   }
 
