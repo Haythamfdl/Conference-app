@@ -48,6 +48,7 @@ import { ListHotelsComponent } from './component/list-hotels/list-hotels.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import { FormHotelComponent } from './component/form-hotel/form-hotel.component';
+import { ModifHotelComponent } from './component/modif-hotel/modif-hotel.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { FormHotelComponent } from './component/form-hotel/form-hotel.component'
     FormReservationComponent,
     ModifReservationComponent,
     ListHotelsComponent,
-    FormHotelComponent
+    FormHotelComponent,
+    ModifHotelComponent
   ],
   imports: [
     BrowserModule,

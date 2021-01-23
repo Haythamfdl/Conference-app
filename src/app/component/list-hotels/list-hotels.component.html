@@ -6,7 +6,7 @@
       <tr>
         <th scope="col">Nom</th>
         <th scope="col">Ville</th>
-        <th scope="col">Adress</th>
+        <th scope="col">Address</th>
         <th scope="col"></th>
       </tr>
       </thead>
@@ -14,16 +14,16 @@
       <tr *ngFor="let hotel of hotels">
         <td>{{ hotel.nom }}</td>
         <td>{{ hotel.ville }}</td>
-        <td>{{ hotel.adress }}</td>
+        <td>{{ hotel.address }}</td>
         <td>
-          <button style="margin-right: 10px"  class="btn btn-info">Modifier</button>
+          <button style="margin-right: 10px"  class="btn btn-info" (click)="Modifier(hotel)">Modifier</button>
           <button style="margin-right: 10px"  class="btn btn-secondary">Afficher les Chambres</button>
           <button style="margin-right: 10px"  class="btn btn-secondary">Afficher les Salles de Conférences</button>
-          <button style="margin-right: 10px" class="btn btn-danger">Supprimer</button>
+          <button style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(hotel)">Supprimer</button>
         </td>
       </tr>
       </tbody>
     </table>
-    <td><button class="btn btn-primary" >Ajouter un Hotel</button></td>
+    <td><button class="btn btn-primary" (click)="Ajouter()">Ajouter un Hotel</button></td>
   </div>
 </div>
