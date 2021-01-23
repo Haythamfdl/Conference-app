@@ -25,4 +25,12 @@ export class ChambreService {
     return this.http.get<Chambre[]>(this.Url+"/disponible/"+id);
   }
 
+  public save(chambre : Chambre):Observable<Object> {
+    return this.http.post(this.Url, chambre, this.httpOptions);
+  }
+
+  public update(chambre : Chambre):Observable<Object> {
+    return this.http.put(this.Url, chambre, this.httpOptions);
+  }
+
 }

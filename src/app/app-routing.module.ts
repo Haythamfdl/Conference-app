@@ -37,6 +37,7 @@ import {UploadComponent} from "./component/upload/upload.component";
 import {ListReservationComponent} from "./component/list-reservation/list-reservation.component";
 import {FormReservationComponent} from "./component/form-reservation/form-reservation.component";
 import {ModifReservationComponent} from "./component/modif-reservation/modif-reservation.component";
+import {ListHotelsComponent} from "./component/list-hotels/list-hotels.component";
 
 
 const routes: Routes = [
@@ -76,6 +77,7 @@ const routes: Routes = [
   { path: 'reservations', component: ListReservationComponent },
   { path: 'areservation', component: FormReservationComponent },
   { path: 'mreservation', component: ModifReservationComponent },
+  { path: 'hotels', component: ListHotelsComponent },
 ];
 
 @NgModule({

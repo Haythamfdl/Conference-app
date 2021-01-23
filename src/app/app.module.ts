@@ -45,6 +45,9 @@ import { FormReservationComponent } from './component/form-reservation/form-rese
 import { ModifReservationComponent } from './component/modif-reservation/modif-reservation.component';
 import {DatePipe} from "@angular/common";
 import { ListHotelsComponent } from './component/list-hotels/list-hotels.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from "@angular/material/table";
+import { FormHotelComponent } from './component/form-hotel/form-hotel.component';
 
 @NgModule({
   declarations: [
@@ -88,13 +91,16 @@ import { ListHotelsComponent } from './component/list-hotels/list-hotels.compone
     ListReservationComponent,
     FormReservationComponent,
     ModifReservationComponent,
-    ListHotelsComponent
+    ListHotelsComponent,
+    FormHotelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

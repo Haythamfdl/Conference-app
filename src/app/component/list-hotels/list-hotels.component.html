@@ -1,1 +1,29 @@
-<p>list-hotels works!</p>
+<div class="card my-5">
+  <div class="card-header"><h3>Liste des Hotels</h3></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Adress</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hotel of hotels">
+        <td>{{ hotel.nom }}</td>
+        <td>{{ hotel.ville }}</td>
+        <td>{{ hotel.adress }}</td>
+        <td>
+          <button style="margin-right: 10px"  class="btn btn-info">Modifier</button>
+          <button style="margin-right: 10px"  class="btn btn-secondary">Afficher les Chambres</button>
+          <button style="margin-right: 10px"  class="btn btn-secondary">Afficher les Salles de Conférences</button>
+          <button style="margin-right: 10px" class="btn btn-danger">Supprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <td><button class="btn btn-primary" >Ajouter un Hotel</button></td>
+  </div>
+</div>
