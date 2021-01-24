@@ -8,4 +8,5 @@ export class SalleConference{
   type:string;
   disponible:boolean;
   hotel:Hotel;
+  deleted:boolean;
 }

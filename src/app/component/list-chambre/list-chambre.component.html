@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-header"><h1>Liste des Chambres de l'hotel <b>{{hotel.nom}}</b></h1></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Numéro</th>
+        <th scope="col">Capacité</th>
+        <th scope="col">Type</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Disponible</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let chambre of chambres">
+        <td>{{ chambre.numero }}</td>
+        <td>{{ chambre.nbpersonne }} personne(s)</td>
+        <td>{{ chambre.type }}</td>
+        <td>{{ chambre.prix }}</td>
+        <td>{{ chambre.disponible?'Oui':'Non' }}</td>
+        <td>
+          <button style="margin-right: 10px"  class="btn btn-info" (click)="Modifier(chambre)">Modifier</button>
+          <button style="margin-right: 10px" class="btn btn-warning" (click)="Disponible(chambre)">{{chambre.disponible?'Indisponible':'Disponible' }}</button>
+          <button style="margin-right: 10px"  class="btn btn-danger" (click)="Supprimer(chambre)">Supprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <td><button class="btn btn-primary" (click)="Ajouter()">Ajouter une Chambre</button></td>
+  </div>
+</div>

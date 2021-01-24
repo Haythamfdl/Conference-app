@@ -8,4 +8,5 @@ export class Chambre {
   type:string;
   disponible:boolean;
   hotel:Hotel;
+  deleted:boolean;
 }

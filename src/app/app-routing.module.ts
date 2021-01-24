@@ -40,6 +40,9 @@ import {ModifReservationComponent} from "./component/modif-reservation/modif-res
 import {ListHotelsComponent} from "./component/list-hotels/list-hotels.component";
 import {FormHotelComponent} from "./component/form-hotel/form-hotel.component";
 import {ModifHotelComponent} from "./component/modif-hotel/modif-hotel.component";
+import {ListChambreComponent} from "./component/list-chambre/list-chambre.component";
+import {FormChambreComponent} from "./component/form-chambre/form-chambre.component";
+import {ModifChambreComponent} from "./component/modif-chambre/modif-chambre.component";
 
 
 const routes: Routes = [
@@ -81,7 +84,10 @@ const routes: Routes = [
   { path: 'mreservation', component: ModifReservationComponent },
   { path: 'hotels', component: ListHotelsComponent },
   { path: 'ahotel', component: FormHotelComponent },
-  { path: 'mhotel', component: ModifHotelComponent }
+  { path: 'mhotel', component: ModifHotelComponent },
+  { path: 'chambres', component: ListChambreComponent },
+  { path: 'achambre', component: FormChambreComponent },
+  { path: 'mchambre', component: ModifChambreComponent }
 ];
 
 @NgModule({

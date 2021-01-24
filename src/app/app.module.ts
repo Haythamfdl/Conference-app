@@ -49,6 +49,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import { FormHotelComponent } from './component/form-hotel/form-hotel.component';
 import { ModifHotelComponent } from './component/modif-hotel/modif-hotel.component';
+import { ListChambreComponent } from './component/list-chambre/list-chambre.component';
+import { FormChambreComponent } from './component/form-chambre/form-chambre.component';
+import { ModifChambreComponent } from './component/modif-chambre/modif-chambre.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +97,10 @@ import { ModifHotelComponent } from './component/modif-hotel/modif-hotel.compone
     ModifReservationComponent,
     ListHotelsComponent,
     FormHotelComponent,
-    ModifHotelComponent
+    ModifHotelComponent,
+    ListChambreComponent,
+    FormChambreComponent,
+    ModifChambreComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,10 @@ export class ChambreService {
     return this.http.get<Chambre[]>(this.Url);
   }
 
+  public findAllbyHotel(id : string): Observable<Chambre[]> {
+    return this.http.get<Chambre[]>(this.Url+"/"+id);
+  }
+
   public findAlldispo(id :string): Observable<Chambre[]> {
     return this.http.get<Chambre[]>(this.Url+"/disponible/"+id);
   }

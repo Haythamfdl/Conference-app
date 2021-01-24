@@ -9,7 +9,6 @@ import {HotelService} from "../../service/hotel.service";
   styleUrls: ['./form-hotel.component.css']
 })
 export class FormHotelComponent implements OnInit {
-
   hotel:Hotel;
   constructor(private route: ActivatedRoute,
               private router: Router,

@@ -23,7 +23,6 @@ export class ListHotelsComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Hotel',JSON.stringify(value));
-    console.log(JSON.stringify(localStorage.getItem("Hotel")));
     this.router.navigate(['/mhotel']);
   }
 
@@ -38,4 +37,10 @@ export class ListHotelsComponent implements OnInit {
   Ajouter(){
     this.router.navigate(['/ahotel']);
   }
+
+  Chambre(value: any){
+    localStorage.setItem('Hotel',JSON.stringify(value));
+    this.router.navigate(['/chambres']);
+  }
+
 }

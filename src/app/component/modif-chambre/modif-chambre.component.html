@@ -1,0 +1,64 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h1>Modifier la Chambre <b>{{chambre.numero}}</b> de l'Hotel <b>{{chambre.hotel.nom}}</b></h1></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Num">Nom</label>
+        <input type="text" [(ngModel)]="chambre.numero"
+               class="form-control"
+               id="Num"
+               name="Num"
+               placeholder="Entrer le Numéro de la chambre"
+               required
+               #num="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Nb">Capacité</label>
+        <input type="number" [(ngModel)]="chambre.nbpersonne"
+               class="form-control"
+               id="Nb"
+               name="Nb"
+               min="1"
+               required
+               #nb="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Type">Type de Chambre</label>
+        <select required
+                class="form-control"
+                id="Type"
+                name="Type"
+                (ngModelChange)="select($event)"
+                [(ngModel)]="chambre.type"
+                #type="ngModel">
+          <option>Chambre Simple</option>
+          <option>Chambre Double</option>
+          <option>Chambre Triple</option>
+          <option>Chambre Quadruple</option>
+          <option>Chambre Dortoir</option>
+          <option>Chambre de Luxe</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="prix">Prix</label>
+        <input type="number" [(ngModel)]="chambre.prix"
+               class="form-control"
+               id="prix"
+               name="prix"
+               min="0"
+               required
+               #prix="ngModel">
+      </div>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Modifier</button>
+    </form>
+  </div>
+</div>
