@@ -61,7 +61,8 @@ export class ListMesconfComponent implements OnInit {
 
   Inviter(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/invitation']);
+    this.router.navigate(['/inviter']);
+    //this.router.navigate(['/invitation']);
   }
 
   Session(value : any){

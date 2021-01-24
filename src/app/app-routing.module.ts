@@ -46,6 +46,7 @@ import {ModifChambreComponent} from "./component/modif-chambre/modif-chambre.com
 import {ListSconfComponent} from "./component/list-sconf/list-sconf.component";
 import {FormSconfComponent} from "./component/form-sconf/form-sconf.component";
 import {ModifSconfComponent} from "./component/modif-sconf/modif-sconf.component";
+import {ListInvconfComponent} from "./component/list-invconf/list-invconf.component";
 
 
 const routes: Routes = [
@@ -61,6 +62,7 @@ const routes: Routes = [
   { path: 'invitation', component: InvitationComponent },
   { path: 'rinvitation', component: InvitRecuComponent },
   { path: 'einvitation', component: InvitEnvComponent },
+  { path: 'inviter', component: ListInvconfComponent },
   { path: 'sessions', component: ListSessComponent },
   { path: 'asession', component: FormSessComponent },
   { path: 'msession', component: ModifSessComponent },

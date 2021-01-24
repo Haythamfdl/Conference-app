@@ -29,7 +29,7 @@ export class InvitationComponent implements OnInit {
         alert("cet email est invalable");
       }
       else {
-        this.invitation.invitee=data;
+        this.invitation.invite=data;
         this.invitation.accepter=false;
         this.invitationService.save(this.invitation).subscribe();
         alert("L'invitation a été envoyer");

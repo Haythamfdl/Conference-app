@@ -55,6 +55,7 @@ import { ModifChambreComponent } from './component/modif-chambre/modif-chambre.c
 import { ListSconfComponent } from './component/list-sconf/list-sconf.component';
 import { FormSconfComponent } from './component/form-sconf/form-sconf.component';
 import { ModifSconfComponent } from './component/modif-sconf/modif-sconf.component';
+import { ListInvconfComponent } from './component/list-invconf/list-invconf.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { ModifSconfComponent } from './component/modif-sconf/modif-sconf.compone
     ModifChambreComponent,
     ListSconfComponent,
     FormSconfComponent,
-    ModifSconfComponent
+    ModifSconfComponent,
+    ListInvconfComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,10 @@ export class InvitationService {
     return this.http.get<Invitation[]>(this.Url+"/env/"+id);
   }
 
+  public invConf(id:string): Observable<Invitation[]> {
+    return this.http.get<Invitation[]>(this.Url+"/conf/"+id);
+  }
+
   public save(invitation : Invitation):Observable<Object> {
     return this.http.post(this.Url, invitation, this.httpOptions);
   }

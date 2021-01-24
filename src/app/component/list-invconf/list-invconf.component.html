@@ -1,12 +1,11 @@
 <div class="card my-5">
-  <div class="card-header"><h1>Mes Invitations Envoyée</h1></div>
+  <div class="card-header"><h1>Les Invités de la Conférence <b>{{conference.nom}}</b></h1></div>
   <div class="card-body table-responsive">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">Accusé de réception</th>
-        <th scope="col">La Conférence</th>
-        <th scope="col">Message</th>
+        <th scope="col">L'Invité</th>
+        <th scope="col">Fonction</th>
         <th scope="col">Date d'Envoie</th>
         <th scope="col">Invitation Acceptée</th>
 
@@ -14,13 +13,13 @@
       </thead>
       <tbody>
       <tr *ngFor="let inv of invitations">
-        <td>{{inv.invite.email}} </td>
-        <td>{{inv.conference.nom}}</td>
-        <td>{{inv.message}}</td>
+        <td>{{inv.invite.nom}} {{inv.invite.prenom}} </td>
+        <td>{{inv.invite.fonction}}</td>
         <td>{{inv.date | date:'shortDate'}}</td>
         <td>{{inv.accepter?'Oui':'Non' }}</td>
       </tr>
       </tbody>
     </table>
+    <td><button class="btn btn-primary" (click)="Ajouter()">Inviter un Utilisateur</button></td>
   </div>
 </div>
