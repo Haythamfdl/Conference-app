@@ -52,6 +52,9 @@ import { ModifHotelComponent } from './component/modif-hotel/modif-hotel.compone
 import { ListChambreComponent } from './component/list-chambre/list-chambre.component';
 import { FormChambreComponent } from './component/form-chambre/form-chambre.component';
 import { ModifChambreComponent } from './component/modif-chambre/modif-chambre.component';
+import { ListSconfComponent } from './component/list-sconf/list-sconf.component';
+import { FormSconfComponent } from './component/form-sconf/form-sconf.component';
+import { ModifSconfComponent } from './component/modif-sconf/modif-sconf.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +103,10 @@ import { ModifChambreComponent } from './component/modif-chambre/modif-chambre.c
     ModifHotelComponent,
     ListChambreComponent,
     FormChambreComponent,
-    ModifChambreComponent
+    ModifChambreComponent,
+    ListSconfComponent,
+    FormSconfComponent,
+    ModifSconfComponent
   ],
   imports: [
     BrowserModule,

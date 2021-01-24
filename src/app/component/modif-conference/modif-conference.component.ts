@@ -17,6 +17,7 @@ export class ModifConferenceComponent implements OnInit {
   hotels:Hotel[];
   form:FormGroup;
   id:string;
+  l:string;
 
   constructor(
     private route: ActivatedRoute,
@@ -52,6 +53,7 @@ export class ModifConferenceComponent implements OnInit {
     this.conference.date=this.datePipe.transform(this.conference.date,'yyyy-MM-dd');
     this.conference.delaisoumission=this.datePipe.transform(this.conference.delaisoumission,'yyyy-MM-dd');
     this.id=this.conference.id;
+    this.l = this.conference.nom;
   }
 
 }

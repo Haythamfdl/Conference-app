@@ -43,4 +43,9 @@ export class ListHotelsComponent implements OnInit {
     this.router.navigate(['/chambres']);
   }
 
+  Sconf(value: any){
+    localStorage.setItem('Hotel',JSON.stringify(value));
+    this.router.navigate(['/salleconferences']);
+  }
+
 }

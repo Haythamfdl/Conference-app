@@ -11,6 +11,7 @@ import {ChambreService} from "../../service/chambre.service";
 })
 export class ModifChambreComponent implements OnInit {
   chambre:Chambre;
+  l:string;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private chambreService:ChambreService) {
@@ -18,6 +19,7 @@ export class ModifChambreComponent implements OnInit {
 
   ngOnInit(): void {
     this.chambre=JSON.parse(localStorage.getItem("Chambre"));
+    this.l = this.chambre.numero;
   }
 
   onSubmit() {

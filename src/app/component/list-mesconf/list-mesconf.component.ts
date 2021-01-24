@@ -39,10 +39,12 @@ export class ListMesconfComponent implements OnInit {
 
   Supprimer(value : any){
     this.c = value;
-    this.c.deleted = true;
-    this.confserv.update(this.c).subscribe();
-    this.router.navigate(['/myconferences']).then(() => {window.location.reload()});
-    alert("La Conferrence a été Supprimer");
+    if(confirm("Etes-vous sûr de vouloir Annuler La Conférence "+this.c.nom+" !!!")){
+      this.c.deleted = true;
+      this.confserv.update(this.c).subscribe();
+      this.router.navigate(['/myconferences']).then(() => {window.location.reload()});
+      alert("La Conferrence a été Supprimer");
+    }
   }
 
   Terminer(value : any){

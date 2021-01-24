@@ -22,6 +22,10 @@ export class SalleConfService {
     return this.http.get<SalleConference[]>(this.Url);
   }
 
+  public findAllbyHotel(id :string): Observable<SalleConference[]> {
+    return this.http.get<SalleConference[]>(this.Url+"/"+id);
+  }
+
   public findAlldispo(id :string): Observable<SalleConference[]> {
     return this.http.get<SalleConference[]>(this.Url+"/disponible/"+id);
   }
@@ -30,7 +34,7 @@ export class SalleConfService {
     return this.http.post(this.Url, salleConference, this.httpOptions);
   }
 
-  public update(salleConference : Session):Observable<Object> {
+  public update(salleConference : SalleConference):Observable<Object> {
     return this.http.put(this.Url, salleConference, this.httpOptions);
   }
 

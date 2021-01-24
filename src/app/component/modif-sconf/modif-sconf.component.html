@@ -1,0 +1,35 @@
+<div class="card my-5 w-75 mx-auto">
+  <div class="card-header"><h1>Modifier une Salle de Conférence  <b>{{l}}</b> a l'Hotel <b>{{salleConference.hotel.nom}}</b></h1></div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+
+      <div class="form-group">
+        <label for="Num">Nom</label>
+        <input type="text" [(ngModel)]="salleConference.numero"
+               class="form-control"
+               id="Num"
+               name="Num"
+               placeholder="Entrer le Numéro de la chambre"
+               required
+               #num="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Nb">Capacité</label>
+        <input type="number" [(ngModel)]="salleConference.nbpersonne"
+               class="form-control"
+               id="Nb"
+               name="Nb"
+               min="1"
+               required
+               #nb="ngModel">
+      </div>
+
+      <button type="reset"
+              class="btn btn-danger float-lg-left">Réinitialiser</button>
+
+      <button type="submit" [disabled]="!form.form.valid"
+              class="btn btn-primary float-lg-right">Modifier</button>
+    </form>
+  </div>
+</div>

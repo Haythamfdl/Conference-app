@@ -14,7 +14,7 @@ import {DatePipe} from "@angular/common";
 export class ModifTrackComponent implements OnInit {
   conference : Conference
   track:Track;
-
+  l:string;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private trackService:TrackService,
@@ -27,6 +27,7 @@ export class ModifTrackComponent implements OnInit {
     this.track=JSON.parse(localStorage.getItem("Track"));
     this.track.datedeb=this.datePipe.transform(this.track.datedeb,'yyyy-MM-ddTHH:mm');
     this.track.datefin=this.datePipe.transform(this.track.datefin,'yyyy-MM-ddTHH:mm');
+    this.l = this.track.nom;
   }
   onSubmit(){
     this.trackService.update(this.track).subscribe(date =>{

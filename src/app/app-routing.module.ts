@@ -43,6 +43,9 @@ import {ModifHotelComponent} from "./component/modif-hotel/modif-hotel.component
 import {ListChambreComponent} from "./component/list-chambre/list-chambre.component";
 import {FormChambreComponent} from "./component/form-chambre/form-chambre.component";
 import {ModifChambreComponent} from "./component/modif-chambre/modif-chambre.component";
+import {ListSconfComponent} from "./component/list-sconf/list-sconf.component";
+import {FormSconfComponent} from "./component/form-sconf/form-sconf.component";
+import {ModifSconfComponent} from "./component/modif-sconf/modif-sconf.component";
 
 
 const routes: Routes = [
@@ -87,7 +90,10 @@ const routes: Routes = [
   { path: 'mhotel', component: ModifHotelComponent },
   { path: 'chambres', component: ListChambreComponent },
   { path: 'achambre', component: FormChambreComponent },
-  { path: 'mchambre', component: ModifChambreComponent }
+  { path: 'mchambre', component: ModifChambreComponent },
+  { path: 'salleconferences', component: ListSconfComponent },
+  { path: 'asalleconference', component: FormSconfComponent },
+  { path: 'msalleconference', component: ModifSconfComponent }
 ];
 
 @NgModule({

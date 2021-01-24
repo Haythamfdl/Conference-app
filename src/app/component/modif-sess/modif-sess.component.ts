@@ -19,6 +19,7 @@ export class ModifSessComponent implements OnInit {
   conference : Conference
   session:Session;
   salleConferences:SalleConference[];
+  l:string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -41,6 +42,7 @@ export class ModifSessComponent implements OnInit {
     this.salleConfService.findAlldispo(this.conference.hotel.id).subscribe(data => {
       this.salleConferences = data;
     });
+    this.l = this.session.nom;
   }
   onSubmit(){
     this.utilisateurService.getByEmail(this.session.chair.email).subscribe(data => {

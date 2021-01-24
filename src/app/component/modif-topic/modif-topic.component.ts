@@ -11,6 +11,7 @@ import {TopicService} from "../../service/topic.service";
 })
 export class ModifTopicComponent implements OnInit {
   topic:Topic;
+  l:string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -20,6 +21,7 @@ export class ModifTopicComponent implements OnInit {
 
   ngOnInit(): void {
     this.topic=JSON.parse(localStorage.getItem("Topic"));
+    this.l = this.topic.nom;
   }
 
   onSubmit(){

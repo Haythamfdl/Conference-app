@@ -18,7 +18,7 @@ export class ModifPapierComponent implements OnInit {
   papier:Papier;
   email1:string="";
   email2:string="";
-
+  l:string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -39,6 +39,7 @@ export class ModifPapierComponent implements OnInit {
     this.topicService.findMine(this.papier.conference.id).subscribe(data => {
       this.topics = data;
     });
+    this.l = this.papier.nom;
   }
 
   select(value:any){

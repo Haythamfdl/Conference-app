@@ -9,14 +9,15 @@ import {HotelService} from "../../service/hotel.service";
   styleUrls: ['./modif-hotel.component.css']
 })
 export class ModifHotelComponent implements OnInit {
-
   hotel:Hotel;
+  l:string;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private hotelService:HotelService) { }
 
   ngOnInit(): void {
     this.hotel=JSON.parse(localStorage.getItem("Hotel"));
+    this.l = this.hotel.nom;
   }
 
   onSubmit() {

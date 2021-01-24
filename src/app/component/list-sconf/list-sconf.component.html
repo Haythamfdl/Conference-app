@@ -1,0 +1,28 @@
+<div class="card my-5">
+  <div class="card-header"><h1>Liste des Salles de Conférence de l'hotel <b>{{hotel.nom}}</b></h1></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Numéro</th>
+        <th scope="col">Capacité</th>
+        <th scope="col">Disponible</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let salleConference of salleConferences">
+        <td>{{ salleConference.numero }}</td>
+        <td>{{ salleConference.nbpersonne }} personnes</td>
+        <td>{{ salleConference.disponible?'Oui':'Non' }}</td>
+        <td>
+          <button style="margin-right: 10px"  class="btn btn-info" (click)="Modifier(salleConference)">Modifier</button>
+          <button style="margin-right: 10px" class="btn btn-warning" (click)="Disponible(salleConference)">{{salleConference.disponible?'Indisponible':'Disponible' }}</button>
+          <button style="margin-right: 10px"  class="btn btn-danger" (click)="Supprimer(salleConference)">Supprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <td><button class="btn btn-primary" (click)="Ajouter()">Ajouter une Salle de Conférence</button></td>
+  </div>
+</div>
