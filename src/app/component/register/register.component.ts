@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Utilisateur} from "../../class/utilisateur";
 import {UtilisateurService} from "../../service/utilisateur.service";
@@ -9,26 +9,25 @@ import {UtilisateurService} from "../../service/utilisateur.service";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  utilisateur:Utilisateur;
-  u:Utilisateur;
+  utilisateur: Utilisateur;
+  u: Utilisateur;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private utilisateurService: UtilisateurService) {
-    this.utilisateur=new Utilisateur();
-    this.u=new Utilisateur();
+    this.utilisateur = new Utilisateur();
+    this.u = new Utilisateur();
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
+  onSubmit() {
     this.utilisateurService.getByEmail(this.utilisateur.email).subscribe(data => {
-      if(data != null){
+      if (data != null) {
         alert("L'email est déja utiliser !!!");
-      }
-      else {
-        this.utilisateur.deleted=false;
+      } else {
+        this.utilisateur.deleted = false;
         this.utilisateurService.save(this.utilisateur).subscribe(data => {
           this.Alert();
         });
@@ -36,8 +35,10 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  Alert(){
-    this.router.navigate(['/login']).then(() => {window.location.reload()});
+  Alert() {
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload()
+    });
     alert("Compte créer avec success!!!");
   }
 }

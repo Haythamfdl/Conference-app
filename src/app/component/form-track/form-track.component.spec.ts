@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FormTrackComponent } from './form-track.component';
+import {FormTrackComponent} from './form-track.component';
 
 describe('FormTrackComponent', () => {
   let component: FormTrackComponent;
@@ -8,9 +8,9 @@ describe('FormTrackComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormTrackComponent ]
+      declarations: [FormTrackComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

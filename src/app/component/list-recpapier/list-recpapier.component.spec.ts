@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListRecpapierComponent } from './list-recpapier.component';
+import {ListRecpapierComponent} from './list-recpapier.component';
 
 describe('ListRecpapierComponent', () => {
   let component: ListRecpapierComponent;

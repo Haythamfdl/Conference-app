@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifHotelComponent } from './modif-hotel.component';
+import {ModifHotelComponent} from './modif-hotel.component';
 
 describe('ModifHotelComponent', () => {
   let component: ModifHotelComponent;

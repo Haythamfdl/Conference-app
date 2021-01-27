@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifReservationComponent } from './modif-reservation.component';
+import {ModifReservationComponent} from './modif-reservation.component';
 
 describe('ModifReservationComponent', () => {
   let component: ModifReservationComponent;

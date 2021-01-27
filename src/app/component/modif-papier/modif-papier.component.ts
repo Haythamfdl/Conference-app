@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {Topic} from "../../class/topic";
 import {Papier} from "../../class/papier";
@@ -47,33 +47,37 @@ export class ModifPapierComponent implements OnInit {
   }
 
   change(file:any){
-    const data =new FormData();
-    data.append('file',file.target.files[0],file.target.files[0].name);
-    this.papier.data=data;
+    //const data =new FormData();
+    // data.append('file',file.target.files[0],file.target.files[0].name);
+    // this.papier.data=data;
   }
 
   onSubmit() {
-    if (this.email1 !== "") {
-      this.utilisateurService.getByEmail(this.email1).subscribe(data => {
-        if (data == null) {
-          alert("L'email du co-auteur est invalable");
-        } else {
-          this.papier.auteur = data;
-          if (this.email2 !== "") {
-            this.utilisateurService.getByEmail(this.email2).subscribe(data => {
-              if (data == null) {
-                alert("L'email du présentateur est invalable");
-              } else {
-                this.papier.presentateur = data;
-                this.papierService.update(this.papier).subscribe();
-                this.router.navigate(['/mypapier']);
-              }
-            });
+      if(this.papier.lien.startsWith("https://drive.google.com/")){
+      if (this.email1 !== "") {
+        this.utilisateurService.getByEmail(this.email1).subscribe(data => {
+          if (data == null) {
+            alert("L'email du co-auteur est invalable");
+          } else {
+            this.papier.auteur = data;
           }
-        }
-      });
-    }
+        });
+      }
 
-
+      if (this.email2 !== "") {
+        this.utilisateurService.getByEmail(this.email2).subscribe(data => {
+          if (data == null) {
+            alert("L'email du présentateur est invalable");
+          } else {
+            this.papier.presentateur = data;
+          }
+        });
+      }
+      this.papierService.update(this.papier).subscribe();
+      this.router.navigate(['/mypapier']);
+      }
+      else {
+        alert("Lien Google Drive invalide !!!");
+      }
   }
 }

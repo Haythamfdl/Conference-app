@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifPapierComponent } from './modif-papier.component';
+import {ModifPapierComponent} from './modif-papier.component';
 
 describe('ModifPapierComponent', () => {
   let component: ModifPapierComponent;

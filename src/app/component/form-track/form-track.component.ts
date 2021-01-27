@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Utilisateur} from "../../class/utilisateur";
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {Session} from "../../class/session";
-import {SalleConference} from "../../class/salle-conference";
 import {ActivatedRoute, Router} from "@angular/router";
-import {SessionService} from "../../service/session.service";
-import {SalleConfService} from "../../service/salle-conf.service";
 import {Track} from "../../class/track";
 import {TrackService} from "../../service/track.service";
 
@@ -15,25 +11,26 @@ import {TrackService} from "../../service/track.service";
   styleUrls: ['./form-track.component.css']
 })
 export class FormTrackComponent implements OnInit {
-  conference : Conference
-  session:Session;
-  track:Track;
+  conference: Conference
+  session: Session;
+  track: Track;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private trackService:TrackService){
-    this.track=new Track();
+              private trackService: TrackService) {
+    this.track = new Track();
   }
 
   ngOnInit(): void {
-    this.conference=JSON.parse(localStorage.getItem("Conference"));
-    this.session=JSON.parse(localStorage.getItem("Session"));
+    this.conference = JSON.parse(localStorage.getItem("Conference"));
+    this.session = JSON.parse(localStorage.getItem("Session"));
   }
-  onSubmit(){
-    this.track.terminer=false;
-    this.track.deleted=false;
-    this.track.session=this.session;
-    this.trackService.save(this.track).subscribe(date =>{
+
+  onSubmit() {
+    this.track.terminer = false;
+    this.track.deleted = false;
+    this.track.session = this.session;
+    this.trackService.save(this.track).subscribe(date => {
       this.router.navigate(['/tracks']);
     });
   }

@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Utilisateur} from "../../class/utilisateur";
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
-import {Session} from "../../class/session";
-import {SalleConference} from "../../class/salle-conference";
 import {ActivatedRoute, Router} from "@angular/router";
-import {SessionService} from "../../service/session.service";
-import {SalleConfService} from "../../service/salle-conf.service";
 import {Topic} from "../../class/topic";
 import {TopicService} from "../../service/topic.service";
 
@@ -15,23 +10,23 @@ import {TopicService} from "../../service/topic.service";
   styleUrls: ['./form-topic.component.css']
 })
 export class FormTopicComponent implements OnInit {
-  conference : Conference
-  topic:Topic;
+  conference: Conference
+  topic: Topic;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private topicService:TopicService) {
-    this.topic=new Topic();
+              private topicService: TopicService) {
+    this.topic = new Topic();
   }
 
   ngOnInit(): void {
-    this.conference=JSON.parse(localStorage.getItem("Conference"));
+    this.conference = JSON.parse(localStorage.getItem("Conference"));
   }
 
-  onSubmit(){
-    this.topic.deleted=false;
-    this.topic.conference=this.conference;
-    this.topicService.save(this.topic).subscribe(date =>{
+  onSubmit() {
+    this.topic.deleted = false;
+    this.topic.conference = this.conference;
+    this.topicService.save(this.topic).subscribe(date => {
       this.router.navigate(['/topics']);
     });
   }

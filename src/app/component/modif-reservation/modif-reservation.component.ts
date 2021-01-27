@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Hotel} from "../../class/hotel";
 import {Chambre} from "../../class/chambre";
 import {Utilisateur} from "../../class/utilisateur";

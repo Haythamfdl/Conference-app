@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListSconfComponent } from './list-sconf.component';
+import {ListSconfComponent} from './list-sconf.component';
 
 describe('ListSconfComponent', () => {
   let component: ListSconfComponent;
@@ -8,9 +8,9 @@ describe('ListSconfComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListSconfComponent ]
+      declarations: [ListSconfComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

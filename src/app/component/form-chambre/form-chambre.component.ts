@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Hotel} from "../../class/hotel";
 import {ActivatedRoute, Router} from "@angular/router";
-import {HotelService} from "../../service/hotel.service";
 import {Chambre} from "../../class/chambre";
 import {ChambreService} from "../../service/chambre.service";
 

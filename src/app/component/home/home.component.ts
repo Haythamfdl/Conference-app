@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
@@ -7,23 +7,23 @@ import {Utilisateur} from "../../class/utilisateur";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  show: boolean =true;
-  utilisateur:Utilisateur;
+  show: boolean = true;
+  utilisateur: Utilisateur;
+
   constructor() {
-    this.utilisateur=new Utilisateur();
+    this.utilisateur = new Utilisateur();
   }
 
   ngOnInit(): void {
     this.isLoggedIn();
   }
 
-  isLoggedIn(){
-    if(localStorage.getItem("Utilisateur") === null){
-      this.show=true;
-    }
-    else{
-      this.show=false;
-      this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
+  isLoggedIn() {
+    if (localStorage.getItem("Utilisateur") === null) {
+      this.show = true;
+    } else {
+      this.show = false;
+      this.utilisateur = JSON.parse(localStorage.getItem("Utilisateur"));
     }
   }
 }

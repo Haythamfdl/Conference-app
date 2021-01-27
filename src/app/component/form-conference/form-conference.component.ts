@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {ConferenceService} from "../../service/conference.service";
 import {ActivatedRoute, Router} from "@angular/router";

@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
-import {Track} from "../../class/track";
 import {Papier} from "../../class/papier";
 import {ActivatedRoute, Router} from "@angular/router";
-import {TrackService} from "../../service/track.service";
 import {PapierService} from "../../service/papier.service";
-import {Topic} from "../../class/topic";
 import {Utilisateur} from "../../class/utilisateur";
 
 @Component({

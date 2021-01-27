@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifTrackComponent } from './modif-track.component';
+import {ModifTrackComponent} from './modif-track.component';
 
 describe('ModifTrackComponent', () => {
   let component: ModifTrackComponent;

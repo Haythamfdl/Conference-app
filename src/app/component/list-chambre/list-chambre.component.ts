@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Hotel} from "../../class/hotel";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Chambre} from "../../class/chambre";

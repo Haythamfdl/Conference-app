@@ -1,4 +1,4 @@
-import { Conference } from './conference';
+import {Conference} from './conference';
 
 describe('Conference', () => {
   it('should create an instance', () => {

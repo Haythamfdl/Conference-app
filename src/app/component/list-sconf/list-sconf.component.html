@@ -14,15 +14,19 @@
       <tr *ngFor="let salleConference of salleConferences">
         <td>{{ salleConference.numero }}</td>
         <td>{{ salleConference.nbpersonne }} personnes</td>
-        <td>{{ salleConference.disponible?'Oui':'Non' }}</td>
+        <td>{{ salleConference.disponible ? 'Oui' : 'Non' }}</td>
         <td>
-          <button style="margin-right: 10px"  class="btn btn-info" (click)="Modifier(salleConference)">Modifier</button>
-          <button style="margin-right: 10px" class="btn btn-warning" (click)="Disponible(salleConference)">{{salleConference.disponible?'Indisponible':'Disponible' }}</button>
-          <button style="margin-right: 10px"  class="btn btn-danger" (click)="Supprimer(salleConference)">Supprimer</button>
+          <button (click)="Modifier(salleConference)" class="btn btn-info" style="margin-right: 10px">Modifier</button>
+          <button (click)="Disponible(salleConference)" class="btn btn-warning"
+                  style="margin-right: 10px">{{salleConference.disponible ? 'Indisponible' : 'Disponible' }}</button>
+          <button (click)="Supprimer(salleConference)" class="btn btn-danger" style="margin-right: 10px">Supprimer
+          </button>
         </td>
       </tr>
       </tbody>
     </table>
-    <td><button class="btn btn-primary" (click)="Ajouter()">Ajouter une Salle de Conférence</button></td>
+    <td>
+      <button (click)="Ajouter()" class="btn btn-primary">Ajouter une Salle de Conférence</button>
+    </td>
   </div>
 </div>

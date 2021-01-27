@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {Track} from "../../class/track";
 import {ActivatedRoute, Router} from "@angular/router";

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifSconfComponent } from './modif-sconf.component';
+import {ModifSconfComponent} from './modif-sconf.component';
 
 describe('ModifSconfComponent', () => {
   let component: ModifSconfComponent;

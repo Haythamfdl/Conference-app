@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListTrackComponent } from './list-track.component';
+import {ListTrackComponent} from './list-track.component';
 
 describe('ListTrackComponent', () => {
   let component: ListTrackComponent;

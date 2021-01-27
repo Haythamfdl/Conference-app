@@ -1,4 +1,4 @@
-import { SalleConference } from './salle-conference';
+import {SalleConference} from './salle-conference';
 
 describe('SalleConference', () => {
   it('should create an instance', () => {

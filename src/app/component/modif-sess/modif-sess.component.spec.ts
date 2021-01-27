@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifSessComponent } from './modif-sess.component';
+import {ModifSessComponent} from './modif-sess.component';
 
 describe('ModifSessComponent', () => {
   let component: ModifSessComponent;

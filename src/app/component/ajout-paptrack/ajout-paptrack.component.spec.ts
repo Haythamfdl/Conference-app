@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AjoutPaptrackComponent } from './ajout-paptrack.component';
+import {AjoutPaptrackComponent} from './ajout-paptrack.component';
 
 describe('AjoutPaptrackComponent', () => {
   let component: AjoutPaptrackComponent;

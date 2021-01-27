@@ -58,6 +58,11 @@
     </div>
 
     <div class="form-group">
+      <label for="Lien">Lien Googe Drive</label>
+      <a name="Lien" ID="Lien" class="form-text" href="{{papier.lien}}">{{papier.lien}}</a>
+    </div>
+
+    <div class="form-group">
       <button *ngIf="show" class="form-control btn btn-primary" (click)="Review()">Soumetre une Evaluation</button>
     </div>
   </div>

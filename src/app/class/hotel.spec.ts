@@ -1,4 +1,4 @@
-import { Hotel } from './hotel';
+import {Hotel} from './hotel';
 
 describe('Hotel', () => {
   it('should create an instance', () => {

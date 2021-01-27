@@ -20,7 +20,7 @@
                class="form-control"
                id="Auth"
                name="Auth"
-               placeholder="Entrer l'Email du Co-Auteur du Papier"
+               placeholder="Entrer l'Email du Co-Auteur du Papier (Optionel)"
                #cauteur="ngModel">
       </div>
 
@@ -30,7 +30,7 @@
                class="form-control"
                id="Pres"
                name="Pres"
-               placeholder="Entrer l'Email du Présentareur du Papier"
+               placeholder="Entrer l'Email du Présentareur du Papier (Optionel)"
                #pres="ngModel">
       </div>
 
@@ -56,6 +56,18 @@
                placeholder="Entrer la Description du Papier"
                required
                #desc="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="Lien">Lien</label>
+        <input type="text" [(ngModel)]="papier.lien"
+               class="form-control"
+               id="Lien"
+               name="Lien"
+               required
+               placeholder="Entrer le lien de partage Google Drive du Papier (Exemple: https://drive.google.com/*)"
+               #lien="ngModel">
+        <a class="form-text" href="https://drive.google.com/">Acceder à votre Drive</a>
       </div>
 
       <div *ngIf="false" class="form-group">

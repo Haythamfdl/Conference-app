@@ -1,4 +1,4 @@
-import { Track } from './track';
+import {Track} from './track';
 
 describe('Track', () => {
   it('should create an instance', () => {

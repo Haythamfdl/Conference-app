@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifReviewComponent } from './modif-review.component';
+import {ModifReviewComponent} from './modif-review.component';
 
 describe('ModifReviewComponent', () => {
   let component: ModifReviewComponent;

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListMesconfComponent } from './list-mesconf.component';
+import {ListMesconfComponent} from './list-mesconf.component';
 
 describe('ListMesconfComponent', () => {
   let component: ListMesconfComponent;

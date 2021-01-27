@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ListInvconfComponent } from './list-invconf.component';
+import {ListInvconfComponent} from './list-invconf.component';
 
 describe('ListInvconfComponent', () => {
   let component: ListInvconfComponent;

@@ -1,34 +1,36 @@
 <div class="card my-5 w-75 mx-auto">
   <div class="card-header"><h1>Envoyer une Invitation</h1></div>
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
         <label for="Email">Email</label>
-        <input type="text" [(ngModel)]="invitee.email"
+        <input #email="ngModel" [(ngModel)]="invitee.email"
                class="form-control"
                id="email"
                name="email"
                placeholder="Entrer l'email de l'utilisateur a inviter"
-               required #email="ngModel">
+               required type="text">
       </div>
 
       <div class="form-group">
         <label for="Message">Message</label>
-        <textarea type="text" [(ngModel)]="invitation.message"
-               class="form-control"
-               id="message"
-               name="message"
-               placeholder="Entrer un message"
-                  rows="3"
-                  required #mess="ngModel"></textarea>
+        <textarea #mess="ngModel" [(ngModel)]="invitation.message"
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  placeholder="Entrer un message"
+                  required
+                  rows="3" type="text"></textarea>
       </div>
 
-      <button type="reset"
-              class="btn btn-danger float-lg-left">Réinitialiser</button>
+      <button class="btn btn-danger float-lg-left"
+              type="reset">Réinitialiser
+      </button>
 
-      <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-primary float-lg-right">Envoyer</button>
+      <button [disabled]="!form.form.valid" class="btn btn-primary float-lg-right"
+              type="submit">Envoyer
+      </button>
 
     </form>
   </div>

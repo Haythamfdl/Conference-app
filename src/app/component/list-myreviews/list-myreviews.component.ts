@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {Papier} from "../../class/papier";
+import {Component, OnInit} from '@angular/core';
 import {Evaluation} from "../../class/evaluation";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EvaluationService} from "../../service/evaluation.service";

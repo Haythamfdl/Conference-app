@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InvitRecuComponent } from './invit-recu.component';
+import {InvitRecuComponent} from './invit-recu.component';
 
 describe('InvitRecuComponent', () => {
   let component: InvitRecuComponent;
@@ -8,9 +8,9 @@ describe('InvitRecuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InvitRecuComponent ]
+      declarations: [InvitRecuComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

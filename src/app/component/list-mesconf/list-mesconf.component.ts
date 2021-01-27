@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {ConferenceService} from "../../service/conference.service";
 import {Utilisateur} from "../../class/utilisateur";
 import {ActivatedRoute, Router} from "@angular/router";
-import {any} from "codelyzer/util/function";
 
 @Component({
   selector: 'app-list-mesconf',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Invitation} from "../../class/invitation";
 import {Utilisateur} from "../../class/utilisateur";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -12,34 +12,35 @@ import {InvitationService} from "../../service/invitation.service";
 })
 export class InvitationComponent implements OnInit {
 
-  invitation:Invitation;
-  invitee:Utilisateur;
-  i:Utilisateur;
+  invitation: Invitation;
+  invitee: Utilisateur;
+  i: Utilisateur;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private utilisateurService: UtilisateurService,
-              private invitationService:InvitationService) {
-    this.invitation=new Invitation();
-    this.invitee=new Utilisateur();
+              private invitationService: InvitationService) {
+    this.invitation = new Invitation();
+    this.invitee = new Utilisateur();
   }
-  onSubmit(){
+
+  onSubmit() {
     this.utilisateurService.getByEmail(this.invitee.email).subscribe(data => {
-      if(data == null){
+      if (data == null) {
         alert("cet email est invalable");
-      }
-      else {
-        this.invitation.invite=data;
-        this.invitation.accepter=false;
+      } else {
+        this.invitation.invite = data;
+        this.invitation.accepter = false;
         this.invitationService.save(this.invitation).subscribe();
         alert("L'invitation a été envoyer");
       }
     });
 
   }
+
   ngOnInit(): void {
-    this.invitation.conference=JSON.parse(localStorage.getItem("Conference"));
-    this.invitation.inviteur=JSON.parse(localStorage.getItem("Utilisateur"));
+    this.invitation.conference = JSON.parse(localStorage.getItem("Conference"));
+    this.invitation.inviteur = JSON.parse(localStorage.getItem("Utilisateur"));
   }
 
 }

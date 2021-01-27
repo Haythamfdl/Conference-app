@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {Hotel} from "../../class/hotel";
 import {FormGroup} from "@angular/forms";
@@ -13,20 +13,20 @@ import {HotelService} from "../../service/hotel.service";
 })
 export class InfoConfComponent implements OnInit {
   conference: Conference;
-  hotels:Hotel[];
-  form:FormGroup;
-  id:string;
+  hotels: Hotel[];
+  form: FormGroup;
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private conferenceService: ConferenceService,
-    private hotelService:HotelService) {
+    private hotelService: HotelService) {
     this.conference = new Conference();
   }
 
   onSubmit() {
-    this.conference.id=this.id;
+    this.conference.id = this.id;
     this.conferenceService.update(this.conference).subscribe(data => {
       this.Alert();
     });
@@ -34,11 +34,13 @@ export class InfoConfComponent implements OnInit {
 
   Alert() {
     alert("La Conference a été Modifier !");
-    this.router.navigate(['/Myconferences']).then(() => {window.location.reload()});
+    this.router.navigate(['/Myconferences']).then(() => {
+      window.location.reload()
+    });
   }
 
-  select(event : any){
-    this.conference.hotel =event;
+  select(event: any) {
+    this.conference.hotel = event;
   }
 
 
@@ -46,8 +48,8 @@ export class InfoConfComponent implements OnInit {
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });
-    this.conference=JSON.parse(localStorage.getItem("Conference"));
-    this.id=this.conference.id;
+    this.conference = JSON.parse(localStorage.getItem("Conference"));
+    this.id = this.conference.id;
   }
 
 

@@ -1,34 +1,36 @@
 <div class="card my-5 w-75 mx-auto">
   <div class="card-header"><h1>Ajouter une Topic a la Conférence <b>{{conference.nom}}</b></h1></div>
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
         <label for="Nom">Nom</label>
-        <input type="text" [(ngModel)]="topic.nom"
+        <input #nom="ngModel" [(ngModel)]="topic.nom"
                class="form-control"
                id="Nom"
                name="Nom"
                placeholder="Entrer le Nom du Topic"
-               #nom="ngModel">
+               type="text">
       </div>
 
       <div class="form-group">
         <label for="Desc">Description</label>
-        <textarea type="text" [(ngModel)]="topic.description"
-               class="form-control"
-               id="Desc"
-               name="Desc"
-               placeholder="Entrer la Description du Topic"
+        <textarea #desc="ngModel" [(ngModel)]="topic.description"
+                  class="form-control"
+                  id="Desc"
+                  name="Desc"
+                  placeholder="Entrer la Description du Topic"
                   rows="3"
-                  #desc="ngModel"></textarea>
+                  type="text"></textarea>
       </div>
 
-      <button type="reset"
-              class="btn btn-danger float-lg-left">Réinitialiser</button>
+      <button class="btn btn-danger float-lg-left"
+              type="reset">Réinitialiser
+      </button>
 
-      <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-primary float-lg-right">Ajouter</button>
+      <button [disabled]="!form.form.valid" class="btn btn-primary float-lg-right"
+              type="submit">Ajouter
+      </button>
     </form>
   </div>
 </div>

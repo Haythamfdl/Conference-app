@@ -1,84 +1,86 @@
 <div class="card my-5 w-75 mx-auto">
   <div class="card-header"><h1>Créer votre Compte</h1></div>
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()"  #form="ngForm">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
         <label for="Nom">Nom</label>
-        <input type="text" [(ngModel)]="utilisateur.nom"
+        <input #nom="ngModel" [(ngModel)]="utilisateur.nom"
                class="form-control"
                id="Nom"
                name="Nom"
                placeholder="Entrer votre nom"
-               required #nom="ngModel">
+               required type="text">
       </div>
 
       <div class="form-group">
         <label for="Prenom">Prenom</label>
-        <input type="text" [(ngModel)]="utilisateur.prenom"
+        <input #prenom="ngModel" [(ngModel)]="utilisateur.prenom"
                class="form-control"
                id="Prenom"
                name="Prenom"
                placeholder="Entrer votre prenom"
-               required #prenom="ngModel">
+               required type="text">
       </div>
 
       <div class="form-group">
         <label for="Pays">Pays</label>
-        <input type="text" [(ngModel)]="utilisateur.pays"
+        <input #pays="ngModel" [(ngModel)]="utilisateur.pays"
                class="form-control"
                id="Pays"
                name="Pays"
                placeholder="Entrer votre pays"
-               required #pays="ngModel">
+               required type="text">
       </div>
 
       <div class="form-group">
         <label for="Email">Email</label>
-        <input type="email" [(ngModel)]="utilisateur.email"
+        <input #email="ngModel" [(ngModel)]="utilisateur.email"
                class="form-control"
                id="Email"
                name="Email"
                placeholder="Entrer votre Email"
-               required #email="ngModel">
+               required type="email">
       </div>
 
       <div class="form-group">
         <label for="Pass">Mots de Passe</label>
-        <input type="password" [(ngModel)]="utilisateur.pass"
+        <input #pass="ngModel" [(ngModel)]="utilisateur.pass"
                class="form-control"
                id="Pass"
+               minlength="6"
                name="Pass"
                placeholder="Entrer votre mots de passe (6 caractère minimum)"
-               minlength="6"
-               required #pass="ngModel">
+               required type="password">
       </div>
 
       <div class="form-group">
         <label for="Aff">Affiliation</label>
-        <input type="text" [(ngModel)]="utilisateur.affiliaton"
+        <input #aff="ngModel" [(ngModel)]="utilisateur.affiliaton"
                class="form-control"
                id="Aff"
                name="Aff"
                placeholder="Entrer votre Affiliation"
-               required #aff="ngModel">
+               required type="text">
       </div>
 
       <div class="form-group">
         <label for="Fonction">Fonction</label>
-        <input type="text" [(ngModel)]="utilisateur.fonction"
+        <input #fonc="ngModel" [(ngModel)]="utilisateur.fonction"
                class="form-control"
                id="Fonction"
                name="Fonction"
                placeholder="Entrer votre Fonction"
-               required #fonc="ngModel">
+               required type="text">
       </div>
 
-      <button type="submit" [disabled]="!form.form.valid"
-              class="btn btn-primary float-lg-right">Créer</button>
+      <button [disabled]="!form.form.valid" class="btn btn-primary float-lg-right"
+              type="submit">Créer
+      </button>
 
-      <button type="reset"
-              class="btn btn-danger float-lg-left">Réinitialiser</button>
+      <button class="btn btn-danger float-lg-left"
+              type="reset">Réinitialiser
+      </button>
     </form>
   </div>
 </div>

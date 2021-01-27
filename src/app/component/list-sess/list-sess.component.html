@@ -20,16 +20,24 @@
         <td>{{ session.salle }}</td>
         <td>{{ session.datedeb | date:'dd/MMM/y h:mm a' }}</td>
         <td>{{ session.datefin | date:'dd/MMM/y h:mm a'}}</td>
-        <td>{{ session.termine?'Oui':'Non'}}</td>
+        <td>{{ session.termine ? 'Oui' : 'Non'}}</td>
         <td>
-          <button style="margin-right: 10px" *ngIf="!show" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(session)">Modifier</button>
-          <button style="margin-right: 10px"  class="btn btn-secondary" (click)="Tracks(session)">Afficher Track</button>
-          <button style="margin-right: 10px" *ngIf="!show" style="margin-right: 10px" class="btn btn-success" (click)="Terminer(session)">Terminer</button>
-          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(session)">Supprimer</button>
+          <button (click)="Modifier(session)" *ngIf="!show" class="btn btn-info" style="margin-right: 10px"
+                  style="margin-right: 10px">Modifier
+          </button>
+          <button (click)="Tracks(session)" class="btn btn-secondary" style="margin-right: 10px">Afficher Track</button>
+          <button (click)="Terminer(session)" *ngIf="!show" class="btn btn-success" style="margin-right: 10px"
+                  style="margin-right: 10px">Terminer
+          </button>
+          <button (click)="Supprimer(session)" *ngIf="!show" class="btn btn-danger" style="margin-right: 10px">
+            Supprimer
+          </button>
         </td>
       </tr>
       </tbody>
     </table>
-    <td><button *ngIf="!show" class="btn btn-primary" (click)="Ajouter()">Ajouter une Session</button></td>
+    <td>
+      <button (click)="Ajouter()" *ngIf="!show" class="btn btn-primary">Ajouter une Session</button>
+    </td>
   </div>
 </div>

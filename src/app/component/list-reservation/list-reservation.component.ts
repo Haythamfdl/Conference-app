@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Utilisateur} from "../../class/utilisateur";
-import {Evaluation} from "../../class/evaluation";
 import {ActivatedRoute, Router} from "@angular/router";
-import {EvaluationService} from "../../service/evaluation.service";
 import {ReservationService} from "../../service/reservation.service";
 import {Reservation} from "../../class/reservation";
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Conference} from "../../class/conference";
 import {Hotel} from "../../class/hotel";
 import {FormGroup} from "@angular/forms";

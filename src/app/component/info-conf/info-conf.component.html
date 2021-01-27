@@ -2,115 +2,115 @@
   <div class="card-header"><h1>Informations de la Conférence <b>{{conference.nom}}</b></h1></div>
   <div class="card-body">
 
-      <div class="form-group">
-        <label for="Nom">Nom</label>
-        <input type="text" value="{{conference.nom}}"
-               class="form-control"
-               id="Nom"
-               name="Nom"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Nom">Nom</label>
+      <input class="form-control" disabled
+             id="Nom"
+             name="Nom"
+             type="text"
+             value="{{conference.nom}}">
+    </div>
 
-      <div class="form-group">
-        <label for="Catégorie">Catégorie</label>
-        <input type="text" value="{{conference.categorie}}"
-               class="form-control"
-               id="Catégorie"
-               name="Catégorie"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Catégorie">Catégorie</label>
+      <input class="form-control" disabled
+             id="Catégorie"
+             name="Catégorie"
+             type="text"
+             value="{{conference.categorie}}">
+    </div>
 
-      <div class="form-group">
-        <label for="Date">Date de la Conférence</label>
-        <input type="text" value="{{conference.date | date:'dd/MMM/y h:mm a' }}"
-               class="form-control"
-               id="Date"
-               name="Date"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Date">Date de la Conférence</label>
+      <input class="form-control" disabled
+             id="Date"
+             name="Date"
+             type="text"
+             value="{{conference.date | date:'dd/MMM/y h:mm a' }}">
+    </div>
 
-      <div class="form-group">
-        <label for="Sponsors">Sponsor</label>
-        <input type="text" value="{{conference.sponsor}}"
-               class="form-control"
-               id="Sponsors"
-               name="Sponsors"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Sponsors">Sponsor</label>
+      <input class="form-control" disabled
+             id="Sponsors"
+             name="Sponsors"
+             type="text"
+             value="{{conference.sponsor}}">
+    </div>
 
-      <div class="form-group">
-        <label for="Hotel">Hotel</label>
-        <input type="text" value="{{conference.hotel.nom}}"
-               class="form-control"
-               id="Hotel"
-               name="Hotel"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Hotel">Hotel</label>
+      <input class="form-control" disabled
+             id="Hotel"
+             name="Hotel"
+             type="text"
+             value="{{conference.hotel.nom}}">
+    </div>
 
     <div class="form-group">
       <label for="Ville">Ville</label>
-      <input type="text" value="{{conference.hotel.ville}}"
-             class="form-control"
+      <input class="form-control" disabled
              id="Ville"
              name="Ville"
-             disabled>
+             type="text"
+             value="{{conference.hotel.ville}}">
     </div>
 
-      <div class="form-group">
-        <label for="Page-Web">Page Web</label>
-        <input type="text" value="{{conference.pageweb}}"
-               class="form-control"
-               id="Page-Web"
-               name="Page-Web"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Page-Web">Page Web</label>
+      <input class="form-control" disabled
+             id="Page-Web"
+             name="Page-Web"
+             type="text"
+             value="{{conference.pageweb}}">
+    </div>
 
-      <div class="form-group">
-        <label for="Max-papier">Nombre Maximum de Papiers</label>
-        <input type="number" value="{{conference.maxpapier}}"
-               class="form-control"
-               id="Max-papier"
-               name="Max-papier"
-               min="1"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Max-papier">Nombre Maximum de Papiers</label>
+      <input class="form-control" disabled
+             id="Max-papier"
+             min="1"
+             name="Max-papier"
+             type="number"
+             value="{{conference.maxpapier}}">
+    </div>
 
-      <div class="form-group">
-        <label for="Delai">Delai de Soumission des Papiers</label>
-        <input type="text" value="{{conference.delaisoumission | date:'dd/MMM/y h:mm a' }}"
-               class="form-control"
-               id="Delai"
-               name="Delai"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Delai">Delai de Soumission des Papiers</label>
+      <input class="form-control" disabled
+             id="Delai"
+             name="Delai"
+             type="text"
+             value="{{conference.delaisoumission | date:'dd/MMM/y h:mm a' }}">
+    </div>
 
-      <div class="form-group">
-        <label for="Prix-Ticket">Prix de Ticket</label>
-        <input type="number" value="{{conference.prixticket}}"
-               class="form-control"
-               id="Prix-Ticket"
-               name="Prix-Ticket"
-               min="1"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Prix-Ticket">Prix de Ticket</label>
+      <input class="form-control" disabled
+             id="Prix-Ticket"
+             min="1"
+             name="Prix-Ticket"
+             type="number"
+             value="{{conference.prixticket}}">
+    </div>
 
-      <div class="form-group">
-        <label for="Nombre-Ticket">Nombre de Ticket</label>
-        <input type="number" value="{{conference.nticket}}"
-               class="form-control"
-               id="Nombre-Ticket"
-               name="Nombre-Ticket"
-               min="1"
-               disabled>
-      </div>
+    <div class="form-group">
+      <label for="Nombre-Ticket">Nombre de Ticket</label>
+      <input class="form-control" disabled
+             id="Nombre-Ticket"
+             min="1"
+             name="Nombre-Ticket"
+             type="number"
+             value="{{conference.nticket}}">
+    </div>
 
     <div class="form-group">
       <label for="Terminer">Conférence Terminer</label>
-      <input type="text" value="{{conference.terminer?'Oui':'Non'}}"
-             class="form-control"
+      <input class="form-control" disabled
              id="Terminer"
              name="Terminer"
-             disabled>
+             type="text"
+             value="{{conference.terminer?'Oui':'Non'}}">
     </div>
 
   </div>

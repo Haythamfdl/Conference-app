@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModifUserComponent } from './modif-user.component';
+import {ModifUserComponent} from './modif-user.component';
 
 describe('ModifUserComponent', () => {
   let component: ModifUserComponent;

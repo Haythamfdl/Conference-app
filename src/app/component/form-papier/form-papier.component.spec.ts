@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FormPapierComponent } from './form-papier.component';
+import {FormPapierComponent} from './form-papier.component';
 
 describe('FormPapierComponent', () => {
   let component: FormPapierComponent;
@@ -8,9 +8,9 @@ describe('FormPapierComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormPapierComponent ]
+      declarations: [FormPapierComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
