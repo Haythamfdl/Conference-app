@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Utilisateur} from "../../class/utilisateur";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UtilisateurService} from "../../service/utilisateur.service";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-modif-user',
@@ -10,29 +11,38 @@ import {UtilisateurService} from "../../service/utilisateur.service";
 })
 export class ModifUserComponent implements OnInit {
   utilisateur:Utilisateur;
-  id:string;
+  u:Utilisateur;
+  pass:string;
+  email:string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private utilisateurService: UtilisateurService) {
     this.utilisateur=new Utilisateur();
+    this.u=new Utilisateur();
   }
 
   ngOnInit(): void {
     this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
-    this.id=this.utilisateur.id;
+    this.email=this.utilisateur.email;
   }
 
   onSubmit(){
-    this.utilisateur.id=this.id;
-    this.utilisateurService.update(this.utilisateur).subscribe(data => {
-      this.Alert();
+    this.utilisateurService.login(this.u.email,this.pass).subscribe(data => {
+        this.u=data;
     });
+    if(this.u === null) {
+      alert("Le mot de passe est incorrect !!!")
+    }
+    else {
+      this.utilisateurService.update(this.utilisateur).subscribe(data => {
+        this.Alert();
+      });
+    }
   }
 
   Delete(){
     if(confirm("Etes-vous sûr de vouloir supprimer votre Compte !!!")){
-      this.utilisateur.id=this.id;
       this.utilisateur.deleted=true;
       this.utilisateurService.update(this.utilisateur).subscribe();
       localStorage.removeItem('Utilisateur');
