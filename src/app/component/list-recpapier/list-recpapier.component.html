@@ -1,6 +1,7 @@
 <div class="card my-5">
-  <div class="card-header"><h1>Papiers Reçu pour la Conférence <b>{{conferences.nom}}</b></h1></div>
+  <div class="card-header"><h1>Papiers Reçu pour la Conférence <b>{{conference.nom}} </b> <b *ngIf="conference.terminer" style="color: red">(Terminé)</b></h1></div>
   <div class="card-body table-responsive">
+    <h4>Vous ne pouvez pas Accepter les Papiers pour une Conférence terminé</h4>
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
@@ -21,7 +22,7 @@
         <td>{{ p.confirmer?'Oui':'Non' }}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(p)">Plus d'Info</button>
-          <button *ngIf="(!p.confirmer && !conferences.terminer) || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-primary" (click)="Confirmer(p)">Confirmer</button>
+          <button *ngIf="(!p.confirmer && !conference.terminer) || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-primary" (click)="Confirmer(p)">Confirmer</button>
       </tr>
       </tbody>
     </table>

@@ -12,7 +12,7 @@ import {Utilisateur} from "../../class/utilisateur";
 })
 export class ListRecpapierComponent implements OnInit {
   papiers:Papier[];
-  conferences : Conference;
+  conference : Conference;
   utilisateur:Utilisateur;
   p:Papier;
   constructor(private route: ActivatedRoute,
@@ -20,9 +20,9 @@ export class ListRecpapierComponent implements OnInit {
               private papierService:PapierService) { }
 
   ngOnInit(): void {
-    this.conferences=JSON.parse(localStorage.getItem("Conference"));
+    this.conference=JSON.parse(localStorage.getItem("Conference"));
     this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
-    this.papierService.findbyConf(this.conferences.id).subscribe(data => {
+    this.papierService.findbyConf(this.conference.id).subscribe(data => {
       this.papiers = data;
     });
   }

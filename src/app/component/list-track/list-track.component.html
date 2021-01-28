@@ -1,6 +1,7 @@
 <div class="card my-5">
-  <div class="card-header"><h1>Liste des Tracks de la Conférence <b>{{conference.nom}}</b></h1></div>
+  <div class="card-header"><h1>Liste des Tracks de la Conférence <b>{{conference.nom}} </b><b *ngIf="conference.terminer" style="color: red">(Terminé)</b> session <b>{{session.nom}} </b><b *ngIf="session.terminer" style="color: red">(Terminé)</b></h1></div>
   <div class="card-body table-responsive">
+    <h4>Vous ne pouvez pas ajouter ou modifier les Tracks d'une Conférence ou Session terminé</h4>
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
