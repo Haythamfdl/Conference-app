@@ -21,13 +21,13 @@
         <td>{{ conf.terminer?'Oui':'Non' }}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(conf)">Plus d'Info</button>
-          <button style="margin-right: 10px" class="btn btn-primary" (click)="Modifier(conf)">Modifier</button>
+          <button *ngIf="!conf.terminer || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-primary" (click)="Modifier(conf)">Modifier</button>
           <button style="margin-right: 10px" class="btn btn-warning" (click)="Session(conf)">Afficher Sessions</button>
           <button style="margin-right: 10px" class="btn btn-warning" (click)="Topic(conf)">Afficher Topics</button>
           <button style="margin-right: 10px" class="btn btn-warning" (click)="Papier(conf)">Afficher Papiers</button>
           <button style="margin-right: 10px" class="btn btn-warning" (click)="Inviter(conf)">Afficher Inviter</button>
-          <button *ngIf="!conf.terminer" style="margin-right: 10px" class="btn btn-secondary" (click)="Terminer(conf)">Terminer</button>
-          <button class="btn btn-danger" (click)="Supprimer(conf)">Annuler Conférence</button></td>
+          <button *ngIf="!conf.terminer || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-secondary" (click)="Terminer(conf)">Terminer</button>
+          <button *ngIf="!conf.terminer || utilisateur.isadmin" class="btn btn-danger" (click)="Supprimer(conf)">Annuler Conférence</button></td>
       </tr>
       </tbody>
     </table>

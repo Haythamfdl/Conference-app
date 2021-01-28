@@ -60,7 +60,7 @@ export class ListSessComponent implements OnInit {
 
   Terminer(value: any) {
     this.s = value;
-    this.s.termine = true;
+    this.s.terminer = !this.s.terminer;
     this.sessionService.update(this.s).subscribe();
     this.router.navigate(['/sessions']);
   }

@@ -18,16 +18,16 @@
         <td>{{ track.datefin | date:'dd/MMM/y h:mm a'}}</td>
         <td>{{ track.terminer?'Oui':'Non'}}</td>
         <td>
-          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(track)">Modifier</button>
+          <button *ngIf="(!show && !conference.terminer && !session.terminer && !track.terminer) || u.isadmin" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(track)">Modifier</button>
           <button *ngIf="!aPapier(track) " style="margin-right: 10px"  class="btn btn-secondary" (click)="Info(track.papier)">Info Papier</button>
-          <button *ngIf="!show && aPapier(track) " style="margin-right: 10px"  class="btn btn-warning" (click)="AjouterP(track)">Ajouter Papier</button>
-          <button *ngIf="!show && !aPapier(track) " style="margin-right: 10px"  class="btn btn-warning" (click)="Enlever(track)">Enlever Papier</button>
-          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-success" (click)="Terminer(track)">Terminer</button>
-          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(track)">Supprimer</button>
+          <button *ngIf="(!show && aPapier(track) && !conference.terminer && !session.terminer && !track.terminer) || (u.isadmin && aPapier(track))" style="margin-right: 10px"  class="btn btn-warning" (click)="AjouterP(track)">Ajouter Papier</button>
+          <button *ngIf="(!show && !aPapier(track) && !conference.terminer && !session.terminer && !track.terminer) || (u.isadmin && !aPapier(track))" style="margin-right: 10px"  class="btn btn-warning" (click)="Enlever(track)">Enlever Papier</button>
+          <button *ngIf="(!show && !conference.terminer && !session.terminer && !track.terminer) || u.isadmin" style="margin-right: 10px" class="btn btn-success" (click)="Terminer(track)">Terminer</button>
+          <button *ngIf="(!show && !conference.terminer && !session.terminer && !track.terminer) || u.isadmin" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(track)">Supprimer</button>
         </td>
       </tr>
       </tbody>
     </table>
-    <td><button *ngIf="!show" class="btn btn-primary" (click)="Ajouter()">Ajouter Track</button></td>
+    <td><button *ngIf="(!show && !conference.terminer && !session.terminer) || u.isadmin" class="btn btn-primary" (click)="Ajouter()">Ajouter Track</button></td>
   </div>
 </div>

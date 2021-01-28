@@ -61,7 +61,7 @@ export class ListTrackComponent implements OnInit {
 
   Terminer(value : any){
     this.t = value;
-    this.t.terminer = true;
+    this.t.terminer = !this.t.terminer;
     this.trackService.update(this.t).subscribe();
     this.router.navigate(['/tracks']);
   }

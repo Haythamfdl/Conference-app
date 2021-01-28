@@ -21,7 +21,7 @@
         <td>{{ p.confirmer?'Oui':'Non' }}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(p)">Plus d'Info</button>
-          <button *ngIf="!p.confirmer" style="margin-right: 10px" class="btn btn-primary" (click)="Confirmer(p)">Confirmer</button>
+          <button *ngIf="(!p.confirmer && !conferences.terminer) || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-primary" (click)="Confirmer(p)">Confirmer</button>
       </tr>
       </tbody>
     </table>

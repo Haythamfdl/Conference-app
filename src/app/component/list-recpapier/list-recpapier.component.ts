@@ -3,6 +3,7 @@ import {Papier} from "../../class/papier";
 import {Conference} from "../../class/conference";
 import {ActivatedRoute, Router} from "@angular/router";
 import {PapierService} from "../../service/papier.service";
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-list-recpapier',
@@ -12,6 +13,7 @@ import {PapierService} from "../../service/papier.service";
 export class ListRecpapierComponent implements OnInit {
   papiers:Papier[];
   conferences : Conference;
+  utilisateur:Utilisateur;
   p:Papier;
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -19,6 +21,7 @@ export class ListRecpapierComponent implements OnInit {
 
   ngOnInit(): void {
     this.conferences=JSON.parse(localStorage.getItem("Conference"));
+    this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
     this.papierService.findbyConf(this.conferences.id).subscribe(data => {
       this.papiers = data;
     });
@@ -31,7 +34,7 @@ export class ListRecpapierComponent implements OnInit {
 
   Confirmer(value : any){
     this.p = value;
-    this.p.confirmer = true;
+    this.p.confirmer = !this.p.confirmer;
     this.papierService.update(this.p).subscribe();
     this.router.navigate(['/recpapier']);
   }

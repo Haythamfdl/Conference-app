@@ -48,7 +48,7 @@ export class ListMesconfComponent implements OnInit {
 
   Terminer(value : any){
     this.c = value;
-    this.c.terminer = true;
+    this.c.terminer = !this.c.terminer;
     this.confserv.update(this.c).subscribe();
     this.router.navigate(['/myconferences']);
   }

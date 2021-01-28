@@ -45,7 +45,7 @@ export class FormSessComponent implements OnInit {
         alert("Cet email est invalid");
       } else {
         this.session.chair = data;
-        this.session.termine = false;
+        this.session.terminer = false;
         this.session.deleted = false;
         this.session.conference = this.conference;
         this.sessionService.save(this.session).subscribe(date => {

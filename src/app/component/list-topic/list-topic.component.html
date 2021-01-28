@@ -14,12 +14,12 @@
         <td>{{ topic.nom }}</td>
         <td>{{ topic.description }}</td>
         <td>
-          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(topic)">Modifier</button>
-          <button *ngIf="!show" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(topic)">Supprimer</button>
+          <button *ngIf="(!show && !conference.terminer) || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(topic)">Modifier</button>
+          <button *ngIf="(!show && !conference.terminer) || utilisateur.isadmin" style="margin-right: 10px" class="btn btn-danger" (click)="Supprimer(topic)">Supprimer</button>
         </td>
       </tr>
       </tbody>
     </table>
-    <td><button *ngIf="!show" class="btn btn-primary" (click)="Ajouter()">Ajouter un Topic</button></td>
+    <td><button *ngIf="(!show && !conference.terminer) || utilisateur.isadmin" class="btn btn-primary" (click)="Ajouter()">Ajouter un Topic</button></td>
   </div>
 </div>

@@ -3,6 +3,7 @@ import {Conference} from "../../class/conference";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Topic} from "../../class/topic";
 import {TopicService} from "../../service/topic.service";
+import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
   selector: 'app-list-topic',
@@ -14,6 +15,7 @@ export class ListTopicComponent implements OnInit {
   t:Topic;
   conference : Conference;
   show:boolean =false;
+  utilisateur:Utilisateur;
   constructor(private route: ActivatedRoute,
               private router: Router,
               private topicService:TopicService) {}
@@ -52,7 +54,8 @@ export class ListTopicComponent implements OnInit {
 
 
   isLoggedIn(){
-    if(localStorage.getItem("Utilisateur") === null){
+    this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
+    if(this.utilisateur === null){
       this.show=true;
     }
     else{

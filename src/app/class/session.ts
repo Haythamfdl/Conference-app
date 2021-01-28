@@ -10,6 +10,6 @@ export class Session {
   datedeb: string;
   datefin: string;
   salle: string;
-  termine: boolean;
+  terminer: boolean;
   deleted: boolean;
 }
