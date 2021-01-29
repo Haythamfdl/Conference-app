@@ -20,7 +20,7 @@
         <td>{{inv.date | date:'shortDate'}}</td>
         <td>{{inv.accepter ? 'Oui' : 'Non' }}</td>
         <td>
-          <button (click)="Accepter(inv)" *ngIf="!inv.accepter" class="btn btn-primary">Accepter l'Invitation</button>
+          <button (click)="Accepter(inv)" *ngIf="!inv.accepter" class="btn btn-primary" style="margin-right: 10px">Accepter l'Invitation</button>
           <button (click)="Info(inv.conference)" class="btn btn-info" style="margin-right: 10px">Plus d'Info</button>
           <button (click)="Session(inv.conference)" class="btn btn-warning">Afficher les Sessions</button>
         </td>
