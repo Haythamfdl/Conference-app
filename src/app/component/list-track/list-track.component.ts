@@ -43,7 +43,6 @@ export class ListTrackComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Track',JSON.stringify(value));
-    console.log(JSON.stringify(localStorage.getItem("Track")));
     this.router.navigate(['/mtrack']);
   }
 

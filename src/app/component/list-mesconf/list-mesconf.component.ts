@@ -32,7 +32,6 @@ export class ListMesconfComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    console.log(JSON.stringify(localStorage.getItem("Conference")));
     this.router.navigate(['/mconferences']);
   }
 

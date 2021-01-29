@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
         alert("L'email est déja utiliser !!!");
       } else {
         this.utilisateur.deleted = false;
+        this.utilisateur.isadmin = false;
         this.utilisateurService.save(this.utilisateur).subscribe(data => {
           this.Alert();
         });

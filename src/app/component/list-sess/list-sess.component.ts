@@ -40,7 +40,6 @@ export class ListSessComponent implements OnInit {
 
   Modifier(value: any) {
     localStorage.setItem('Session', JSON.stringify(value));
-    console.log(JSON.stringify(localStorage.getItem("Session")));
     this.router.navigate(['/msession']);
   }
 

@@ -36,7 +36,6 @@ export class ListTopicComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Topic',JSON.stringify(value));
-    console.log(JSON.stringify(localStorage.getItem("Topic")));
     this.router.navigate(['/mtopic']);
   }
 

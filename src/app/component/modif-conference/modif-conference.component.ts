@@ -37,7 +37,7 @@ export class ModifConferenceComponent implements OnInit {
 
   Alert() {
     alert("La Conference a été Modifier !");
-    this.router.navigate(['/Myconferences']).then(() => {window.location.reload()});
+    this.router.navigate(['/myconferences']).then(() => {window.location.reload()});
   }
 
   select(event : any){

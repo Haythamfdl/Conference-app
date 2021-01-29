@@ -53,6 +53,9 @@ export class FormConferenceComponent implements OnInit {
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });
+    this.conference.maxpapier=1;
+    this.conference.prixticket=0;
+    this.conference.nticket=1;
   }
 
   Sel(date){
