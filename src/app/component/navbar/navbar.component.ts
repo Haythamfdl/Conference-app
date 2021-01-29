@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit, OnChanges {
   show: boolean = false;
   isadmin: boolean = false;
   utilisateur: Utilisateur;
-  title = 'Gestion Conférence';
+  title = 'Gestion Conférences';
 
   constructor(private route: ActivatedRoute,
               private router: Router,) {
