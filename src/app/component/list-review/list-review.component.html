@@ -13,7 +13,7 @@
       <tbody>
       <tr *ngFor="let e of evaluations">
         <td>{{ e.evaluateur.nom }} {{ e.evaluateur.prenom }}</td>
-        <td>{{e.date | date:'dd/MMM/y h:mm a'}}</td>
+        <td>{{e.date | date:'dd/MMM/y h:mm a':'UTC'}}</td>
         <td>{{e.note}}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(e)">Plus d'Info</button>
