@@ -114,12 +114,21 @@
     </div>
 
     <div class="form-group">
-      <label for="Terminer">Conférence Terminer</label>
+      <label for="Org">Organisateur</label>
       <input class="form-control" disabled
-             id="Terminer"
-             name="Terminer"
+             id="Org"
+             name="Org"
              type="text"
-             value="{{conference.terminer?'Oui':'Non'}}">
+             value="{{conference.organisateur.nom}} {{conference.organisateur.prenom}}">
+    </div>
+
+    <div class="form-group">
+      <label for="EOrg">Email de l'Organisateur</label>
+      <input class="form-control" disabled
+             id="EOrg"
+             name="EOrg"
+             type="text"
+             value="{{conference.organisateur.email}}">
     </div>
 
   </div>
