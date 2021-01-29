@@ -107,4 +107,8 @@ export class ListTrackComponent implements OnInit {
     localStorage.setItem('Papier',JSON.stringify(value));
     this.router.navigate(['/papier']);
   }
+
+  Back(){
+    this.router.navigate(['/sessions']);
+  }
 }
