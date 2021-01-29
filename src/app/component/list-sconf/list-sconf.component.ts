@@ -59,4 +59,8 @@ export class ListSconfComponent implements OnInit {
     });
     alert("La Salle a été Supprimer");
   }
+
+  Back(){
+    this.router.navigate(['/hotels']).then();
+  }
 }

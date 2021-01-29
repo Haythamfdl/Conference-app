@@ -54,4 +54,9 @@ export class ListChambreComponent implements OnInit {
     this.router.navigate(['/chambres']).then(() => {window.location.reload()});
     alert("La chambre a été Supprimer");
   }
+
+  Back(){
+    this.router.navigate(['/hotels']).then();
+  }
+
 }
