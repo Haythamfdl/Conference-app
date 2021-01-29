@@ -23,6 +23,6 @@ export class FormHotelComponent implements OnInit {
   onSubmit() {
     this.hotel.deleted = false;
     this.hotelService.save(this.hotel).subscribe();
-    this.router.navigate(['/hotels']);
+    this.router.navigate(['/hotels']).then();
   }
 }

@@ -92,7 +92,6 @@ export class FormConferenceComponent implements OnInit {
       this.conference.nticket=this.c.nticket;
       this.conference.date=this.datePipe.transform(this.c.date,'yyyy-MM-dd');
       this.conference.delaisoumission=this.datePipe.transform(this.c.delaisoumission,'yyyy-MM-dd');
-      console.log(this.conference);
     }
   }
 }

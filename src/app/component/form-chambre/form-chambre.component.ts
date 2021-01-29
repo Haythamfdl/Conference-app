@@ -29,7 +29,7 @@ export class FormChambreComponent implements OnInit {
     this.chambre.disponible=true;
     this.chambre.deleted=false;
     this.chambreService.save(this.chambre).subscribe();
-    this.router.navigate(['/chambres']);
+    this.router.navigate(['/chambres']).then();
   }
 
   select(value: any){

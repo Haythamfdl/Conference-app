@@ -6,6 +6,7 @@ export class Hotel {
   nom: string;
   address: string;
   ville: string;
+  pays: string;
   chambres: Chambre[];
   saleconf: SalleConference[];
   deleted: boolean;
