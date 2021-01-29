@@ -16,8 +16,8 @@
       <tr *ngFor="let r of reservations">
         <td>{{r.hotel.nom}}</td>
         <td>{{r.chambre}}</td>
-        <td>{{r.datedeb | date:'dd/MMM/y'}}</td>
-        <td>{{r.datefin | date:'dd/MMM/y'}}</td>
+        <td>{{r.datedeb | date:'dd/MMM/y':'UTC'}}</td>
+        <td>{{r.datefin | date:'dd/MMM/y':'UTC'}}</td>
         <td>{{r.repas?'Oui':'Non'}}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-secondary" (click)="Modifier(r)">Modifier</button>

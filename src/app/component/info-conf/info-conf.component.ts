@@ -5,6 +5,7 @@ import {FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ConferenceService} from "../../service/conference.service";
 import {HotelService} from "../../service/hotel.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-info-conf',
@@ -21,7 +22,8 @@ export class InfoConfComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private conferenceService: ConferenceService,
-    private hotelService: HotelService) {
+    private hotelService: HotelService,
+    private datePipe:DatePipe) {
     this.conference = new Conference();
   }
 
@@ -49,6 +51,8 @@ export class InfoConfComponent implements OnInit {
       this.hotels = data;
     });
     this.conference = JSON.parse(localStorage.getItem("Conference"));
+    this.conference.date=this.datePipe.transform(this.conference.date,'yyyy-MM-dd','UTC');
+    this.conference.delaisoumission=this.datePipe.transform(this.conference.delaisoumission,'yyyy-MM-dd','UTC');
     this.id = this.conference.id;
   }
 

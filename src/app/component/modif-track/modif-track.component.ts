@@ -24,8 +24,8 @@ export class ModifTrackComponent implements OnInit {
   ngOnInit(): void {
     this.conference=JSON.parse(localStorage.getItem("Conference"));
     this.track=JSON.parse(localStorage.getItem("Track"));
-    this.track.datedeb=this.datePipe.transform(this.track.datedeb,'yyyy-MM-ddTHH:mm');
-    this.track.datefin=this.datePipe.transform(this.track.datefin,'yyyy-MM-ddTHH:mm');
+    this.track.datedeb=this.datePipe.transform(this.track.datedeb,'yyyy-MM-ddTHH:mm','UTC');
+    this.track.datefin=this.datePipe.transform(this.track.datefin,'yyyy-MM-ddTHH:mm','UTC');
     this.l = this.track.nom;
   }
   onSubmit(){

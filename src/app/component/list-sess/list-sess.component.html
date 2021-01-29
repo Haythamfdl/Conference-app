@@ -19,8 +19,8 @@
         <td>{{ session.nom }}</td>
         <td>{{ session.chair.nom }} {{session.chair.prenom}}</td>
         <td>{{ session.salle }}</td>
-        <td>{{ session.datedeb | date:'dd/MMM/y h:mm a' }}</td>
-        <td>{{ session.datefin | date:'dd/MMM/y h:mm a'}}</td>
+        <td>{{ session.datedeb | date:'dd/MMM/y h:mm a':'UTC' }}</td>
+        <td>{{ session.datefin | date:'dd/MMM/y h:mm a':'UTC' }}</td>
         <td>{{ session.terminer ? 'Oui' : 'Non'}}</td>
         <td>
           <button (click)="Modifier(session)" *ngIf="(!show && !conference.terminer && !session.terminer) || u.isadmin" class="btn btn-info" style="margin-right: 10px">Modifier</button>

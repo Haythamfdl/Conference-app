@@ -16,7 +16,7 @@
       <tr *ngFor="let inv of invitations">
         <td>{{inv.invite.nom}} {{inv.invite.prenom}} </td>
         <td>{{inv.invite.fonction}}</td>
-        <td>{{inv.date | date:'shortDate'}}</td>
+        <td>{{inv.date | date:'shortDate':'UTC'}}</td>
         <td>{{inv.accepter?'Oui':'Non' }}</td>
       </tr>
       </tbody>

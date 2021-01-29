@@ -56,8 +56,8 @@ export class ModifReservationComponent implements OnInit {
 
   ngOnInit(): void {
     this.reservation=JSON.parse(localStorage.getItem("Reservation"));
-    this.reservation.datedeb=this.datePipe.transform(this.reservation.datedeb,'yyyy-MM-dd');
-    this.reservation.datefin=this.datePipe.transform(this.reservation.datefin,'yyyy-MM-dd');
+    this.reservation.datedeb=this.datePipe.transform(this.reservation.datedeb,'yyyy-MM-dd','UTC');
+    this.reservation.datefin=this.datePipe.transform(this.reservation.datefin,'yyyy-MM-dd','UTC');
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });

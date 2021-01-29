@@ -50,8 +50,8 @@ export class ModifConferenceComponent implements OnInit {
       this.hotels = data;
     });
     this.conference=JSON.parse(localStorage.getItem("Conference"));
-    this.conference.date=this.datePipe.transform(this.conference.date,'yyyy-MM-dd');
-    this.conference.delaisoumission=this.datePipe.transform(this.conference.delaisoumission,'yyyy-MM-dd');
+    this.conference.date=this.datePipe.transform(this.conference.date,'yyyy-MM-dd','UTC');
+    this.conference.delaisoumission=this.datePipe.transform(this.conference.delaisoumission,'yyyy-MM-dd','UTC');
     this.id=this.conference.id;
     this.l = this.conference.nom;
   }

@@ -16,7 +16,7 @@
       <tr *ngFor="let conf of conferences">
         <td>{{ conf.nom }}</td>
         <td>{{ conf.categorie }}</td>
-        <td>{{ conf.date | date:'dd/MMM/y h:mm a'}}</td>
+        <td>{{ conf.date | date:'dd/MMM/y h:mm a':'UTC'}}</td>
         <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
         <td>{{ conf.terminer?'Oui':'Non' }}</td>
         <td>

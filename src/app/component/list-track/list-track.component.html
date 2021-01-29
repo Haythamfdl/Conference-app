@@ -15,8 +15,8 @@
       <tbody>
       <tr *ngFor="let track of tracks; let i = index">
         <td>{{track.nom}}</td>
-        <td>{{ track.datedeb | date:'dd/MMM/y h:mm a' }}</td>
-        <td>{{ track.datefin | date:'dd/MMM/y h:mm a'}}</td>
+        <td>{{ track.datedeb | date:'dd/MMM/y h:mm a' : 'UTC' }}</td>
+        <td>{{ track.datefin | date:'dd/MMM/y h:mm a': 'UTC'}}</td>
         <td>{{ track.terminer?'Oui':'Non'}}</td>
         <td>
           <button *ngIf="(!show && !conference.terminer && !session.terminer && !track.terminer) || u.isadmin" style="margin-right: 10px" class="btn btn-info" (click)="Modifier(track)">Modifier</button>

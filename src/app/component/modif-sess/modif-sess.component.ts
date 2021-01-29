@@ -37,8 +37,8 @@ export class ModifSessComponent implements OnInit {
   ngOnInit(): void {
     this.conference=JSON.parse(localStorage.getItem("Conference"));
     this.session=JSON.parse(localStorage.getItem("Session"));
-    this.session.datedeb=this.datePipe.transform(this.session.datedeb,'yyyy-MM-ddTHH:mm');
-    this.session.datefin=this.datePipe.transform(this.session.datefin,'yyyy-MM-ddTHH:mm');
+    this.session.datedeb=this.datePipe.transform(this.session.datedeb,'yyyy-MM-ddTHH:mm', 'UTC');
+    this.session.datefin=this.datePipe.transform(this.session.datefin,'yyyy-MM-ddTHH:mm', 'UTC');
     this.salleConfService.findAlldispo(this.conference.hotel.id).subscribe(data => {
       this.salleConferences = data;
     });
