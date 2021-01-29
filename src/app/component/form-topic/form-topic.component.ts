@@ -27,7 +27,7 @@ export class FormTopicComponent implements OnInit {
     this.topic.deleted = false;
     this.topic.conference = this.conference;
     this.topicService.save(this.topic).subscribe(date => {
-      this.router.navigate(['/topics']);
+      this.router.navigate(['/topics']).then();
     });
   }
 }

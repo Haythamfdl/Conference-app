@@ -43,11 +43,11 @@ export class ListTrackComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Track',JSON.stringify(value));
-    this.router.navigate(['/mtrack']);
+    this.router.navigate(['/mtrack']).then();
   }
 
   Ajouter(){
-    this.router.navigate(['/atrack']);
+    this.router.navigate(['/atrack']).then();
   }
 
   Supprimer(value : any){
@@ -62,7 +62,7 @@ export class ListTrackComponent implements OnInit {
     this.t = value;
     this.t.terminer = !this.t.terminer;
     this.trackService.update(this.t).subscribe();
-    this.router.navigate(['/tracks']);
+    this.router.navigate(['/tracks']).then();
   }
 
   isLoggedIn(){
@@ -100,15 +100,15 @@ export class ListTrackComponent implements OnInit {
   }
   AjouterP(value:any){
     localStorage.setItem('Track',JSON.stringify(value));
-    this.router.navigate(['/apaptrack']);
+    this.router.navigate(['/apaptrack']).then();
   }
 
   Info(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/papier']);
+    this.router.navigate(['/papier']).then();
   }
 
   Back(){
-    this.router.navigate(['/sessions']);
+    this.router.navigate(['/sessions']).then();
   }
 }

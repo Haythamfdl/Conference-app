@@ -33,7 +33,7 @@ export class InvitRecuComponent implements OnInit {
 
   Info(value: any) {
     localStorage.setItem('Conference', JSON.stringify(value));
-    this.router.navigate(['/conference']);
+    this.router.navigate(['/conference']).then();
   }
 
   Session(value: any) {

@@ -30,7 +30,7 @@ export class ModifTrackComponent implements OnInit {
   }
   onSubmit(){
     this.trackService.update(this.track).subscribe(date =>{
-      this.router.navigate(['/tracks']);
+      this.router.navigate(['/tracks']).then();
     });
   }
 

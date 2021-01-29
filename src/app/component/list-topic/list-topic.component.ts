@@ -36,11 +36,11 @@ export class ListTopicComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Topic',JSON.stringify(value));
-    this.router.navigate(['/mtopic']);
+    this.router.navigate(['/mtopic']).then();
   }
 
   Ajouter(){
-    this.router.navigate(['/atopic']);
+    this.router.navigate(['/atopic']).then();
   }
 
   Supprimer(value : any){

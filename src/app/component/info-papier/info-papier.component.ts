@@ -29,7 +29,7 @@ export class InfoPapierComponent implements OnInit {
 
   Review(){
     localStorage.setItem('Papier',JSON.stringify(this.papier));
-    this.router.navigate(['/areview']);
+    this.router.navigate(['/areview']).then();
   }
 
   isLoggedIn(){

@@ -84,7 +84,7 @@ export class FormPapierComponent implements OnInit {
         this.p = data;
         console.log(this.p);
         //this.onUpload(this.p.id);
-        this.router.navigate(['/mypapier']);
+        this.router.navigate(['/mypapier']).then();
       });
     } else {
       alert("Lien Google Drive invalide !!!");

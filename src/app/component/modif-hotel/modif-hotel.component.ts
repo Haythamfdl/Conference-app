@@ -22,7 +22,7 @@ export class ModifHotelComponent implements OnInit {
 
   onSubmit() {
     this.hotelService.update(this.hotel).subscribe();
-    this.router.navigate(['/hotels']);
+    this.router.navigate(['/hotels']).then();
   }
 
 }

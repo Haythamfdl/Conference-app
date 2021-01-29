@@ -25,7 +25,7 @@ export class ModifTopicComponent implements OnInit {
 
   onSubmit(){
     this.topicService.update(this.topic).subscribe(date =>{
-      this.router.navigate(['/topics']);
+      this.router.navigate(['/topics']).then();
     });
   }
 

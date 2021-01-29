@@ -34,12 +34,12 @@ export class ChoixConfComponent implements OnInit {
 
   Modifier(value: any) {
     localStorage.setItem('Conference', JSON.stringify(value));
-    this.router.navigate(['/mconferences']);
+    this.router.navigate(['/mconferences']).then();
   }
 
   Info(value: any) {
     localStorage.setItem('Conference', JSON.stringify(value));
-    this.router.navigate(['/conference']);
+    this.router.navigate(['/conference']).then();
   }
 
   Papier(value: any) {

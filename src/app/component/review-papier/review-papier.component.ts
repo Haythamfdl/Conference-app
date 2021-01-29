@@ -33,7 +33,7 @@ export class ReviewPapierComponent implements OnInit {
     this.evaluation.deleted=false;
     this.evaluationService.save(this.evaluation).subscribe();
     alert("Evaluation Soumise");
-    this.router.navigate(['/myreviews']);
+    this.router.navigate(['/myreviews']).then();
   }
 
 }

@@ -29,7 +29,7 @@ export class FormSconfComponent implements OnInit {
     this.salleConference.disponible = true;
     this.salleConference.deleted = false;
     this.salleConfService.save(this.salleConference).subscribe();
-    this.router.navigate(['/salleconferences']);
+    this.router.navigate(['/salleconferences']).then();
   }
 
 }

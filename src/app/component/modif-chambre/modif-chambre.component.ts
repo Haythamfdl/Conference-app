@@ -23,7 +23,7 @@ export class ModifChambreComponent implements OnInit {
 
   onSubmit() {
     this.chambreService.update(this.chambre).subscribe();
-    this.router.navigate(['/chambres']);
+    this.router.navigate(['/chambres']).then();
   }
 
   select(value: any){

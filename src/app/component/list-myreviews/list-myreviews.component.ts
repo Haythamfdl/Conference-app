@@ -27,12 +27,12 @@ export class ListMyreviewsComponent implements OnInit {
   Modifier(value :any){
     this.e=value;
     localStorage.setItem('Evaluation',JSON.stringify(this.e));
-    this.router.navigate(['/mreview']);
+    this.router.navigate(['/mreview']).then();
   }
 
   Info(value :any){
     localStorage.setItem('Evaluation',JSON.stringify(value));
-    this.router.navigate(['/review']);
+    this.router.navigate(['/review']).then();
   }
 
   Supprimer(value : any){

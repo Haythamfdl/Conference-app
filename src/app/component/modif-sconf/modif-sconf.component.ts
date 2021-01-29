@@ -24,7 +24,7 @@ export class ModifSconfComponent implements OnInit {
 
   onSubmit() {
     this.salleConfService.update(this.salleConference).subscribe();
-    this.router.navigate(['/salleconferences']);
+    this.router.navigate(['/salleconferences']).then();
   }
 
 }

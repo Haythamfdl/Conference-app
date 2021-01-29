@@ -27,7 +27,7 @@ export class ListInvconfComponent implements OnInit {
   }
 
   Ajouter(){
-    this.router.navigate(['/invitation']);
+    this.router.navigate(['/invitation']).then();
   }
 
 }

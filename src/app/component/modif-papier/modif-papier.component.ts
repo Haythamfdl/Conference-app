@@ -74,7 +74,7 @@ export class ModifPapierComponent implements OnInit {
         });
       }
       this.papierService.update(this.papier).subscribe();
-      this.router.navigate(['/mypapier']);
+      this.router.navigate(['/mypapier']).then();
       }
       else {
         alert("Lien Google Drive invalide !!!");

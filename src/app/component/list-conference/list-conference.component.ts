@@ -28,7 +28,7 @@ export class ListConferenceComponent implements OnInit {
 
   Info(value :any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/conference']);
+    this.router.navigate(['/conference']).then();
   }
 
   Session(value : any){
@@ -38,7 +38,7 @@ export class ListConferenceComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/mconferences']);
+    this.router.navigate(['/mconferences']).then();
   }
 
   Supprimer(value : any){

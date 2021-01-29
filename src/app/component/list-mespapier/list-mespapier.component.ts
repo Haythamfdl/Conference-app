@@ -26,12 +26,12 @@ export class ListMespapierComponent implements OnInit {
 
   Papier(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/papier']);
+    this.router.navigate(['/papier']).then();
   }
 
   Modifier(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/mpapier']);
+    this.router.navigate(['/mpapier']).then();
   }
 
   Supprimer(value : any){
@@ -44,6 +44,6 @@ export class ListMespapierComponent implements OnInit {
 
   Evaluation(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/reviews']);
+    this.router.navigate(['/reviews']).then();
   }
 }

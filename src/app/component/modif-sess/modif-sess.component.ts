@@ -52,7 +52,7 @@ export class ModifSessComponent implements OnInit {
       else {
         this.session.chair=data;
         this.sessionService.update(this.session).subscribe(date =>{
-          this.router.navigate(['/sessions']);
+          this.router.navigate(['/sessions']).then();
         });
       }
     });

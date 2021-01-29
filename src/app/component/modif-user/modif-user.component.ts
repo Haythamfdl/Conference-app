@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Utilisateur} from "../../class/utilisateur";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UtilisateurService} from "../../service/utilisateur.service";
-import {element} from "protractor";
 
 @Component({
   selector: 'app-modif-user',

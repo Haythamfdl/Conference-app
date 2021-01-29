@@ -27,7 +27,7 @@ export class ListChambreComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Chambre',JSON.stringify(value));
-    this.router.navigate(['/mchambre']);
+    this.router.navigate(['/mchambre']).then();
   }
 
   Disponible(value : any){
@@ -44,7 +44,7 @@ export class ListChambreComponent implements OnInit {
   }
 
   Ajouter(){
-    this.router.navigate(['/achambre']);
+    this.router.navigate(['/achambre']).then();
   }
 
   Supprimer(value : any){

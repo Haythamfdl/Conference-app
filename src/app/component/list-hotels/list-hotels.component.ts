@@ -23,7 +23,7 @@ export class ListHotelsComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Hotel',JSON.stringify(value));
-    this.router.navigate(['/mhotel']);
+    this.router.navigate(['/mhotel']).then();
   }
 
   Supprimer(value : any){
@@ -35,17 +35,17 @@ export class ListHotelsComponent implements OnInit {
   }
 
   Ajouter(){
-    this.router.navigate(['/ahotel']);
+    this.router.navigate(['/ahotel']).then();
   }
 
   Chambre(value: any){
     localStorage.setItem('Hotel',JSON.stringify(value));
-    this.router.navigate(['/chambres']);
+    this.router.navigate(['/chambres']).then();
   }
 
   Sconf(value: any){
     localStorage.setItem('Hotel',JSON.stringify(value));
-    this.router.navigate(['/salleconferences']);
+    this.router.navigate(['/salleconferences']).then();
   }
 
 }

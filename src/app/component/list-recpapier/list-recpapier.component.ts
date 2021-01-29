@@ -29,13 +29,13 @@ export class ListRecpapierComponent implements OnInit {
 
   Info(value :any){
     localStorage.setItem('Papier',JSON.stringify(value));
-    this.router.navigate(['/papier']);
+    this.router.navigate(['/papier']).then();
   }
 
   Confirmer(value : any){
     this.p = value;
     this.p.confirmer = !this.p.confirmer;
     this.papierService.update(this.p).subscribe();
-    this.router.navigate(['/recpapier']);
+    this.router.navigate(['/recpapier']).then();
   }
 }

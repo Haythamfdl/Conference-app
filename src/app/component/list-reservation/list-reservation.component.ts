@@ -28,11 +28,11 @@ export class ListReservationComponent implements OnInit {
   Modifier(value :any){
     this.r=value;
     localStorage.setItem('Reservation',JSON.stringify(this.r));
-    this.router.navigate(['/mreservation']);
+    this.router.navigate(['/mreservation']).then();
   }
 
   Ajouter(){
-    this.router.navigate(['/areservation']);
+    this.router.navigate(['/areservation']).then();
   }
 
   Annuler(value : any){

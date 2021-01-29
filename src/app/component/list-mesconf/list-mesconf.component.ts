@@ -32,7 +32,7 @@ export class ListMesconfComponent implements OnInit {
 
   Modifier(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/mconferences']);
+    this.router.navigate(['/mconferences']).then();
   }
 
   Supprimer(value : any){
@@ -49,37 +49,37 @@ export class ListMesconfComponent implements OnInit {
     this.c = value;
     this.c.terminer = !this.c.terminer;
     this.confserv.update(this.c).subscribe();
-    this.router.navigate(['/myconferences']);
+    this.router.navigate(['/myconferences']).then();
   }
 
   Info(value :any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/conference']);
+    this.router.navigate(['/conference']).then();
   }
 
   Inviter(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/inviter']);
-    //this.router.navigate(['/invitation']);
+    this.router.navigate(['/inviter']).then();
+    //this.router.navigate(['/invitation']).then();
   }
 
   Session(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/sessions']);
+    this.router.navigate(['/sessions']).then();
   }
 
   Topic(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/topics']);
+    this.router.navigate(['/topics']).then();
   }
 
   Papier(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/recpapier']);
+    this.router.navigate(['/recpapier']).then();
   }
 
   Ajouter(){
-    this.router.navigate(['/aconferences']);
+    this.router.navigate(['/aconferences']).then();
   }
 }
 

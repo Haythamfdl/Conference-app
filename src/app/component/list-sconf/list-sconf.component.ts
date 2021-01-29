@@ -29,7 +29,7 @@ export class ListSconfComponent implements OnInit {
 
   Modifier(value: any) {
     localStorage.setItem('Sconf', JSON.stringify(value));
-    this.router.navigate(['/msalleconference']);
+    this.router.navigate(['/msalleconference']).then();
   }
 
   Disponible(value: any) {
@@ -47,7 +47,7 @@ export class ListSconfComponent implements OnInit {
   }
 
   Ajouter() {
-    this.router.navigate(['/asalleconference']);
+    this.router.navigate(['/asalleconference']).then();
   }
 
   Supprimer(value: any) {

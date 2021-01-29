@@ -40,11 +40,11 @@ export class ListSessComponent implements OnInit {
 
   Modifier(value: any) {
     localStorage.setItem('Session', JSON.stringify(value));
-    this.router.navigate(['/msession']);
+    this.router.navigate(['/msession']).then();
   }
 
   Ajouter() {
-    this.router.navigate(['/asession']);
+    this.router.navigate(['/asession']).then();
   }
 
   Supprimer(value: any) {
@@ -61,7 +61,7 @@ export class ListSessComponent implements OnInit {
     this.s = value;
     this.s.terminer = !this.s.terminer;
     this.sessionService.update(this.s).subscribe();
-    this.router.navigate(['/sessions']);
+    this.router.navigate(['/sessions']).then();
   }
 
   isLoggedIn() {
@@ -83,6 +83,6 @@ export class ListSessComponent implements OnInit {
 
   Tracks(value: any) {
     localStorage.setItem('Session', JSON.stringify(value));
-    this.router.navigate(['/tracks']);
+    this.router.navigate(['/tracks']).then();
   }
 }

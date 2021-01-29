@@ -31,7 +31,7 @@ export class FormTrackComponent implements OnInit {
     this.track.deleted = false;
     this.track.session = this.session;
     this.trackService.save(this.track).subscribe(date => {
-      this.router.navigate(['/tracks']);
+      this.router.navigate(['/tracks']).then();
     });
   }
 

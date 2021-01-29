@@ -49,7 +49,7 @@ export class FormSessComponent implements OnInit {
         this.session.deleted = false;
         this.session.conference = this.conference;
         this.sessionService.save(this.session).subscribe(date => {
-          this.router.navigate(['/sessions']);
+          this.router.navigate(['/sessions']).then();
         });
       }
     });
