@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {Utilisateur} from "../../class/utilisateur";
 import {Conference} from "../../class/conference";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ConferenceService} from "../../service/conference.service";
-import {Utilisateur} from "../../class/utilisateur";
 
 @Component({
-  selector: 'app-choix-conf',
-  templateUrl: './choix-conf.component.html',
-  styleUrls: ['./choix-conf.component.css']
+  selector: 'app-choix-confi',
+  templateUrl: './choix-confi.component.html',
+  styleUrls: ['./choix-confi.component.css']
 })
-export class ChoixConfComponent implements OnInit {
+export class ChoixConfiComponent implements OnInit {
   utilisateur: Utilisateur;
   conferences: Conference[];
 
@@ -26,7 +26,7 @@ export class ChoixConfComponent implements OnInit {
         window.location.reload()
       });
     } else {
-      this.confserv.findAll().subscribe(data => {
+      this.confserv.findMine(this.utilisateur.id).subscribe(data => {
         this.conferences = data;
       });
     }
@@ -42,9 +42,8 @@ export class ChoixConfComponent implements OnInit {
     this.router.navigate(['/conference']).then();
   }
 
-  Papier(value: any) {
+  Inviter(value: any) {
     localStorage.setItem('Conference', JSON.stringify(value));
-    this.router.navigate(['/apapier']).then();
+    this.router.navigate(['/invitation']).then();
   }
-
 }

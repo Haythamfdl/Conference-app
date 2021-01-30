@@ -32,11 +32,6 @@ export class ChoixConfpComponent implements OnInit {
     }
   }
 
-  Modifier(value: any) {
-    localStorage.setItem('Conference', JSON.stringify(value));
-    this.router.navigate(['/mconferences']).then();
-  }
-
   Info(value: any) {
     localStorage.setItem('Conference', JSON.stringify(value));
     this.router.navigate(['/conference']).then();
@@ -44,9 +39,7 @@ export class ChoixConfpComponent implements OnInit {
 
   Papier(value: any) {
     localStorage.setItem('Conference', JSON.stringify(value));
-    this.router.navigate(['/recpapier']).then(() => {
-      window.location.reload()
-    });
+    this.router.navigate(['/recpapier']).then();
   }
 
 }

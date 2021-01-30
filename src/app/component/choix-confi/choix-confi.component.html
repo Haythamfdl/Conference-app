@@ -1,0 +1,28 @@
+<div class="card my-5">
+  <div class="card-header"><h1>Veuiller choisir une Conférences</h1></div>
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">Date</th>
+        <th scope="col">Site Web</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let conf of conferences">
+        <td>{{ conf.nom }}</td>
+        <td>{{ conf.categorie }}</td>
+        <td>{{ conf.date | date:'dd/MMM/y h:mm a':'UTC'}}</td>
+        <td><a href="https://{{conf.pageweb }}">{{ conf.pageweb }}</a></td>
+        <td>
+          <button (click)="Info(conf)" class="btn btn-info" style="margin-right: 10px">Plus d'Info</button>
+          <button (click)="Inviter(conf)" class="btn btn-primary">Inviter un Utilisateur</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

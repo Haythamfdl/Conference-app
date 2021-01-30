@@ -57,6 +57,7 @@ import { FormSconfComponent } from './component/form-sconf/form-sconf.component'
 import { ModifSconfComponent } from './component/modif-sconf/modif-sconf.component';
 import { ListInvconfComponent } from './component/list-invconf/list-invconf.component';
 import { ChoixConfpComponent } from './component/choix-confp/choix-confp.component';
+import { ChoixConfiComponent } from './component/choix-confi/choix-confi.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { ChoixConfpComponent } from './component/choix-confp/choix-confp.compone
     FormSconfComponent,
     ModifSconfComponent,
     ListInvconfComponent,
-    ChoixConfpComponent
+    ChoixConfpComponent,
+    ChoixConfiComponent
   ],
   imports: [
     BrowserModule,
