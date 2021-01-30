@@ -32,9 +32,6 @@ export class FormConferenceComponent implements OnInit {
 
   onSubmit() {
     this.utilisateur=JSON.parse(localStorage.getItem("Utilisateur"));
-    this.conference.organisateur=this.utilisateur;
-    this.conference.terminer=false;
-    this.conference.deleted=false;
     this.conferenceService.save(this.conference).subscribe(data => {
       this.Alert();
     });
@@ -53,6 +50,9 @@ export class FormConferenceComponent implements OnInit {
     this.hotelService.findAll().subscribe(data => {
       this.hotels = data;
     });
+    this.conference.organisateur=this.utilisateur;
+    this.conference.terminer=false;
+    this.conference.deleted=false;
     this.conference.maxpapier=1;
     this.conference.prixticket=0;
     this.conference.nticket=1;

@@ -31,9 +31,25 @@ export class ListConferenceComponent implements OnInit {
     this.router.navigate(['/conference']).then();
   }
 
+  Inviter(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/inviter']).then();
+    //this.router.navigate(['/invitation']).then();
+  }
+
   Session(value : any){
     localStorage.setItem('Conference',JSON.stringify(value));
-    this.router.navigate(['/sessions']).then(() => {window.location.reload()});
+    this.router.navigate(['/sessions']).then();
+  }
+
+  Topic(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/topics']).then();
+  }
+
+  Papier(value : any){
+    localStorage.setItem('Conference',JSON.stringify(value));
+    this.router.navigate(['/recpapier']).then();
   }
 
   Modifier(value : any){
