@@ -26,7 +26,7 @@ export class ChoixConfpComponent implements OnInit {
         window.location.reload()
       });
     } else {
-      this.confserv.findAll().subscribe(data => {
+      this.confserv.findMine(this.utilisateur.id).subscribe(data => {
         this.conferences = data;
       });
     }
