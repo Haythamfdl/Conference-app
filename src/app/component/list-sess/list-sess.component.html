@@ -23,10 +23,10 @@
         <td>{{ session.datefin | date:'dd/MMM/y h:mm a':'UTC' }}</td>
         <td>{{ session.terminer ? 'Oui' : 'Non'}}</td>
         <td>
-          <button (click)="Modifier(session)" *ngIf="(!show && !conference.terminer && !session.terminer) || u.isadmin" class="btn btn-info" style="margin-right: 10px">Modifier</button>
+          <button (click)="Modifier(session)" *ngIf="(!show && !conference.terminer && !session.terminer) || (session.chair.id == u.id) || u.isadmin" class="btn btn-info" style="margin-right: 10px">Modifier</button>
           <button (click)="Tracks(session)" class="btn btn-secondary" style="margin-right: 10px">Afficher Track</button>
-          <button (click)="Terminer(session)" *ngIf="(!show && !conference.terminer && !session.terminer) || u.isadmin" class="btn btn-success" style="margin-right: 10px">Terminer</button>
-          <button (click)="Supprimer(session)" *ngIf="(!show && !conference.terminer && !session.terminer) || u.isadmin" class="btn btn-danger" style="margin-right: 10px">Supprimer</button>
+          <button (click)="Terminer(session)" *ngIf="(!show && !conference.terminer && !session.terminer ) || (session.chair.id == u.id) || u.isadmin" class="btn btn-success" style="margin-right: 10px">Terminer</button>
+          <button (click)="Supprimer(session)" *ngIf="(!show && !conference.terminer && !session.terminer) || (session.chair.id == u.id) || u.isadmin" class="btn btn-danger" style="margin-right: 10px">Supprimer</button>
         </td>
       </tr>
       </tbody>

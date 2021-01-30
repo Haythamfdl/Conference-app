@@ -8,7 +8,6 @@
         <th scope="col">Nom</th>
         <th scope="col">Premier Auteur</th>
         <th scope="col">Topic</th>
-        <th scope="col">Conference</th>
         <th scope="col">Confirmer</th>
         <th scope="col"></th>
       </tr>
@@ -18,7 +17,6 @@
         <td>{{ p.nom }}</td>
         <td>{{ p.premierauteur.nom }} {{ p.premierauteur.prenom }}</td>
         <td>{{ p.topic.nom }}</td>
-        <td>{{ p.conference.nom }}</td>
         <td>{{ p.confirmer?'Oui':'Non' }}</td>
         <td>
           <button style="margin-right: 10px" class="btn btn-info" (click)="Info(p)">Plus d'Info</button>
