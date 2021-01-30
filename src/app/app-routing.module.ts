@@ -47,6 +47,7 @@ import {ListSconfComponent} from "./component/list-sconf/list-sconf.component";
 import {FormSconfComponent} from "./component/form-sconf/form-sconf.component";
 import {ModifSconfComponent} from "./component/modif-sconf/modif-sconf.component";
 import {ListInvconfComponent} from "./component/list-invconf/list-invconf.component";
+import {ChoixConfpComponent} from "./component/choix-confp/choix-confp.component";
 
 
 const routes: Routes = [
@@ -73,6 +74,7 @@ const routes: Routes = [
   { path: 'atopic', component: FormTopicComponent },
   { path: 'mtopic', component: ModifTopicComponent },
   { path: 'cconference', component: ChoixConfComponent },
+  { path: 'cconferencep', component: ChoixConfpComponent },
   { path: 'mypapier', component: ListMespapierComponent },
   { path: 'recpapier', component: ListRecpapierComponent },
   { path: 'apapier', component: FormPapierComponent },
