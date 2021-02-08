@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   isLoggedIn() {
-    if (localStorage.getItem("Utilisateur") === null) {
+    if (localStorage.getItem("Utilisateur") === null || this.utilisateur.id ==  null) {
       this.show = true;
       this.utilisateur.isadmin=false;
       localStorage.setItem('Utilisateur', JSON.stringify(this.utilisateur));
