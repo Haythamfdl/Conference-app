@@ -45,6 +45,9 @@ export class NavbarComponent implements OnInit, OnChanges {
       this.show = false;
       this.utilisateur = JSON.parse(localStorage.getItem("Utilisateur"));
       this.isadmin = this.utilisateur.isadmin;
+      if(this.utilisateur.id ="-1"){
+        this.show = true;
+      }
     }
   }
 }

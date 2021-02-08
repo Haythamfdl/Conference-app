@@ -16,11 +16,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoggedIn();
+    if(this.utilisateur.id ==  "-1"){
+      this.show = true;
+    }
   }
 
   isLoggedIn() {
-    if (localStorage.getItem("Utilisateur") === null || this.utilisateur.id ==  null) {
+    if (localStorage.getItem("Utilisateur") === null || this.utilisateur.id ==  "-1") {
       this.show = true;
+      this.utilisateur.id="-1";
+      this.utilisateur.nom="";
+      this.utilisateur.prenom="";
       this.utilisateur.isadmin=false;
       localStorage.setItem('Utilisateur', JSON.stringify(this.utilisateur));
     } else {

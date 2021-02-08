@@ -41,7 +41,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    localStorage.removeItem('Utilisateur');
+    this.utilisateur.id="-1";
+    this.utilisateur.nom="";
+    this.utilisateur.prenom="";
+    this.utilisateur.isadmin=false;
+    localStorage.setItem('Utilisateur', JSON.stringify(this.utilisateur));
   }
 
 }
