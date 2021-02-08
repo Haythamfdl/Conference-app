@@ -10,24 +10,24 @@
       <li class="nav-item dropdown">
         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
            id="navbarConference">
-          Conferences
+          Conférences
         </a>
         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-          <a class="dropdown-item" routerLink="/lconferences">Lister les Conferences</a>
+          <a class="dropdown-item" routerLink="/lconferences">Lister les Conférences</a>
           <a *ngIf="!show" class="dropdown-item" routerLink="/aconferences">Chairing</a>
-          <a *ngIf="!show" class="dropdown-item" routerLink="/myconferences">Afficher Mes Conference</a>
+          <a *ngIf="!show" class="dropdown-item" routerLink="/myconferences">Afficher Mes Conférences</a>
         </div>
       </li>
 
       <li *ngIf="!show" class="nav-item dropdown">
         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
            id="navbarPapier">
-          Papier
+          Papiers
         </a>
         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
           <a class="dropdown-item" routerLink="/mypapier">Mes Papiers</a>
           <a class="dropdown-item" routerLink="/cconference">Soumettre un Papier</a>
-          <a class="dropdown-item" routerLink="/cconferencep">Papiers Reçue</a>
+          <a class="dropdown-item" routerLink="/cconferencep">Papiers Reçu</a>
           <a class="dropdown-item" routerLink="/myreviews">Mes Evaluations</a>
         </div>
       </li>
@@ -35,12 +35,12 @@
       <li *ngIf="!show" class="nav-item dropdown">
         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
            id="navbarInvitation">
-          Invitation
+          Invitations
         </a>
         <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
           <a class="dropdown-item" routerLink="/cconferencei">Envoyer une Invitation</a>
-          <a class="dropdown-item" routerLink="/einvitation">Invitation Envoyer</a>
-          <a class="dropdown-item" routerLink="/rinvitation">Invitation Reçue</a>
+          <a class="dropdown-item" routerLink="/einvitation">Invitation Envoyée</a>
+          <a class="dropdown-item" routerLink="/rinvitation">Invitation Reçu</a>
         </div>
       </li>
 

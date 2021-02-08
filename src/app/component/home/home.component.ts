@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   isLoggedIn() {
     if (localStorage.getItem("Utilisateur") === null) {
       this.show = true;
+      this.utilisateur.isadmin=false;
+      localStorage.setItem('Utilisateur', JSON.stringify(this.utilisateur));
     } else {
       this.show = false;
       this.utilisateur = JSON.parse(localStorage.getItem("Utilisateur"));
